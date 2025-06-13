@@ -25,10 +25,6 @@
     <div class="mb-4">
       <div class="flex items-center gap-2">
         <h2 class="h-5 leading-5 text-n-slate-12 font-medium">Current plan</h2>
-        <a href="<%= refresh_super_admin_settings_url %>" class="inline-flex gap-1 text-xs font-medium items-center text-woot-500 hover:text-woot-700">
-          <svg width="16" height="16"><use xlink:href="#icon-refresh-line" /></svg>
-          <span>Refresh</span>
-        </a>
       </div>
       <p class="text-n-slate-11 mt-1"><%= SuperAdmin::FeaturesHelper.plan_details.html_safe %></p>
       <div class="flex items-center mt-6">
