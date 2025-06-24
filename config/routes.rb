@@ -65,6 +65,16 @@ Rails.application.routes.draw do
             end
             resources :documents, only: [:index, :show, :create, :destroy]
           end
+          namespace :navigator do
+            resources :assistants do
+              member do
+                post :playground
+              end
+              resources :inboxes, only: [:index, :create, :destroy], param: :inbox_id
+            end
+            resources :assistant_responses
+            resources :documents, only: [:index, :show, :create, :destroy]
+          end
           resources :agent_bots, only: [:index, :create, :show, :update, :destroy] do
             delete :avatar, on: :member
             post :reset_access_token, on: :member

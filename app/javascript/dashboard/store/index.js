@@ -53,6 +53,10 @@ import captainInboxes from './captain/inboxes';
 import captainBulkActions from './captain/bulkActions';
 import copilotThreads from './captain/copilotThreads';
 import copilotMessages from './captain/copilotMessages';
+import navigatorAssistants from './navigator/assistant';
+import navigatorDocuments from './navigator/document';
+import navigatorResponses from './navigator/response';
+import navigatorInboxes from './navigator/inboxes';
 
 const plugins = [];
 
@@ -111,6 +115,10 @@ export default createStore({
     captainBulkActions,
     copilotThreads,
     copilotMessages,
+    navigatorAssistants,
+    navigatorDocuments,
+    navigatorResponses,
+    navigatorInboxes,
   },
   plugins,
 });

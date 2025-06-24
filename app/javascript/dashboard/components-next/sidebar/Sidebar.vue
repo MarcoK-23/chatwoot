@@ -221,6 +221,28 @@ const menuItems = computed(() => {
       ],
     },
     {
+      name: 'Navigator',
+      icon: 'i-lucide-compass',
+      label: t('SIDEBAR.NAVIGATOR'),
+      children: [
+        {
+          name: 'Assistants',
+          label: t('SIDEBAR.NAVIGATOR_ASSISTANTS'),
+          to: accountScopedRoute('navigator_assistants_index'),
+        },
+        {
+          name: 'Documents',
+          label: t('SIDEBAR.NAVIGATOR_DOCUMENTS'),
+          to: accountScopedRoute('navigator_documents_index'),
+        },
+        {
+          name: 'Responses',
+          label: t('SIDEBAR.NAVIGATOR_RESPONSES'),
+          to: accountScopedRoute('navigator_responses_index'),
+        },
+      ],
+    },
+    {
       name: 'Contacts',
       label: t('SIDEBAR.CONTACTS'),
       icon: 'i-lucide-contact',

@@ -98,6 +98,11 @@ class Account < ApplicationRecord
   has_many :whatsapp_channels, dependent: :destroy_async, class_name: '::Channel::Whatsapp'
   has_many :working_hours, dependent: :destroy_async
 
+  # Navigator AI associations
+  has_many :navigator_assistants, dependent: :destroy_async, class_name: 'Navigator::Assistant'
+  has_many :navigator_assistant_responses, dependent: :destroy_async, class_name: 'Navigator::AssistantResponse'
+  has_many :navigator_documents, dependent: :destroy_async, class_name: 'Navigator::Document'
+
   has_one_attached :contacts_export
 
   enum :locale, LANGUAGES_CONFIG.map { |key, val| [val[:iso_639_1_code], key] }.to_h, prefix: true

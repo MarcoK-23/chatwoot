@@ -351,3 +351,53 @@ en:
 
       Transcript:
       %{format_messages}
+
+  navigator:
+    name: "Navigator"
+    header_know_more: "Know More"
+    assistants:
+      header: "Navigator Assistants"
+      add_new: "Add New Assistant"
+      empty_state:
+        feature_spotlight:
+          title: "AI-Powered Assistants"
+          note: "Create intelligent assistants to help your team"
+    documents:
+      header: "Navigator Documents"
+      add_new: "Add New Document"
+      empty_state:
+        feature_spotlight:
+          title: "Knowledge Base"
+          note: "Upload documents to train your assistants"
+    responses:
+      header: "Navigator Responses"
+      add_new: "Add New Response"
+      status:
+        all: "All Status"
+        pending: "Pending"
+        approved: "Approved"
+      filter:
+        status: "Status: %{selected}"
+        assistant: "Assistant: %{selected}"
+        all_assistants: "All Assistants"
+      empty_state:
+        feature_spotlight:
+          title: "Trained Responses"
+          note: "Create and manage AI responses"
+      edit:
+        approve_success_message: "Response approved successfully"
+        error_message: "Failed to approve response"
+    delete:
+      title: "Delete %{type}"
+      description: "Are you sure you want to delete this %{type}? This action cannot be undone."
+      confirm: "Delete"
+      success_message: "%{type} deleted successfully"
+      error_message: "Failed to delete %{type}"
+    CAPTAIN: "Captain"
+    CAPTAIN_ASSISTANTS: "Assistants"
+    CAPTAIN_DOCUMENTS: "Documents"
+    CAPTAIN_RESPONSES: "FAQs"
+    NAVIGATOR: "Navigator"
+    NAVIGATOR_ASSISTANTS: "Assistants"
+    NAVIGATOR_DOCUMENTS: "Documents"
+    NAVIGATOR_RESPONSES: "Responses"
