@@ -287,10 +287,10 @@
     "SETTINGS": "Einstellungen",
     "CONTACTS": "Kontakte",
     "ACTIVE": "Aktiv",
-    "NAVIGATOR": "Kapitän",
-    "NAVIGATOR_ASSISTANTS": "Assistants",
-    "NAVIGATOR_DOCUMENTS": "Documents",
-    "NAVIGATOR_RESPONSES": "FAQs",
+    "CAPTAIN": "Kapitän",
+    "CAPTAIN_ASSISTANTS": "Assistants",
+    "CAPTAIN_DOCUMENTS": "Documents",
+    "CAPTAIN_RESPONSES": "FAQs",
     "HOME": "Hauptseite",
     "AGENTS": "Agenten",
     "AGENT_BOTS": "Bots",
@@ -365,13 +365,13 @@
       "DESCRIPTION": "Zeigen Sie Ihre vorherigen Rechnungen an, bearbeiten Sie Ihre Rechnungsdaten oder kündigen Sie Ihr Abonnement.",
       "BUTTON_TXT": "Gehen Sie zum Abrechnungsportal"
     },
-    "NAVIGATOR": {
+    "CAPTAIN": {
       "TITLE": "Kapitän",
-      "DESCRIPTION": "Manage usage and credits for Navigator AI.",
+      "DESCRIPTION": "Manage usage and credits for Captain AI.",
       "BUTTON_TXT": "Buy more credits",
       "DOCUMENTS": "Documents",
       "RESPONSES": "Responses",
-      "UPGRADE": "Navigator is not available on the free plan, upgrade now to get access to assistants, copilot and more."
+      "UPGRADE": "Captain is not available on the free plan, upgrade now to get access to assistants, copilot and more."
     },
     "CHAT_WITH_US": {
       "TITLE": "Brauchen Sie Hilfe?",

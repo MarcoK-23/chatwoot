@@ -22,7 +22,7 @@ const messages = ref([
   },
 ]);
 
-const isNavigatorTyping = ref(false);
+const isCaptainTyping = ref(false);
 
 const sendMessage = message => {
   // Add user message
@@ -33,9 +33,9 @@ const sendMessage = message => {
   });
 
   // Simulate AI response
-  isNavigatorTyping.value = true;
+  isCaptainTyping.value = true;
   setTimeout(() => {
-    isNavigatorTyping.value = false;
+    isCaptainTyping.value = false;
     messages.value.push({
       id: messages.value.length + 1,
       role: 'assistant',
@@ -47,13 +47,13 @@ const sendMessage = message => {
 
 <template>
   <Story
-    title="Navigator/Copilot"
+    title="Captain/Copilot"
     :layout="{ type: 'grid', width: '400px', height: '800px' }"
   >
     <Copilot
       :support-agent="supportAgent"
       :messages="messages"
-      :is-navigator-typing="isNavigatorTyping"
+      :is-captain-typing="isCaptainTyping"
       @send-message="sendMessage"
     />
   </Story>

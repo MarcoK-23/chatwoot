@@ -31,11 +31,11 @@ const deleteEntity = async payload => {
   if (!payload) return;
 
   try {
-    await store.dispatch(`navigator${props.type}/delete`, payload);
+    await store.dispatch(`captain${props.type}/delete`, payload);
     emit('deleteSuccess');
-    useAlert(t(`NAVIGATOR.${i18nKey.value}.DELETE.SUCCESS_MESSAGE`));
+    useAlert(t(`CAPTAIN.${i18nKey.value}.DELETE.SUCCESS_MESSAGE`));
   } catch (error) {
-    useAlert(t(`NAVIGATOR.${i18nKey.value}.DELETE.ERROR_MESSAGE`));
+    useAlert(t(`CAPTAIN.${i18nKey.value}.DELETE.ERROR_MESSAGE`));
   }
 };
 
@@ -51,9 +51,9 @@ defineExpose({ dialogRef: deleteDialogRef });
   <Dialog
     ref="deleteDialogRef"
     type="alert"
-    :title="t(`NAVIGATOR.${i18nKey}.DELETE.TITLE`)"
-    :description="t(`NAVIGATOR.${i18nKey}.DELETE.DESCRIPTION`)"
-    :confirm-button-label="t(`NAVIGATOR.${i18nKey}.DELETE.CONFIRM`)"
+    :title="t(`CAPTAIN.${i18nKey}.DELETE.TITLE`)"
+    :description="t(`CAPTAIN.${i18nKey}.DELETE.DESCRIPTION`)"
+    :confirm-button-label="t(`CAPTAIN.${i18nKey}.DELETE.CONFIRM`)"
     @confirm="handleDialogConfirm"
   />
 </template>

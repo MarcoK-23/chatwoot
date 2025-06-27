@@ -1,10 +1,10 @@
-import NavigatorBulkActionsAPI from 'dashboard/api/navigator/bulkActions';
+import CaptainBulkActionsAPI from 'dashboard/api/captain/bulkActions';
 import { createStore } from './storeFactory';
 import { throwErrorMessage } from 'dashboard/store/utils/api';
 
 export default createStore({
-  name: 'NavigatorBulkAction',
-  API: NavigatorBulkActionsAPI,
+  name: 'CaptainBulkAction',
+  API: CaptainBulkActionsAPI,
   actions: mutations => ({
     processBulkAction: async function processBulkAction(
       { commit },
@@ -12,7 +12,7 @@ export default createStore({
     ) {
       commit(mutations.SET_UI_FLAG, { isUpdating: true });
       try {
-        const response = await NavigatorBulkActionsAPI.create({
+        const response = await CaptainBulkActionsAPI.create({
           type: type,
           ids,
           fields: { status: actionType },
@@ -33,7 +33,7 @@ export default createStore({
       });
 
       // Update the response store after successful API call
-      await dispatch('navigatorResponses/removeBulkResponses', ids, {
+      await dispatch('captainResponses/removeBulkResponses', ids, {
         root: true,
       });
       return response;
@@ -47,7 +47,7 @@ export default createStore({
       });
 
       // Update response store after successful API call
-      await dispatch('navigatorResponses/updateBulkResponses', response, {
+      await dispatch('captainResponses/updateBulkResponses', response, {
         root: true,
       });
       return response;

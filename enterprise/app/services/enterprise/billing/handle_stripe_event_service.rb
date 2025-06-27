@@ -14,7 +14,7 @@ class Enterprise::Billing::HandleStripeEventService
     channel_facebook
     channel_email
     channel_instagram
-    navigator_integration
+    captain_integration
   ].freeze
 
   # Additional features available starting with the Business plan
@@ -46,7 +46,7 @@ class Enterprise::Billing::HandleStripeEventService
 
     update_account_attributes(subscription, plan)
     update_plan_features
-    reset_navigator_usage
+    reset_captain_usage
   end
 
   def update_account_attributes(subscription, plan)
@@ -99,7 +99,7 @@ class Enterprise::Billing::HandleStripeEventService
     enable_plan_specific_features
   end
 
-  def reset_navigator_usage
+  def reset_captain_usage
     account.reset_response_usage
   end
 

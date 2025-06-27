@@ -14,7 +14,7 @@ const isFeatureEnabledonAccount = useMapGetter(
 );
 
 const showCopilotTab = computed(() =>
-  isFeatureEnabledonAccount.value(currentAccountId.value, FEATURE_FLAGS.NAVIGATOR)
+  isFeatureEnabledonAccount.value(currentAccountId.value, FEATURE_FLAGS.CAPTAIN)
 );
 
 const { uiSettings } = useUISettings();
@@ -80,7 +80,7 @@ useKeyboardEvents(keyboardEvents);
         'bg-n-alpha-2 !text-n-iris-9': isCopilotPanelOpen,
       }"
       sm
-      icon="i-woot-navigator"
+      icon="i-woot-captain"
       @click="handleCopilotSidebarToggle"
     />
   </div>

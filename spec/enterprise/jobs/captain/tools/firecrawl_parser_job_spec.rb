@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Navigator::Tools::FirecrawlParserJob, type: :job do
+RSpec.describe Captain::Tools::FirecrawlParserJob, type: :job do
   describe '#perform' do
-    let(:assistant) { create(:navigator_assistant) }
+    let(:assistant) { create(:captain_assistant) }
     let(:payload) do
       {
         markdown: 'Launch Week I is here! 🚀',
@@ -29,7 +29,7 @@ RSpec.describe Navigator::Tools::FirecrawlParserJob, type: :job do
     end
 
     it 'updates existing document when one exists' do
-      existing_document = create(:navigator_document,
+      existing_document = create(:captain_document,
                                  assistant: assistant,
                                  account: assistant.account,
                                  external_link: payload[:metadata]['url'],
@@ -51,7 +51,7 @@ RSpec.describe Navigator::Tools::FirecrawlParserJob, type: :job do
 
     context 'when an error occurs' do
       it 'raises an error with a descriptive message' do
-        allow(Navigator::Assistant).to receive(:find).and_raise(ActiveRecord::RecordNotFound)
+        allow(Captain::Assistant).to receive(:find).and_raise(ActiveRecord::RecordNotFound)
 
         expect do
           described_class.perform_now(assistant_id: -1, payload: payload)

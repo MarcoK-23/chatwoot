@@ -1,7 +1,7 @@
 require 'openai'
 
-class Navigator::Copilot::ChatService < Llm::BaseOpenAiService
-  include Navigator::ChatHelper
+class Captain::Copilot::ChatService < Llm::BaseOpenAiService
+  include Captain::ChatHelper
 
   attr_reader :assistant, :account, :user, :copilot_thread, :previous_history, :messages
 
@@ -60,21 +60,21 @@ class Navigator::Copilot::ChatService < Llm::BaseOpenAiService
   end
 
   def register_tools
-    @tool_registry = Navigator::ToolRegistryService.new(@assistant, user: @user)
-    @tool_registry.register_tool(Navigator::Tools::SearchDocumentationService)
-    @tool_registry.register_tool(Navigator::Tools::Copilot::GetArticleService)
-    @tool_registry.register_tool(Navigator::Tools::Copilot::GetContactService)
-    @tool_registry.register_tool(Navigator::Tools::Copilot::GetConversationService)
-    @tool_registry.register_tool(Navigator::Tools::Copilot::SearchArticlesService)
-    @tool_registry.register_tool(Navigator::Tools::Copilot::SearchContactsService)
-    @tool_registry.register_tool(Navigator::Tools::Copilot::SearchConversationsService)
-    @tool_registry.register_tool(Navigator::Tools::Copilot::SearchLinearIssuesService)
+    @tool_registry = Captain::ToolRegistryService.new(@assistant, user: @user)
+    @tool_registry.register_tool(Captain::Tools::SearchDocumentationService)
+    @tool_registry.register_tool(Captain::Tools::Copilot::GetArticleService)
+    @tool_registry.register_tool(Captain::Tools::Copilot::GetContactService)
+    @tool_registry.register_tool(Captain::Tools::Copilot::GetConversationService)
+    @tool_registry.register_tool(Captain::Tools::Copilot::SearchArticlesService)
+    @tool_registry.register_tool(Captain::Tools::Copilot::SearchContactsService)
+    @tool_registry.register_tool(Captain::Tools::Copilot::SearchConversationsService)
+    @tool_registry.register_tool(Captain::Tools::Copilot::SearchLinearIssuesService)
   end
 
   def system_message
     {
       role: 'system',
-      content: Navigator::Llm::SystemPromptsService.copilot_response_generator(
+      content: Captain::Llm::SystemPromptsService.copilot_response_generator(
         @assistant.config['product_name'],
         @tool_registry.tools_summary
       )

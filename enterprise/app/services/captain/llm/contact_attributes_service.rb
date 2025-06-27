@@ -1,4 +1,4 @@
-class Navigator::Llm::ContactAttributesService < Llm::BaseOpenAiService
+class Captain::Llm::ContactAttributesService < Llm::BaseOpenAiService
   def initialize(assistant, conversation)
     super()
     @assistant = assistant
@@ -25,7 +25,7 @@ class Navigator::Llm::ContactAttributesService < Llm::BaseOpenAiService
   end
 
   def chat_parameters
-    prompt = Navigator::Llm::SystemPromptsService.attributes_generator
+    prompt = Captain::Llm::SystemPromptsService.attributes_generator
     {
       model: @model,
       response_format: { type: 'json_object' },

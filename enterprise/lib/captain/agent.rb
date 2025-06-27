@@ -1,5 +1,5 @@
 require 'openai'
-class Navigator::Agent
+class Captain::Agent
   attr_reader :name, :tools, :prompt, :persona, :goal, :secrets
 
   def initialize(name:, config:)
@@ -8,7 +8,7 @@ class Navigator::Agent
     @tools = prepare_tools(config[:tools] || [])
     @messages = config[:messages] || []
     @max_iterations = config[:max_iterations] || 10
-    @llm = Navigator::LlmService.new(api_key: config[:secrets][:OPENAI_API_KEY])
+    @llm = Captain::LlmService.new(api_key: config[:secrets][:OPENAI_API_KEY])
     @logger = Rails.logger
 
     @logger.info(@prompt)
@@ -97,7 +97,7 @@ class Navigator::Agent
 
   def prepare_tools(tools = [])
     tools.map do |_, tool|
-      Navigator::Tool.new(
+      Captain::Tool.new(
         name: tool['name'],
         config: {
           description: tool['description'],

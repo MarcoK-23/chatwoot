@@ -11,12 +11,12 @@ import Button from 'dashboard/components-next/button/Button.vue';
 import Checkbox from 'dashboard/components-next/checkbox/Checkbox.vue';
 import DropdownMenu from 'dashboard/components-next/dropdown-menu/DropdownMenu.vue';
 import DeleteDialog from 'dashboard/components-next/navigator/pageComponents/DeleteDialog.vue';
-import BulkDeleteDialog from 'dashboard/components-next/navigator/pageComponents/BulkDeleteDialog.vue';
-import PageLayout from 'dashboard/components-next/navigator/PageLayout.vue';
+import BulkDeleteDialog from 'dashboard/components-next/captain/pageComponents/BulkDeleteDialog.vue';
+import PageLayout from 'dashboard/components-next/captain/PageLayout.vue';
 import AssistantSelector from 'dashboard/components-next/navigator/pageComponents/AssistantSelector.vue';
-import ResponseCard from 'dashboard/components-next/navigator/assistant/ResponseCard.vue';
-import CreateResponseDialog from 'dashboard/components-next/navigator/pageComponents/response/CreateResponseDialog.vue';
-import ResponsePageEmptyState from 'dashboard/components-next/navigator/pageComponents/emptyStates/ResponsePageEmptyState.vue';
+import ResponseCard from 'dashboard/components-next/captain/assistant/ResponseCard.vue';
+import CreateResponseDialog from 'dashboard/components-next/captain/pageComponents/response/CreateResponseDialog.vue';
+import ResponsePageEmptyState from 'dashboard/components-next/captain/pageComponents/emptyStates/ResponsePageEmptyState.vue';
 import FeatureSpotlightPopover from 'dashboard/components-next/feature-spotlight/FeatureSpotlightPopover.vue';
 
 const router = useRouter();

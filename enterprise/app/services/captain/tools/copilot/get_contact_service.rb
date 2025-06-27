@@ -1,4 +1,4 @@
-class Navigator::Tools::Copilot::GetContactService < Navigator::Tools::BaseService
+class Captain::Tools::Copilot::GetContactService < Captain::Tools::BaseService
   def name
     'get_contact'
   end

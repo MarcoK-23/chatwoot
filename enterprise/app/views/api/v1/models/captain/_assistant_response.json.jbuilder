@@ -1,7 +1,7 @@
 json.account_id resource.account_id
 json.answer resource.answer
 json.assistant do
-  json.partial! 'api/v1/models/navigator/assistant', formats: [:json], resource: resource.assistant
+  json.partial! 'api/v1/models/captain/assistant', formats: [:json], resource: resource.assistant
 end
 json.created_at resource.created_at.to_i
 
@@ -10,7 +10,7 @@ if resource.documentable
     json.type resource.documentable_type
 
     case resource.documentable_type
-    when 'Navigator::Document'
+    when 'Captain::Document'
       json.id resource.documentable.id
       json.external_link resource.documentable.external_link
       json.name resource.documentable.name

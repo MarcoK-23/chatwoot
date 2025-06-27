@@ -1,7 +1,7 @@
-import NavigatorAssistantAPI from 'dashboard/api/navigator/assistant';
+import CaptainAssistantAPI from 'dashboard/api/captain/assistant';
 import { createStore } from './storeFactory';
 
 export default createStore({
-  name: 'NavigatorAssistant',
-  API: NavigatorAssistantAPI,
+  name: 'CaptainAssistant',
+  API: CaptainAssistantAPI,
 });

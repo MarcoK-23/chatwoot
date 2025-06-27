@@ -1,4 +1,4 @@
-class Navigator::Tools::Copilot::SearchLinearIssuesService < Navigator::Tools::BaseService
+class Captain::Tools::Copilot::SearchLinearIssuesService < Captain::Tools::BaseService
   def name
     'search_linear_issues'
   end

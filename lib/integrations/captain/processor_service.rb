@@ -1,10 +1,10 @@
-class Integrations::Navigator::ProcessorService < Integrations::BotProcessorService
+class Integrations::Captain::ProcessorService < Integrations::BotProcessorService
   pattr_initialize [:event_name!, :hook!, :event_data!]
 
   private
 
   def get_response(_session_id, message_content)
-    call_navigator(message_content)
+    call_captain(message_content)
   end
 
   def process_response(message, response)
@@ -30,8 +30,8 @@ class Integrations::Navigator::ProcessorService < Integrations::BotProcessorServ
     )
   end
 
-  def call_navigator(message_content)
-    url = "#{GlobalConfigService.load('NAVIGATOR_API_URL',
+  def call_captain(message_content)
+    url = "#{GlobalConfigService.load('CAPTAIN_API_URL',
                                       '')}/accounts/#{hook.settings['account_id']}/assistants/#{hook.settings['assistant_id']}/chat"
 
     headers = {

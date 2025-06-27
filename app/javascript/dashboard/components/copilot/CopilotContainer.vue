@@ -14,8 +14,8 @@ defineProps({
 
 const store = useStore();
 const currentUser = useMapGetter('getCurrentUser');
-const assistants = useMapGetter('navigatorAssistants/getRecords');
-const uiFlags = useMapGetter('navigatorAssistants/getUIFlags');
+const assistants = useMapGetter('captainAssistants/getRecords');
+const uiFlags = useMapGetter('captainAssistants/getUIFlags');
 const inboxAssistant = useMapGetter('getCopilotAssistant');
 const currentChat = useMapGetter('getSelectedChat');
 
@@ -35,7 +35,7 @@ const selectedAssistantId = ref(null);
 const { uiSettings, updateUISettings } = useUISettings();
 
 const activeAssistant = computed(() => {
-  const preferredId = uiSettings.value.preferred_navigator_assistant_id;
+  const preferredId = uiSettings.value.preferred_captain_assistant_id;
 
   // If the user has selected a specific assistant, it takes first preference for Copilot.
   if (preferredId) {
@@ -58,17 +58,17 @@ const activeAssistant = computed(() => {
 const setAssistant = async assistant => {
   selectedAssistantId.value = assistant.id;
   await updateUISettings({
-    preferred_navigator_assistant_id: assistant.id,
+    preferred_captain_assistant_id: assistant.id,
   });
 };
 
 const shouldShowCopilotPanel = computed(() => {
-  const isNavigatorEnabled = isFeatureEnabledonAccount.value(
+  const isCaptainEnabled = isFeatureEnabledonAccount.value(
     currentAccountId.value,
-    FEATURE_FLAGS.NAVIGATOR
+    FEATURE_FLAGS.CAPTAIN
   );
   const { is_copilot_panel_open: isCopilotPanelOpen } = uiSettings.value;
-  return isNavigatorEnabled && isCopilotPanelOpen && !uiFlags.value.fetchingList;
+  return isCaptainEnabled && isCopilotPanelOpen && !uiFlags.value.fetchingList;
 });
 
 const handleReset = () => {
@@ -94,7 +94,7 @@ const sendMessage = async message => {
 };
 
 onMounted(() => {
-  store.dispatch('navigatorAssistants/get');
+  store.dispatch('captainAssistants/get');
 });
 </script>
 

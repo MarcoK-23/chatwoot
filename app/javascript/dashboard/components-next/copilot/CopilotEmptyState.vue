@@ -18,26 +18,26 @@ const route = useRoute();
 const routePromptMap = {
   conversations: [
     {
-      label: 'NAVIGATOR.COPILOT.PROMPTS.SUMMARIZE.LABEL',
-      prompt: 'NAVIGATOR.COPILOT.PROMPTS.SUMMARIZE.CONTENT',
+      label: 'CAPTAIN.COPILOT.PROMPTS.SUMMARIZE.LABEL',
+      prompt: 'CAPTAIN.COPILOT.PROMPTS.SUMMARIZE.CONTENT',
     },
     {
-      label: 'NAVIGATOR.COPILOT.PROMPTS.SUGGEST.LABEL',
-      prompt: 'NAVIGATOR.COPILOT.PROMPTS.SUGGEST.CONTENT',
+      label: 'CAPTAIN.COPILOT.PROMPTS.SUGGEST.LABEL',
+      prompt: 'CAPTAIN.COPILOT.PROMPTS.SUGGEST.CONTENT',
     },
     {
-      label: 'NAVIGATOR.COPILOT.PROMPTS.RATE.LABEL',
-      prompt: 'NAVIGATOR.COPILOT.PROMPTS.RATE.CONTENT',
+      label: 'CAPTAIN.COPILOT.PROMPTS.RATE.LABEL',
+      prompt: 'CAPTAIN.COPILOT.PROMPTS.RATE.CONTENT',
     },
   ],
   dashboard: [
     {
-      label: 'NAVIGATOR.COPILOT.PROMPTS.HIGH_PRIORITY.LABEL',
-      prompt: 'NAVIGATOR.COPILOT.PROMPTS.HIGH_PRIORITY.CONTENT',
+      label: 'CAPTAIN.COPILOT.PROMPTS.HIGH_PRIORITY.LABEL',
+      prompt: 'CAPTAIN.COPILOT.PROMPTS.HIGH_PRIORITY.CONTENT',
     },
     {
-      label: 'NAVIGATOR.COPILOT.PROMPTS.LIST_CONTACTS.LABEL',
-      prompt: 'NAVIGATOR.COPILOT.PROMPTS.LIST_CONTACTS.CONTENT',
+      label: 'CAPTAIN.COPILOT.PROMPTS.LIST_CONTACTS.LABEL',
+      prompt: 'CAPTAIN.COPILOT.PROMPTS.LIST_CONTACTS.CONTENT',
     },
   ],
 };
@@ -62,33 +62,33 @@ const handleSuggestion = opt => {
 <template>
   <div class="flex-1 flex flex-col gap-6 px-2">
     <div class="flex flex-col space-y-4 py-4">
-      <Icon icon="i-woot-navigator" class="text-n-slate-9 text-4xl" />
+      <Icon icon="i-woot-captain" class="text-n-slate-9 text-4xl" />
       <div class="space-y-1">
         <h3 class="text-base font-medium text-n-slate-12 leading-8">
-          {{ $t('NAVIGATOR.COPILOT.PANEL_TITLE') }}
+          {{ $t('CAPTAIN.COPILOT.PANEL_TITLE') }}
         </h3>
         <p class="text-sm text-n-slate-11 leading-6">
-          {{ $t('NAVIGATOR.COPILOT.KICK_OFF_MESSAGE') }}
+          {{ $t('CAPTAIN.COPILOT.KICK_OFF_MESSAGE') }}
         </p>
       </div>
     </div>
     <div v-if="!hasAssistants" class="w-full space-y-2">
       <p class="text-sm text-n-slate-11 leading-6">
-        {{ $t('NAVIGATOR.ASSISTANTS.NO_ASSISTANTS_AVAILABLE') }}
+        {{ $t('CAPTAIN.ASSISTANTS.NO_ASSISTANTS_AVAILABLE') }}
       </p>
       <router-link
         :to="{
-          name: 'navigator_assistants_index',
+          name: 'captain_assistants_index',
           params: { accountId: route.params.accountId },
         }"
         class="text-n-slate-11 underline hover:text-n-slate-12"
       >
-        {{ $t('NAVIGATOR.ASSISTANTS.ADD_NEW') }}
+        {{ $t('CAPTAIN.ASSISTANTS.ADD_NEW') }}
       </router-link>
     </div>
     <div v-else class="w-full space-y-2">
       <span class="text-xs text-n-slate-10 block">
-        {{ $t('NAVIGATOR.COPILOT.TRY_THESE_PROMPTS') }}
+        {{ $t('CAPTAIN.COPILOT.TRY_THESE_PROMPTS') }}
       </span>
       <div class="space-y-1">
         <button

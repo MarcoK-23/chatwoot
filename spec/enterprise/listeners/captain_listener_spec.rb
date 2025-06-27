@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-describe NavigatorListener do
+describe CaptainListener do
   let(:listener) { described_class.instance }
   let(:account) { create(:account) }
   let(:inbox) { create(:inbox, account: account) }
   let(:user) { create(:user, account: account) }
-  let(:assistant) { create(:navigator_assistant, account: account, config: { feature_memory: true, feature_faq: true }) }
+  let(:assistant) { create(:captain_assistant, account: account, config: { feature_memory: true, feature_faq: true }) }
 
   describe '#conversation_resolved' do
     let(:agent) { create(:user, account: account) }
@@ -15,7 +15,7 @@ describe NavigatorListener do
     let(:event) { Events::Base.new(event_name, Time.zone.now, conversation: conversation) }
 
     before do
-      create(:navigator_inbox, navigator_assistant: assistant, inbox: inbox)
+      create(:captain_inbox, captain_assistant: assistant, inbox: inbox)
     end
 
     context 'when feature_memory is enabled' do
@@ -26,11 +26,11 @@ describe NavigatorListener do
       end
 
       it 'generates and updates notes' do
-        expect(Navigator::Llm::ContactNotesService)
+        expect(Captain::Llm::ContactNotesService)
           .to receive(:new)
           .with(assistant, conversation)
-          .and_return(instance_double(Navigator::Llm::ContactNotesService, generate_and_update_notes: nil))
-        expect(Navigator::Llm::ConversationFaqService).not_to receive(:new)
+          .and_return(instance_double(Captain::Llm::ContactNotesService, generate_and_update_notes: nil))
+        expect(Captain::Llm::ConversationFaqService).not_to receive(:new)
 
         listener.conversation_resolved(event)
       end
@@ -44,11 +44,11 @@ describe NavigatorListener do
       end
 
       it 'generates and deduplicates FAQs' do
-        expect(Navigator::Llm::ConversationFaqService)
+        expect(Captain::Llm::ConversationFaqService)
           .to receive(:new)
           .with(assistant, conversation)
-          .and_return(instance_double(Navigator::Llm::ConversationFaqService, generate_and_deduplicate: false))
-        expect(Navigator::Llm::ContactNotesService).not_to receive(:new)
+          .and_return(instance_double(Captain::Llm::ConversationFaqService, generate_and_deduplicate: false))
+        expect(Captain::Llm::ContactNotesService).not_to receive(:new)
 
         listener.conversation_resolved(event)
       end

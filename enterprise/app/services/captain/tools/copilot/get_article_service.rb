@@ -1,4 +1,4 @@
-class Navigator::Tools::Copilot::GetArticleService < Navigator::Tools::BaseService
+class Captain::Tools::Copilot::GetArticleService < Captain::Tools::BaseService
   def name
     'get_article'
   end

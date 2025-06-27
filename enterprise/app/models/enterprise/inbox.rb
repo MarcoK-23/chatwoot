@@ -6,17 +6,17 @@ module Enterprise::Inbox
   end
 
   def active_bot?
-    super || navigator_active?
+    super || captain_active?
   end
 
-  def navigator_active?
-    navigator_assistant.present? && more_responses?
+  def captain_active?
+    captain_assistant.present? && more_responses?
   end
 
   private
 
   def more_responses?
-    account.usage_limits[:navigator][:responses][:current_available].positive?
+    account.usage_limits[:captain][:responses][:current_available].positive?
   end
 
   def get_agent_ids_over_assignment_limit(limit)

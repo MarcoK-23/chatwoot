@@ -287,10 +287,10 @@
     "SETTINGS": "Iestatījumi",
     "CONTACTS": "Kontaktpersonas",
     "ACTIVE": "Aktīvs",
-    "NAVIGATOR": "Navigator",
-    "NAVIGATOR_ASSISTANTS": "Asistenti",
-    "NAVIGATOR_DOCUMENTS": "Dokumenti",
-    "NAVIGATOR_RESPONSES": "Bieži uzdotie jautājumi",
+    "CAPTAIN": "Captain",
+    "CAPTAIN_ASSISTANTS": "Asistenti",
+    "CAPTAIN_DOCUMENTS": "Dokumenti",
+    "CAPTAIN_RESPONSES": "Bieži uzdotie jautājumi",
     "HOME": "Sākums",
     "AGENTS": "Aģenti",
     "AGENT_BOTS": "Bots",
@@ -365,13 +365,13 @@
       "DESCRIPTION": "Apskatīt iepriekšējos rēķinus, rediģēt norēķinu informāciju vai atcelt abonementu.",
       "BUTTON_TXT": "Doties uz norēķinu portālu"
     },
-    "NAVIGATOR": {
-      "TITLE": "Navigator",
-      "DESCRIPTION": "Pārvaldīt Navigator AI lietošanu un kredītus.",
+    "CAPTAIN": {
+      "TITLE": "Captain",
+      "DESCRIPTION": "Pārvaldīt Captain AI lietošanu un kredītus.",
       "BUTTON_TXT": "Iegādāties vairāk kredītu",
       "DOCUMENTS": "Dokumenti",
       "RESPONSES": "Atbildes",
-      "UPGRADE": "Navigator nav pieejams bezmaksas abonementā. Modernizējiet abonementu tūlīt, lai piekļūtu asistentiem un copilot."
+      "UPGRADE": "Captain nav pieejams bezmaksas abonementā. Modernizējiet abonementu tūlīt, lai piekļūtu asistentiem un copilot."
     },
     "CHAT_WITH_US": {
       "TITLE": "Nepieciešama palīdzība?",

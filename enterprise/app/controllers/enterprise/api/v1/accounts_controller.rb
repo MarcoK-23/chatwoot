@@ -66,7 +66,7 @@ class Enterprise::Api::V1::AccountsController < Api::BaseController
       'conversation' => {},
       'non_web_inboxes' => {},
       'agents' => {},
-      'navigator' => @account.usage_limits[:navigator]
+      'captain' => @account.usage_limits[:captain]
     }
   end
 

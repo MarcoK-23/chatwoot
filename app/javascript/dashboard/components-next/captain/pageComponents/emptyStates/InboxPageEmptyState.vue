@@ -1,8 +1,8 @@
 <script setup>
 import EmptyStateLayout from 'dashboard/components-next/EmptyStateLayout.vue';
 import Button from 'dashboard/components-next/button/Button.vue';
-import InboxCard from 'dashboard/components-next/navigator/assistant/InboxCard.vue';
-import { inboxes } from 'dashboard/components-next/navigator/pageComponents/emptyStates/navigatorEmptyStateContent.js';
+import InboxCard from 'dashboard/components-next/captain/assistant/InboxCard.vue';
+import { inboxes } from 'dashboard/components-next/captain/pageComponents/emptyStates/captainEmptyStateContent.js';
 
 const emit = defineEmits(['click']);
 
@@ -13,8 +13,8 @@ const onClick = () => {
 
 <template>
   <EmptyStateLayout
-    :title="$t('NAVIGATOR.INBOXES.EMPTY_STATE.TITLE')"
-    :subtitle="$t('NAVIGATOR.INBOXES.EMPTY_STATE.SUBTITLE')"
+    :title="$t('CAPTAIN.INBOXES.EMPTY_STATE.TITLE')"
+    :subtitle="$t('CAPTAIN.INBOXES.EMPTY_STATE.SUBTITLE')"
     :action-perms="['administrator']"
   >
     <template #empty-state-item>
@@ -29,7 +29,7 @@ const onClick = () => {
     </template>
     <template #actions>
       <Button
-        :label="$t('NAVIGATOR.INBOXES.ADD_NEW')"
+        :label="$t('CAPTAIN.INBOXES.ADD_NEW')"
         icon="i-lucide-plus"
         @click="onClick"
       />

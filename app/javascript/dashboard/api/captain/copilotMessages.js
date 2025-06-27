@@ -3,7 +3,7 @@ import ApiClient from '../ApiClient';
 
 class CopilotMessages extends ApiClient {
   constructor() {
-    super('navigator/copilot_threads', { accountScoped: true });
+    super('captain/copilot_threads', { accountScoped: true });
   }
 
   get(threadId) {

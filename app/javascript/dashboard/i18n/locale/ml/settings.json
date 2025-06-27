@@ -287,10 +287,10 @@
     "SETTINGS": "ക്രമീകരണങ്ങൾ",
     "CONTACTS": "കോൺ‌ടാക്റ്റുകൾ",
     "ACTIVE": "സജീവമാണ്",
-    "NAVIGATOR": "Navigator",
-    "NAVIGATOR_ASSISTANTS": "Assistants",
-    "NAVIGATOR_DOCUMENTS": "Documents",
-    "NAVIGATOR_RESPONSES": "FAQs",
+    "CAPTAIN": "Captain",
+    "CAPTAIN_ASSISTANTS": "Assistants",
+    "CAPTAIN_DOCUMENTS": "Documents",
+    "CAPTAIN_RESPONSES": "FAQs",
     "HOME": "ഹോം",
     "AGENTS": "ഏജന്റുമാർ",
     "AGENT_BOTS": "Bots",
@@ -365,13 +365,13 @@
       "DESCRIPTION": "View your previous invoices, edit your billing details, or cancel your subscription.",
       "BUTTON_TXT": "Go to the billing portal"
     },
-    "NAVIGATOR": {
-      "TITLE": "Navigator",
-      "DESCRIPTION": "Manage usage and credits for Navigator AI.",
+    "CAPTAIN": {
+      "TITLE": "Captain",
+      "DESCRIPTION": "Manage usage and credits for Captain AI.",
       "BUTTON_TXT": "Buy more credits",
       "DOCUMENTS": "Documents",
       "RESPONSES": "Responses",
-      "UPGRADE": "Navigator is not available on the free plan, upgrade now to get access to assistants, copilot and more."
+      "UPGRADE": "Captain is not available on the free plan, upgrade now to get access to assistants, copilot and more."
     },
     "CHAT_WITH_US": {
       "TITLE": "Need help?",

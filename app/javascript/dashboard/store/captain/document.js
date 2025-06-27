@@ -1,7 +1,7 @@
-import NavigatorDocumentAPI from 'dashboard/api/navigator/document';
+import CaptainDocumentAPI from 'dashboard/api/captain/document';
 import { createStore } from './storeFactory';
 
 export default createStore({
-  name: 'NavigatorDocument',
-  API: NavigatorDocumentAPI,
+  name: 'CaptainDocument',
+  API: CaptainDocumentAPI,
 });

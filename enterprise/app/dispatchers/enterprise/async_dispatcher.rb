@@ -1,7 +1,7 @@
 module Enterprise::AsyncDispatcher
   def listeners
     super + [
-      NavigatorListener.instance
+      CaptainListener.instance
     ]
   end
 end

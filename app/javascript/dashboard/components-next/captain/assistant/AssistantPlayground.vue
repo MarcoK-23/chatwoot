@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import NextButton from 'dashboard/components-next/button/Button.vue';
 import MessageList from './MessageList.vue';
-import NavigatorAssistant from 'dashboard/api/navigator/assistant';
+import CaptainAssistant from 'dashboard/api/captain/assistant';
 
 const { assistantId } = defineProps({
   assistantId: {
@@ -43,7 +43,7 @@ const sendMessage = async () => {
 
   try {
     isLoading.value = true;
-    const { data } = await NavigatorAssistant.playground({
+    const { data } = await CaptainAssistant.playground({
       assistantId,
       messageContent: currentMessage,
       messageHistory: formatMessagesForApi(),
@@ -70,7 +70,7 @@ const sendMessage = async () => {
     <div class="mb-4">
       <div class="flex justify-between items-center mb-1">
         <h3 class="text-lg font-medium">
-          {{ t('NAVIGATOR.PLAYGROUND.HEADER') }}
+          {{ t('CAPTAIN.PLAYGROUND.HEADER') }}
         </h3>
         <NextButton
           ghost
@@ -80,7 +80,7 @@ const sendMessage = async () => {
         />
       </div>
       <p class="text-sm text-n-slate-11">
-        {{ t('NAVIGATOR.PLAYGROUND.DESCRIPTION') }}
+        {{ t('CAPTAIN.PLAYGROUND.DESCRIPTION') }}
       </p>
     </div>
 
@@ -92,7 +92,7 @@ const sendMessage = async () => {
       <input
         v-model="newMessage"
         class="flex-1 bg-transparent border-none focus:outline-none text-sm mb-0"
-        :placeholder="t('NAVIGATOR.PLAYGROUND.MESSAGE_PLACEHOLDER')"
+        :placeholder="t('CAPTAIN.PLAYGROUND.MESSAGE_PLACEHOLDER')"
         @keyup.enter="sendMessage"
       />
       <NextButton
@@ -105,7 +105,7 @@ const sendMessage = async () => {
     </div>
 
     <p class="text-xs text-n-slate-11 pt-2 text-center">
-      {{ t('NAVIGATOR.PLAYGROUND.CREDIT_NOTE') }}
+      {{ t('CAPTAIN.PLAYGROUND.CREDIT_NOTE') }}
     </p>
   </div>
 </template>

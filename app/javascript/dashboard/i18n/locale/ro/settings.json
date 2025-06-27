@@ -287,10 +287,10 @@
     "SETTINGS": "Setări",
     "CONTACTS": "Contacte",
     "ACTIVE": "Activ",
-    "NAVIGATOR": "Navigator",
-    "NAVIGATOR_ASSISTANTS": "Assistants",
-    "NAVIGATOR_DOCUMENTS": "Documents",
-    "NAVIGATOR_RESPONSES": "FAQs",
+    "CAPTAIN": "Captain",
+    "CAPTAIN_ASSISTANTS": "Assistants",
+    "CAPTAIN_DOCUMENTS": "Documents",
+    "CAPTAIN_RESPONSES": "FAQs",
     "HOME": "Acasa",
     "AGENTS": "Agenți",
     "AGENT_BOTS": "Boți",
@@ -365,13 +365,13 @@
       "DESCRIPTION": "Vizualizați facturile anterioare, editați detaliile de facturare sau anulați abonamentul.",
       "BUTTON_TXT": "Accesați portalul de facturare"
     },
-    "NAVIGATOR": {
-      "TITLE": "Navigator",
-      "DESCRIPTION": "Manage usage and credits for Navigator AI.",
+    "CAPTAIN": {
+      "TITLE": "Captain",
+      "DESCRIPTION": "Manage usage and credits for Captain AI.",
       "BUTTON_TXT": "Buy more credits",
       "DOCUMENTS": "Documents",
       "RESPONSES": "Responses",
-      "UPGRADE": "Navigator is not available on the free plan, upgrade now to get access to assistants, copilot and more."
+      "UPGRADE": "Captain is not available on the free plan, upgrade now to get access to assistants, copilot and more."
     },
     "CHAT_WITH_US": {
       "TITLE": "Aveţi nevoie de ajutor?",

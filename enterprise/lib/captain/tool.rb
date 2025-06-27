@@ -1,4 +1,4 @@
-class Navigator::Tool
+class Captain::Tool
   class InvalidImplementationError < StandardError; end
   class InvalidSecretsError < StandardError; end
   class ExecutionError < StandardError; end

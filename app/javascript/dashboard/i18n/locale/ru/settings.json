@@ -287,10 +287,10 @@
     "SETTINGS": "Настройки",
     "CONTACTS": "Контакты",
     "ACTIVE": "Активно",
-    "NAVIGATOR": "Капитан",
-    "NAVIGATOR_ASSISTANTS": "Ассистенты",
-    "NAVIGATOR_DOCUMENTS": "Документы",
-    "NAVIGATOR_RESPONSES": "FAQ",
+    "CAPTAIN": "Капитан",
+    "CAPTAIN_ASSISTANTS": "Ассистенты",
+    "CAPTAIN_DOCUMENTS": "Документы",
+    "CAPTAIN_RESPONSES": "FAQ",
     "HOME": "Главная",
     "AGENTS": "Операторы",
     "AGENT_BOTS": "Боты",
@@ -365,13 +365,13 @@
       "DESCRIPTION": "Просматривайте ваши предыдущие счета, редактируйте платежные реквизиты или отмените подписку.",
       "BUTTON_TXT": "Перейти на платёжный портал"
     },
-    "NAVIGATOR": {
+    "CAPTAIN": {
       "TITLE": "Капитан",
-      "DESCRIPTION": "Управляйте использованием и кредитами для Navigator AI.",
+      "DESCRIPTION": "Управляйте использованием и кредитами для Captain AI.",
       "BUTTON_TXT": "Купить дополнительные кредиты",
       "DOCUMENTS": "Документы",
       "RESPONSES": "Ответы",
-      "UPGRADE": "Navigator недоступен в бесплатном тарифном плане, обновите его, чтобы получить доступ к ассистентам, copilot и другим функциям."
+      "UPGRADE": "Captain недоступен в бесплатном тарифном плане, обновите его, чтобы получить доступ к ассистентам, copilot и другим функциям."
     },
     "CHAT_WITH_US": {
       "TITLE": "Нужна помощь?",

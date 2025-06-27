@@ -4,29 +4,29 @@ import { useAccount } from 'dashboard/composables/useAccount';
 import { useCamelCase } from 'dashboard/composables/useTransformKeys';
 import { FEATURE_FLAGS } from 'dashboard/featureFlags';
 
-export function useNavigator() {
+export function useCaptain() {
   const store = useStore();
   const { isCloudFeatureEnabled, currentAccount } = useAccount();
 
-  const navigatorEnabled = computed(() => {
-    return isCloudFeatureEnabled(FEATURE_FLAGS.NAVIGATOR);
+  const captainEnabled = computed(() => {
+    return isCloudFeatureEnabled(FEATURE_FLAGS.CAPTAIN);
   });
 
-  const navigatorLimits = computed(() => {
-    return currentAccount.value?.limits?.navigator;
+  const captainLimits = computed(() => {
+    return currentAccount.value?.limits?.captain;
   });
 
   const documentLimits = computed(() => {
-    if (navigatorLimits.value?.documents) {
-      return useCamelCase(navigatorLimits.value.documents);
+    if (captainLimits.value?.documents) {
+      return useCamelCase(captainLimits.value.documents);
     }
 
     return null;
   });
 
   const responseLimits = computed(() => {
-    if (navigatorLimits.value?.responses) {
-      return useCamelCase(navigatorLimits.value.responses);
+    if (captainLimits.value?.responses) {
+      return useCamelCase(captainLimits.value.responses);
     }
 
     return null;
@@ -37,8 +37,8 @@ export function useNavigator() {
   };
 
   return {
-    navigatorEnabled,
-    navigatorLimits,
+    captainEnabled,
+    captainLimits,
     documentLimits,
     responseLimits,
     fetchLimits,

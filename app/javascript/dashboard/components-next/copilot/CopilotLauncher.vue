@@ -30,12 +30,12 @@ const isFeatureEnabledonAccount = useMapGetter(
 );
 
 const showCopilotLauncher = computed(() => {
-  const isNavigatorEnabled = isFeatureEnabledonAccount.value(
+  const isCaptainEnabled = isFeatureEnabledonAccount.value(
     currentAccountId.value,
-    FEATURE_FLAGS.NAVIGATOR
+    FEATURE_FLAGS.CAPTAIN
   );
   return (
-    isNavigatorEnabled &&
+    isCaptainEnabled &&
     !uiSettings.value.is_copilot_panel_open &&
     !isConversationRoute.value
   );
@@ -52,7 +52,7 @@ const toggleSidebar = () => {
   <div v-if="showCopilotLauncher" class="fixed bottom-4 right-4 z-50">
     <div class="rounded-full bg-n-alpha-2 p-1">
       <Button
-        icon="i-woot-navigator"
+        icon="i-woot-captain"
         class="!rounded-full !bg-n-solid-3 dark:!bg-n-alpha-2 !text-n-slate-12 text-xl"
         lg
         @click="toggleSidebar"

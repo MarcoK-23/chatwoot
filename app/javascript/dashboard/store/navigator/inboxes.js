@@ -1,5 +1,5 @@
 import NavigatorInboxes from 'dashboard/api/navigator/inboxes';
-import { createStore } from '../navigator/storeFactory';
+import { createStore } from '../captain/storeFactory';
 import { throwErrorMessage } from 'dashboard/store/utils/api';
 
 export default createStore({

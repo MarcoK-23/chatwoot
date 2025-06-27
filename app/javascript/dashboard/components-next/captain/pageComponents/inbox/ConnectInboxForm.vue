@@ -20,9 +20,9 @@ const emit = defineEmits(['submit', 'cancel']);
 const { t } = useI18n();
 
 const formState = {
-  uiFlags: useMapGetter('navigatorInboxes/getUIFlags'),
+  uiFlags: useMapGetter('captainInboxes/getUIFlags'),
   inboxes: useMapGetter('inboxes/getInboxes'),
-  navigatorInboxes: useMapGetter('navigatorInboxes/getRecords'),
+  captainInboxes: useMapGetter('captainInboxes/getRecords'),
 };
 
 const initialState = {
@@ -36,10 +36,10 @@ const validationRules = {
 };
 
 const inboxList = computed(() => {
-  const navigatorInboxIds = formState.navigatorInboxes.value.map(inbox => inbox.id);
+  const captainInboxIds = formState.captainInboxes.value.map(inbox => inbox.id);
 
   return formState.inboxes.value
-    .filter(inbox => !navigatorInboxIds.includes(inbox.id))
+    .filter(inbox => !captainInboxIds.includes(inbox.id))
     .map(inbox => ({
       value: inbox.id,
       label: inbox.name,
@@ -52,7 +52,7 @@ const isLoading = computed(() => formState.uiFlags.value.creatingItem);
 
 const getErrorMessage = (field, errorKey) => {
   return v$.value[field].$error
-    ? t(`NAVIGATOR.INBOXES.FORM.${errorKey}.ERROR`)
+    ? t(`CAPTAIN.INBOXES.FORM.${errorKey}.ERROR`)
     : '';
 };
 
@@ -81,14 +81,14 @@ const handleSubmit = async () => {
   <form class="flex flex-col gap-4" @submit.prevent="handleSubmit">
     <div class="flex flex-col gap-1">
       <label for="inbox" class="mb-0.5 text-sm font-medium text-n-slate-12">
-        {{ t('NAVIGATOR.INBOXES.FORM.INBOX.LABEL') }}
+        {{ t('CAPTAIN.INBOXES.FORM.INBOX.LABEL') }}
       </label>
       <ComboBox
         id="inbox"
         v-model="state.inboxId"
         :options="inboxList"
         :has-error="!!formErrors.inboxId"
-        :placeholder="t('NAVIGATOR.INBOXES.FORM.INBOX.PLACEHOLDER')"
+        :placeholder="t('CAPTAIN.INBOXES.FORM.INBOX.PLACEHOLDER')"
         class="[&>div>button]:bg-n-alpha-black2 [&>div>button:not(.focused)]:dark:outline-n-weak [&>div>button:not(.focused)]:hover:!outline-n-slate-6"
         :message="formErrors.inboxId"
       />
@@ -99,13 +99,13 @@ const handleSubmit = async () => {
         type="button"
         variant="faded"
         color="slate"
-        :label="t('NAVIGATOR.FORM.CANCEL')"
+        :label="t('CAPTAIN.FORM.CANCEL')"
         class="w-full bg-n-alpha-2 n-blue-text hover:bg-n-alpha-3"
         @click="handleCancel"
       />
       <Button
         type="submit"
-        :label="t('NAVIGATOR.FORM.CREATE')"
+        :label="t('CAPTAIN.FORM.CREATE')"
         class="w-full"
         :is-loading="isLoading"
         :disabled="isLoading"

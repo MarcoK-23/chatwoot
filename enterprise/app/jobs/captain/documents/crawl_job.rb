@@ -1,8 +1,8 @@
-class Navigator::Documents::CrawlJob < ApplicationJob
+class Captain::Documents::CrawlJob < ApplicationJob
   queue_as :low
 
   def perform(document)
-    if InstallationConfig.find_by(name: 'NAVIGATOR_FIRECRAWL_API_KEY')&.value.present?
+    if InstallationConfig.find_by(name: 'CAPTAIN_FIRECRAWL_API_KEY')&.value.present?
       perform_firecrawl_crawl(document)
     else
       perform_simple_crawl(document)
@@ -11,30 +11,30 @@ class Navigator::Documents::CrawlJob < ApplicationJob
 
   private
 
-  include Navigator::FirecrawlHelper
+  include Captain::FirecrawlHelper
 
   def perform_simple_crawl(document)
-    page_links = Navigator::Tools::SimplePageCrawlService.new(document.external_link).page_links
+    page_links = Captain::Tools::SimplePageCrawlService.new(document.external_link).page_links
 
     page_links.each do |page_link|
-      Navigator::Tools::SimplePageCrawlParserJob.perform_later(
+      Captain::Tools::SimplePageCrawlParserJob.perform_later(
         assistant_id: document.assistant_id,
         page_link: page_link
       )
     end
 
-    Navigator::Tools::SimplePageCrawlParserJob.perform_later(
+    Captain::Tools::SimplePageCrawlParserJob.perform_later(
       assistant_id: document.assistant_id,
       page_link: document.external_link
     )
   end
 
   def perform_firecrawl_crawl(document)
-    navigator_usage_limits = document.account.usage_limits[:navigator] || {}
-    document_limit = navigator_usage_limits[:documents] || {}
+    captain_usage_limits = document.account.usage_limits[:captain] || {}
+    document_limit = captain_usage_limits[:documents] || {}
     crawl_limit = [document_limit[:current_available] || 10, 500].min
 
-    Navigator::Tools::FirecrawlService
+    Captain::Tools::FirecrawlService
       .new
       .perform(
         document.external_link,

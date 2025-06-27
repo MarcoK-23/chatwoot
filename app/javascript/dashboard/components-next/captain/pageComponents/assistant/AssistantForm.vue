@@ -26,7 +26,7 @@ const emit = defineEmits(['submit', 'cancel']);
 const { t } = useI18n();
 
 const formState = {
-  uiFlags: useMapGetter('navigatorAssistants/getUIFlags'),
+  uiFlags: useMapGetter('captainAssistants/getUIFlags'),
 };
 
 const initialState = {
@@ -51,7 +51,7 @@ const isLoading = computed(() => formState.uiFlags.value.creatingItem);
 
 const getErrorMessage = (field, errorKey) => {
   return v$.value[field].$error
-    ? t(`NAVIGATOR.ASSISTANTS.FORM.${errorKey}.ERROR`)
+    ? t(`CAPTAIN.ASSISTANTS.FORM.${errorKey}.ERROR`)
     : '';
 };
 
@@ -111,44 +111,44 @@ watch(
   <form class="flex flex-col gap-4" @submit.prevent="handleSubmit">
     <Input
       v-model="state.name"
-      :label="t('NAVIGATOR.ASSISTANTS.FORM.NAME.LABEL')"
-      :placeholder="t('NAVIGATOR.ASSISTANTS.FORM.NAME.PLACEHOLDER')"
+      :label="t('CAPTAIN.ASSISTANTS.FORM.NAME.LABEL')"
+      :placeholder="t('CAPTAIN.ASSISTANTS.FORM.NAME.PLACEHOLDER')"
       :message="formErrors.name"
       :message-type="formErrors.name ? 'error' : 'info'"
     />
 
     <Editor
       v-model="state.description"
-      :label="t('NAVIGATOR.ASSISTANTS.FORM.DESCRIPTION.LABEL')"
-      :placeholder="t('NAVIGATOR.ASSISTANTS.FORM.DESCRIPTION.PLACEHOLDER')"
+      :label="t('CAPTAIN.ASSISTANTS.FORM.DESCRIPTION.LABEL')"
+      :placeholder="t('CAPTAIN.ASSISTANTS.FORM.DESCRIPTION.PLACEHOLDER')"
       :message="formErrors.description"
       :message-type="formErrors.description ? 'error' : 'info'"
     />
 
     <Input
       v-model="state.productName"
-      :label="t('NAVIGATOR.ASSISTANTS.FORM.PRODUCT_NAME.LABEL')"
-      :placeholder="t('NAVIGATOR.ASSISTANTS.FORM.PRODUCT_NAME.PLACEHOLDER')"
+      :label="t('CAPTAIN.ASSISTANTS.FORM.PRODUCT_NAME.LABEL')"
+      :placeholder="t('CAPTAIN.ASSISTANTS.FORM.PRODUCT_NAME.PLACEHOLDER')"
       :message="formErrors.productName"
       :message-type="formErrors.productName ? 'error' : 'info'"
     />
 
     <fieldset class="flex flex-col gap-2.5">
       <legend class="mb-3 text-sm font-medium text-n-slate-12">
-        {{ t('NAVIGATOR.ASSISTANTS.FORM.FEATURES.TITLE') }}
+        {{ t('CAPTAIN.ASSISTANTS.FORM.FEATURES.TITLE') }}
       </legend>
 
       <label class="flex items-center gap-2">
         <input v-model="state.featureFaq" type="checkbox" />
         <span class="text-sm font-medium text-n-slate-12">
-          {{ t('NAVIGATOR.ASSISTANTS.FORM.FEATURES.ALLOW_CONVERSATION_FAQS') }}
+          {{ t('CAPTAIN.ASSISTANTS.FORM.FEATURES.ALLOW_CONVERSATION_FAQS') }}
         </span>
       </label>
 
       <label class="flex items-center gap-2">
         <input v-model="state.featureMemory" type="checkbox" />
         <span class="text-sm font-medium text-n-slate-12">
-          {{ t('NAVIGATOR.ASSISTANTS.FORM.FEATURES.ALLOW_MEMORIES') }}
+          {{ t('CAPTAIN.ASSISTANTS.FORM.FEATURES.ALLOW_MEMORIES') }}
         </span>
       </label>
     </fieldset>
@@ -158,13 +158,13 @@ watch(
         type="button"
         variant="faded"
         color="slate"
-        :label="t('NAVIGATOR.FORM.CANCEL')"
+        :label="t('CAPTAIN.FORM.CANCEL')"
         class="w-full bg-n-alpha-2 n-blue-text hover:bg-n-alpha-3"
         @click="handleCancel"
       />
       <Button
         type="submit"
-        :label="t(`NAVIGATOR.FORM.${mode.toUpperCase()}`)"
+        :label="t(`CAPTAIN.FORM.${mode.toUpperCase()}`)"
         class="w-full"
         :is-loading="isLoading"
         :disabled="isLoading"

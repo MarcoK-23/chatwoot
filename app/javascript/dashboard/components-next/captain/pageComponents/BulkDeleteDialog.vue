@@ -28,14 +28,14 @@ const handleBulkDelete = async ids => {
 
   try {
     await store.dispatch(
-      'navigatorBulkActions/handleBulkDelete',
+      'captainBulkActions/handleBulkDelete',
       Array.from(props.bulkIds)
     );
 
     emit('deleteSuccess');
-    useAlert(t(`NAVIGATOR.${i18nKey.value}.BULK_DELETE.SUCCESS_MESSAGE`));
+    useAlert(t(`CAPTAIN.${i18nKey.value}.BULK_DELETE.SUCCESS_MESSAGE`));
   } catch (error) {
-    useAlert(t(`NAVIGATOR.${i18nKey.value}.BULK_DELETE.ERROR_MESSAGE`));
+    useAlert(t(`CAPTAIN.${i18nKey.value}.BULK_DELETE.ERROR_MESSAGE`));
   }
 };
 
@@ -51,9 +51,9 @@ defineExpose({ dialogRef: bulkDeleteDialogRef });
   <Dialog
     ref="bulkDeleteDialogRef"
     type="alert"
-    :title="t(`NAVIGATOR.${i18nKey}.BULK_DELETE.TITLE`)"
-    :description="t(`NAVIGATOR.${i18nKey}.BULK_DELETE.DESCRIPTION`)"
-    :confirm-button-label="t(`NAVIGATOR.${i18nKey}.BULK_DELETE.CONFIRM`)"
+    :title="t(`CAPTAIN.${i18nKey}.BULK_DELETE.TITLE`)"
+    :description="t(`CAPTAIN.${i18nKey}.BULK_DELETE.DESCRIPTION`)"
+    :confirm-button-label="t(`CAPTAIN.${i18nKey}.BULK_DELETE.CONFIRM`)"
     @confirm="handleDialogConfirm"
   />
 </template>

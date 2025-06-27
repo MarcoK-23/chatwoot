@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, computed } from 'vue';
 import { useAccount } from 'dashboard/composables/useAccount';
-import { useNavigator } from 'dashboard/composables/useNavigator';
+import { useCaptain } from 'dashboard/composables/useCaptain';
 import { useRouter } from 'vue-router';
 
 import Banner from 'dashboard/components-next/banner/Banner.vue';
@@ -9,7 +9,7 @@ import Banner from 'dashboard/components-next/banner/Banner.vue';
 const router = useRouter();
 const { accountId } = useAccount();
 
-const { documentLimits, fetchLimits } = useNavigator();
+const { documentLimits, fetchLimits } = useCaptain();
 
 const openBilling = () => {
   router.push({
@@ -32,9 +32,9 @@ onMounted(fetchLimits);
   <Banner
     v-show="showBanner"
     color="amber"
-    :action-label="$t('NAVIGATOR.PAYWALL.UPGRADE_NOW')"
+    :action-label="$t('CAPTAIN.PAYWALL.UPGRADE_NOW')"
     @action="openBilling"
   >
-    {{ $t('NAVIGATOR.BANNER.DOCUMENTS') }}
+    {{ $t('CAPTAIN.BANNER.DOCUMENTS') }}
   </Banner>
 </template>

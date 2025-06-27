@@ -26,17 +26,17 @@ const dialogRef = ref(null);
 const assistantForm = ref(null);
 
 const updateAssistant = assistantDetails =>
-  store.dispatch('navigatorAssistants/update', {
+  store.dispatch('captainAssistants/update', {
     id: props.selectedAssistant.id,
     ...assistantDetails,
   });
 
 const i18nKey = computed(
-  () => `NAVIGATOR.ASSISTANTS.${props.type.toUpperCase()}`
+  () => `CAPTAIN.ASSISTANTS.${props.type.toUpperCase()}`
 );
 
 const createAssistant = assistantDetails =>
-  store.dispatch('navigatorAssistants/create', assistantDetails);
+  store.dispatch('captainAssistants/create', assistantDetails);
 
 const handleSubmit = async updatedAssistant => {
   try {
@@ -69,7 +69,7 @@ defineExpose({ dialogRef });
     ref="dialogRef"
     type="edit"
     :title="t(`${i18nKey}.TITLE`)"
-    :description="t('NAVIGATOR.ASSISTANTS.FORM_DESCRIPTION')"
+    :description="t('CAPTAIN.ASSISTANTS.FORM_DESCRIPTION')"
     :show-cancel-button="false"
     :show-confirm-button="false"
     overflow-y-auto

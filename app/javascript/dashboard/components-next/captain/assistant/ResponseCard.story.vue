@@ -1,11 +1,11 @@
 <script setup>
 import ResponseCard from './ResponseCard.vue';
-import { responsesList } from 'dashboard/components-next/navigator/pageComponents/emptyStates/navigatorEmptyStateContent.js';
+import { responsesList } from 'dashboard/components-next/captain/pageComponents/emptyStates/captainEmptyStateContent.js';
 </script>
 
 <template>
   <Story
-    title="Navigator/Assistant/ResponseCard"
+    title="Captain/Assistant/ResponseCard"
     :layout="{ type: 'grid', width: '700px' }"
   >
     <Variant title="Article Card">

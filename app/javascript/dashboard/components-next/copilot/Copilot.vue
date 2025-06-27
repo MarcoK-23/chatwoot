@@ -109,7 +109,7 @@ const copilotButtons = computed(() => {
       {
         key: 'reset',
         icon: 'i-lucide-refresh-ccw',
-        tooltip: t('NAVIGATOR.COPILOT.RESET'),
+        tooltip: t('CAPTAIN.COPILOT.RESET'),
       },
     ];
   }
@@ -127,7 +127,7 @@ watch(
 <template>
   <div class="flex flex-col h-full text-sm leading-6 tracking-tight w-full">
     <SidebarActionsHeader
-      :title="$t('NAVIGATOR.COPILOT.TITLE')"
+      :title="$t('CAPTAIN.COPILOT.TITLE')"
       :buttons="copilotButtons"
       @click="handleSidebarAction"
       @close="closeCopilotPanel"

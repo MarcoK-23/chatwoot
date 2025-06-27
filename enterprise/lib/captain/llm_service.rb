@@ -1,6 +1,6 @@
 require 'openai'
 
-class Navigator::LlmService
+class Captain::LlmService
   def initialize(config)
     @client = OpenAI::Client.new(
       access_token: config[:api_key],

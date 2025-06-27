@@ -1,6 +1,6 @@
-class Api::V1::Accounts::Navigator::InboxesController < Api::V1::Accounts::BaseController
+class Api::V1::Accounts::Captain::InboxesController < Api::V1::Accounts::BaseController
   before_action :current_account
-  before_action -> { check_authorization(Navigator::Assistant) }
+  before_action -> { check_authorization(Captain::Assistant) }
 
   before_action :set_assistant
   def index
@@ -9,13 +9,13 @@ class Api::V1::Accounts::Navigator::InboxesController < Api::V1::Accounts::BaseC
 
   def create
     inbox = Current.account.inboxes.find(assistant_params[:inbox_id])
-    @navigator_inbox = @assistant.navigator_inboxes.build(inbox: inbox)
-    @navigator_inbox.save!
+    @captain_inbox = @assistant.captain_inboxes.build(inbox: inbox)
+    @captain_inbox.save!
   end
 
   def destroy
-    @navigator_inbox = @assistant.navigator_inboxes.find_by!(inbox_id: permitted_params[:inbox_id])
-    @navigator_inbox.destroy!
+    @captain_inbox = @assistant.captain_inboxes.find_by!(inbox_id: permitted_params[:inbox_id])
+    @captain_inbox.destroy!
     head :no_content
   end
 
@@ -26,7 +26,7 @@ class Api::V1::Accounts::Navigator::InboxesController < Api::V1::Accounts::BaseC
   end
 
   def account_assistants
-    @account_assistants ||= Current.account.navigator_assistants
+    @account_assistants ||= Current.account.captain_assistants
   end
 
   def permitted_params
