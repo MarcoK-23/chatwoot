@@ -1,9 +1,9 @@
 /* global axios */
 import ApiClient from '../ApiClient';
 
-class CaptainResponses extends ApiClient {
+class NavigatorResponses extends ApiClient {
   constructor() {
-    super('captain/assistant_responses', { accountScoped: true });
+    super('navigator/assistant_responses', { accountScoped: true });
   }
 
   get({ page = 1, searchKey, assistantId, documentId, status } = {}) {
@@ -19,4 +19,4 @@ class CaptainResponses extends ApiClient {
   }
 }
 
-export default new CaptainResponses();
+export default new NavigatorResponses();

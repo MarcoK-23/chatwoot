@@ -287,10 +287,10 @@
     "SETTINGS": "Podešavanja",
     "CONTACTS": "Kontakti",
     "ACTIVE": "Aktivno",
-    "CAPTAIN": "Captain",
-    "CAPTAIN_ASSISTANTS": "Assistants",
-    "CAPTAIN_DOCUMENTS": "Documents",
-    "CAPTAIN_RESPONSES": "FAQs",
+    "NAVIGATOR": "Navigator",
+    "NAVIGATOR_ASSISTANTS": "Assistants",
+    "NAVIGATOR_DOCUMENTS": "Documents",
+    "NAVIGATOR_RESPONSES": "FAQs",
     "HOME": "Početak",
     "AGENTS": "Agenti",
     "AGENT_BOTS": "Bots",
@@ -365,13 +365,13 @@
       "DESCRIPTION": "Pregledajte vaše prethodne račune, izmenite podatke o plaćanju ili prekinite vašu pretplatu.",
       "BUTTON_TXT": "Idite na portal za plaćanje"
     },
-    "CAPTAIN": {
-      "TITLE": "Captain",
-      "DESCRIPTION": "Manage usage and credits for Captain AI.",
+    "NAVIGATOR": {
+      "TITLE": "Navigator",
+      "DESCRIPTION": "Manage usage and credits for Navigator AI.",
       "BUTTON_TXT": "Buy more credits",
       "DOCUMENTS": "Documents",
       "RESPONSES": "Responses",
-      "UPGRADE": "Captain is not available on the free plan, upgrade now to get access to assistants, copilot and more."
+      "UPGRADE": "Navigator is not available on the free plan, upgrade now to get access to assistants, copilot and more."
     },
     "CHAT_WITH_US": {
       "TITLE": "Treba vam pomoć?",

@@ -1,6 +1,6 @@
 # Navigator AI Integration
 
-Navigator is a new AI assistant integration for Chatwoot that provides intelligent conversation handling and automated responses. It's designed to be a lightweight alternative to Captain, available outside the enterprise environment.
+Navigator is a new AI assistant integration for Chatwoot that provides intelligent conversation handling and automated responses. It's designed to be a lightweight alternative to Navigator, available outside the enterprise environment.
 
 ## Features
 
@@ -161,7 +161,7 @@ Navigator uses a simple limit system:
 - Responses: Unlimited
 - API calls: Based on your OpenAI plan
 
-## Differences from Captain
+## Differences from Navigator
 
 - **Simplified Architecture**: No complex tool registry or copilot features
 - **No Premium Requirements**: Available in all Chatwoot installations

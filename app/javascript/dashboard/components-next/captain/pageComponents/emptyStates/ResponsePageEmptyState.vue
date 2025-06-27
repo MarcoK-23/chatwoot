@@ -1,9 +1,9 @@
 <script setup>
 import EmptyStateLayout from 'dashboard/components-next/EmptyStateLayout.vue';
 import Button from 'dashboard/components-next/button/Button.vue';
-import ResponseCard from 'dashboard/components-next/captain/assistant/ResponseCard.vue';
+import ResponseCard from 'dashboard/components-next/navigator/assistant/ResponseCard.vue';
 import FeatureSpotlight from 'dashboard/components-next/feature-spotlight/FeatureSpotlight.vue';
-import { responsesList } from 'dashboard/components-next/captain/pageComponents/emptyStates/captainEmptyStateContent.js';
+import { responsesList } from 'dashboard/components-next/navigator/pageComponents/emptyStates/navigatorEmptyStateContent.js';
 
 const emit = defineEmits(['click']);
 
@@ -14,16 +14,16 @@ const onClick = () => {
 
 <template>
   <FeatureSpotlight
-    :title="$t('CAPTAIN.RESPONSES.EMPTY_STATE.FEATURE_SPOTLIGHT.TITLE')"
-    :note="$t('CAPTAIN.RESPONSES.EMPTY_STATE.FEATURE_SPOTLIGHT.NOTE')"
-    fallback-thumbnail="/assets/images/dashboard/captain/faqs-light.svg"
-    fallback-thumbnail-dark="/assets/images/dashboard/captain/faqs-dark.svg"
-    learn-more-url="https://chwt.app/captain-faq"
+    :title="$t('NAVIGATOR.RESPONSES.EMPTY_STATE.FEATURE_SPOTLIGHT.TITLE')"
+    :note="$t('NAVIGATOR.RESPONSES.EMPTY_STATE.FEATURE_SPOTLIGHT.NOTE')"
+    fallback-thumbnail="/assets/images/dashboard/navigator/faqs-light.svg"
+    fallback-thumbnail-dark="/assets/images/dashboard/navigator/faqs-dark.svg"
+    learn-more-url="https://chwt.app/navigator-faq"
     class="mb-8"
   />
   <EmptyStateLayout
-    :title="$t('CAPTAIN.RESPONSES.EMPTY_STATE.TITLE')"
-    :subtitle="$t('CAPTAIN.RESPONSES.EMPTY_STATE.SUBTITLE')"
+    :title="$t('NAVIGATOR.RESPONSES.EMPTY_STATE.TITLE')"
+    :subtitle="$t('NAVIGATOR.RESPONSES.EMPTY_STATE.SUBTITLE')"
     :action-perms="['administrator']"
   >
     <template #empty-state-item>
@@ -43,7 +43,7 @@ const onClick = () => {
     </template>
     <template #actions>
       <Button
-        :label="$t('CAPTAIN.RESPONSES.ADD_NEW')"
+        :label="$t('NAVIGATOR.RESPONSES.ADD_NEW')"
         icon="i-lucide-plus"
         @click="onClick"
       />

@@ -9,12 +9,12 @@ import ResponsesIndex from './responses/Index.vue';
 
 export const routes = [
   {
-    path: frontendURL('accounts/:accountId/captain/assistants'),
+    path: frontendURL('accounts/:accountId/navigator/assistants'),
     component: AssistantIndex,
-    name: 'captain_assistants_index',
+    name: 'navigator_assistants_index',
     meta: {
       permissions: ['administrator', 'agent'],
-      featureFlag: FEATURE_FLAGS.CAPTAIN,
+      featureFlag: FEATURE_FLAGS.NAVIGATOR,
       installationTypes: [
         INSTALLATION_TYPES.CLOUD,
         INSTALLATION_TYPES.ENTERPRISE,
@@ -22,12 +22,12 @@ export const routes = [
     },
   },
   {
-    path: frontendURL('accounts/:accountId/captain/assistants/:assistantId'),
+    path: frontendURL('accounts/:accountId/navigator/assistants/:assistantId'),
     component: AssistantEdit,
-    name: 'captain_assistants_edit',
+    name: 'navigator_assistants_edit',
     meta: {
       permissions: ['administrator', 'agent'],
-      featureFlag: FEATURE_FLAGS.CAPTAIN,
+      featureFlag: FEATURE_FLAGS.NAVIGATOR,
       installationTypes: [
         INSTALLATION_TYPES.CLOUD,
         INSTALLATION_TYPES.ENTERPRISE,
@@ -36,13 +36,13 @@ export const routes = [
   },
   {
     path: frontendURL(
-      'accounts/:accountId/captain/assistants/:assistantId/inboxes'
+      'accounts/:accountId/navigator/assistants/:assistantId/inboxes'
     ),
     component: AssistantInboxesIndex,
-    name: 'captain_assistants_inboxes_index',
+    name: 'navigator_assistants_inboxes_index',
     meta: {
       permissions: ['administrator', 'agent'],
-      featureFlag: FEATURE_FLAGS.CAPTAIN,
+      featureFlag: FEATURE_FLAGS.NAVIGATOR,
       installationTypes: [
         INSTALLATION_TYPES.CLOUD,
         INSTALLATION_TYPES.ENTERPRISE,
@@ -50,12 +50,12 @@ export const routes = [
     },
   },
   {
-    path: frontendURL('accounts/:accountId/captain/documents'),
+    path: frontendURL('accounts/:accountId/navigator/documents'),
     component: DocumentsIndex,
-    name: 'captain_documents_index',
+    name: 'navigator_documents_index',
     meta: {
       permissions: ['administrator', 'agent'],
-      featureFlag: FEATURE_FLAGS.CAPTAIN,
+      featureFlag: FEATURE_FLAGS.NAVIGATOR,
       installationTypes: [
         INSTALLATION_TYPES.CLOUD,
         INSTALLATION_TYPES.ENTERPRISE,
@@ -63,12 +63,12 @@ export const routes = [
     },
   },
   {
-    path: frontendURL('accounts/:accountId/captain/responses'),
+    path: frontendURL('accounts/:accountId/navigator/responses'),
     component: ResponsesIndex,
-    name: 'captain_responses_index',
+    name: 'navigator_responses_index',
     meta: {
       permissions: ['administrator', 'agent'],
-      featureFlag: FEATURE_FLAGS.CAPTAIN,
+      featureFlag: FEATURE_FLAGS.NAVIGATOR,
       installationTypes: [
         INSTALLATION_TYPES.CLOUD,
         INSTALLATION_TYPES.ENTERPRISE,

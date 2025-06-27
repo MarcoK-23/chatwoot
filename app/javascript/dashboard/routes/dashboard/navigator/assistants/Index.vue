@@ -3,11 +3,11 @@ import { computed, onMounted, ref, nextTick } from 'vue';
 import { useMapGetter, useStore } from 'dashboard/composables/store';
 import { FEATURE_FLAGS } from 'dashboard/featureFlags';
 
-import AssistantCard from 'dashboard/components-next/captain/assistant/AssistantCard.vue';
+import AssistantCard from 'dashboard/components-next/navigator/assistant/AssistantCard.vue';
 import DeleteDialog from 'dashboard/components-next/navigator/pageComponents/DeleteDialog.vue';
-import PageLayout from 'dashboard/components-next/captain/PageLayout.vue';
-import CreateAssistantDialog from 'dashboard/components-next/captain/pageComponents/assistant/CreateAssistantDialog.vue';
-import AssistantPageEmptyState from 'dashboard/components-next/captain/pageComponents/emptyStates/AssistantPageEmptyState.vue';
+import PageLayout from 'dashboard/components-next/navigator/PageLayout.vue';
+import CreateAssistantDialog from 'dashboard/components-next/navigator/pageComponents/assistant/CreateAssistantDialog.vue';
+import AssistantPageEmptyState from 'dashboard/components-next/navigator/pageComponents/emptyStates/AssistantPageEmptyState.vue';
 import FeatureSpotlightPopover from 'dashboard/components-next/feature-spotlight/FeatureSpotlightPopover.vue';
 import { useRouter } from 'vue-router';
 

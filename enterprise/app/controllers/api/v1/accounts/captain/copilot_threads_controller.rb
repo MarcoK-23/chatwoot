@@ -1,4 +1,4 @@
-class Api::V1::Accounts::Captain::CopilotThreadsController < Api::V1::Accounts::BaseController
+class Api::V1::Accounts::Navigator::CopilotThreadsController < Api::V1::Accounts::BaseController
   before_action :ensure_message, only: :create
 
   def index
@@ -34,7 +34,7 @@ class Api::V1::Accounts::Captain::CopilotThreadsController < Api::V1::Accounts::
   end
 
   def assistant
-    Current.account.captain_assistants.find(copilot_thread_params[:assistant_id])
+    Current.account.navigator_assistants.find(copilot_thread_params[:assistant_id])
   end
 
   def copilot_thread_params

@@ -1,5 +1,5 @@
 import NavigatorResponseAPI from 'dashboard/api/navigator/response';
-import { createStore } from '../captain/storeFactory';
+import { createStore } from '../navigator/storeFactory';
 
 export default createStore({
   name: 'NavigatorResponse',

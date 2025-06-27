@@ -1,4 +1,4 @@
-class Captain::Tools::SearchDocumentationService < Captain::Tools::BaseService
+class Navigator::Tools::SearchDocumentationService < Navigator::Tools::BaseService
   def name
     'search_documentation'
   end

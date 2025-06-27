@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: captain_documents
+# Table name: navigator_documents
 #
 #  id            :bigint           not null, primary key
 #  content       :text
@@ -14,17 +14,17 @@
 #
 # Indexes
 #
-#  index_captain_documents_on_account_id                      (account_id)
-#  index_captain_documents_on_assistant_id                    (assistant_id)
-#  index_captain_documents_on_assistant_id_and_external_link  (assistant_id,external_link) UNIQUE
-#  index_captain_documents_on_status                          (status)
+#  index_navigator_documents_on_account_id                      (account_id)
+#  index_navigator_documents_on_assistant_id                    (assistant_id)
+#  index_navigator_documents_on_assistant_id_and_external_link  (assistant_id,external_link) UNIQUE
+#  index_navigator_documents_on_status                          (status)
 #
-class Captain::Document < ApplicationRecord
+class Navigator::Document < ApplicationRecord
   class LimitExceededError < StandardError; end
-  self.table_name = 'captain_documents'
+  self.table_name = 'navigator_documents'
 
-  belongs_to :assistant, class_name: 'Captain::Assistant'
-  has_many :responses, class_name: 'Captain::AssistantResponse', dependent: :destroy, as: :documentable
+  belongs_to :assistant, class_name: 'Navigator::Assistant'
+  has_many :responses, class_name: 'Navigator::AssistantResponse', dependent: :destroy, as: :documentable
   belongs_to :account
 
   validates :external_link, presence: true
@@ -52,13 +52,13 @@ class Captain::Document < ApplicationRecord
   def enqueue_crawl_job
     return if status != 'in_progress'
 
-    Captain::Documents::CrawlJob.perform_later(self)
+    Navigator::Documents::CrawlJob.perform_later(self)
   end
 
   def enqueue_response_builder_job
     return if status != 'available'
 
-    Captain::Documents::ResponseBuilderJob.perform_later(self)
+    Navigator::Documents::ResponseBuilderJob.perform_later(self)
   end
 
   def update_document_usage
@@ -70,7 +70,7 @@ class Captain::Document < ApplicationRecord
   end
 
   def ensure_within_plan_limit
-    limits = account.usage_limits[:captain][:documents]
+    limits = account.usage_limits[:navigator][:documents]
     raise LimitExceededError, 'Document limit exceeded' unless limits[:current_available].positive?
   end
 end

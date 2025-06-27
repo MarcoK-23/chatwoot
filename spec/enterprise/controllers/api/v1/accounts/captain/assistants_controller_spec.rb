@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
+RSpec.describe 'Api::V1::Accounts::Navigator::Assistants', type: :request do
   let(:account) { create(:account) }
   let(:admin) { create(:user, account: account, role: :administrator) }
   let(:agent) { create(:user, account: account, role: :agent) }
@@ -9,10 +9,10 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  describe 'GET /api/v1/accounts/{account.id}/captain/assistants' do
+  describe 'GET /api/v1/accounts/{account.id}/navigator/assistants' do
     context 'when it is an un-authenticated user' do
       it 'does not fetch assistants' do
-        get "/api/v1/accounts/#{account.id}/captain/assistants",
+        get "/api/v1/accounts/#{account.id}/navigator/assistants",
             as: :json
         expect(response).to have_http_status(:unauthorized)
       end
@@ -20,8 +20,8 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
 
     context 'when it is an agent' do
       it 'fetches assistants for the account' do
-        create_list(:captain_assistant, 3, account: account)
-        get "/api/v1/accounts/#{account.id}/captain/assistants",
+        create_list(:navigator_assistant, 3, account: account)
+        get "/api/v1/accounts/#{account.id}/navigator/assistants",
             headers: agent.create_new_auth_token,
             as: :json
 
@@ -34,12 +34,12 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
     end
   end
 
-  describe 'GET /api/v1/accounts/{account.id}/captain/assistants/{id}' do
-    let(:assistant) { create(:captain_assistant, account: account) }
+  describe 'GET /api/v1/accounts/{account.id}/navigator/assistants/{id}' do
+    let(:assistant) { create(:navigator_assistant, account: account) }
 
     context 'when it is an un-authenticated user' do
       it 'does not fetch the assistant' do
-        get "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}",
+        get "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}",
             as: :json
         expect(response).to have_http_status(:unauthorized)
       end
@@ -47,7 +47,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
 
     context 'when it is an agent' do
       it 'fetches the assistant' do
-        get "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}",
+        get "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}",
             headers: agent.create_new_auth_token,
             as: :json
 
@@ -57,7 +57,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
     end
   end
 
-  describe 'POST /api/v1/accounts/{account.id}/captain/assistants' do
+  describe 'POST /api/v1/accounts/{account.id}/navigator/assistants' do
     let(:valid_attributes) do
       {
         assistant: {
@@ -69,7 +69,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
 
     context 'when it is an un-authenticated user' do
       it 'does not create an assistant' do
-        post "/api/v1/accounts/#{account.id}/captain/assistants",
+        post "/api/v1/accounts/#{account.id}/navigator/assistants",
              params: valid_attributes,
              as: :json
         expect(response).to have_http_status(:unauthorized)
@@ -78,7 +78,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
 
     context 'when it is an agent' do
       it 'does not create an assistant' do
-        post "/api/v1/accounts/#{account.id}/captain/assistants",
+        post "/api/v1/accounts/#{account.id}/navigator/assistants",
              params: valid_attributes,
              headers: agent.create_new_auth_token,
              as: :json
@@ -89,11 +89,11 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
     context 'when it is an admin' do
       it 'creates a new assistant' do
         expect do
-          post "/api/v1/accounts/#{account.id}/captain/assistants",
+          post "/api/v1/accounts/#{account.id}/navigator/assistants",
                params: valid_attributes,
                headers: admin.create_new_auth_token,
                as: :json
-        end.to change(Captain::Assistant, :count).by(1)
+        end.to change(Navigator::Assistant, :count).by(1)
 
         expect(json_response[:name]).to eq('New Assistant')
         expect(response).to have_http_status(:success)
@@ -101,8 +101,8 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
     end
   end
 
-  describe 'PATCH /api/v1/accounts/{account.id}/captain/assistants/{id}' do
-    let(:assistant) { create(:captain_assistant, account: account) }
+  describe 'PATCH /api/v1/accounts/{account.id}/navigator/assistants/{id}' do
+    let(:assistant) { create(:navigator_assistant, account: account) }
     let(:update_attributes) do
       {
         assistant: {
@@ -113,7 +113,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
 
     context 'when it is an un-authenticated user' do
       it 'does not update the assistant' do
-        patch "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}",
+        patch "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}",
               params: update_attributes,
               as: :json
         expect(response).to have_http_status(:unauthorized)
@@ -122,7 +122,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
 
     context 'when it is an agent' do
       it 'does not update the assistant' do
-        patch "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}",
+        patch "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}",
               params: update_attributes,
               headers: agent.create_new_auth_token,
               as: :json
@@ -132,7 +132,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
 
     context 'when it is an admin' do
       it 'updates the assistant' do
-        patch "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}",
+        patch "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}",
               params: update_attributes,
               headers: admin.create_new_auth_token,
               as: :json
@@ -143,12 +143,12 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
     end
   end
 
-  describe 'DELETE /api/v1/accounts/{account.id}/captain/assistants/{id}' do
-    let!(:assistant) { create(:captain_assistant, account: account) }
+  describe 'DELETE /api/v1/accounts/{account.id}/navigator/assistants/{id}' do
+    let!(:assistant) { create(:navigator_assistant, account: account) }
 
     context 'when it is an un-authenticated user' do
       it 'does not delete the assistant' do
-        delete "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}",
+        delete "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}",
                as: :json
         expect(response).to have_http_status(:unauthorized)
       end
@@ -156,7 +156,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
 
     context 'when it is an agent' do
       it 'delete the assistant' do
-        delete "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}",
+        delete "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}",
                headers: agent.create_new_auth_token,
                as: :json
         expect(response).to have_http_status(:unauthorized)
@@ -166,18 +166,18 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
     context 'when it is an admin' do
       it 'deletes the assistant' do
         expect do
-          delete "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}",
+          delete "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}",
                  headers: admin.create_new_auth_token,
                  as: :json
-        end.to change(Captain::Assistant, :count).by(-1)
+        end.to change(Navigator::Assistant, :count).by(-1)
 
         expect(response).to have_http_status(:no_content)
       end
     end
   end
 
-  describe 'POST /api/v1/accounts/{account.id}/captain/assistants/{id}/playground' do
-    let(:assistant) { create(:captain_assistant, account: account) }
+  describe 'POST /api/v1/accounts/{account.id}/navigator/assistants/{id}/playground' do
+    let(:assistant) { create(:navigator_assistant, account: account) }
     let(:valid_params) do
       {
         message_content: 'Hello assistant',
@@ -190,7 +190,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
 
     context 'when it is an un-authenticated user' do
       it 'returns unauthorized' do
-        post "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}/playground",
+        post "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}/playground",
              params: valid_params,
              as: :json
 
@@ -200,11 +200,11 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
 
     context 'when it is an agent' do
       it 'generates a response' do
-        chat_service = instance_double(Captain::Llm::AssistantChatService)
-        allow(Captain::Llm::AssistantChatService).to receive(:new).with(assistant: assistant).and_return(chat_service)
+        chat_service = instance_double(Navigator::Llm::AssistantChatService)
+        allow(Navigator::Llm::AssistantChatService).to receive(:new).with(assistant: assistant).and_return(chat_service)
         allow(chat_service).to receive(:generate_response).and_return({ content: 'Assistant response' })
 
-        post "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}/playground",
+        post "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}/playground",
              params: valid_params,
              headers: agent.create_new_auth_token,
              as: :json
@@ -221,11 +221,11 @@ RSpec.describe 'Api::V1::Accounts::Captain::Assistants', type: :request do
     context 'when message_history is not provided' do
       it 'uses empty array as default' do
         params_without_history = { message_content: 'Hello assistant' }
-        chat_service = instance_double(Captain::Llm::AssistantChatService)
-        allow(Captain::Llm::AssistantChatService).to receive(:new).with(assistant: assistant).and_return(chat_service)
+        chat_service = instance_double(Navigator::Llm::AssistantChatService)
+        allow(Navigator::Llm::AssistantChatService).to receive(:new).with(assistant: assistant).and_return(chat_service)
         allow(chat_service).to receive(:generate_response).and_return({ content: 'Assistant response' })
 
-        post "/api/v1/accounts/#{account.id}/captain/assistants/#{assistant.id}/playground",
+        post "/api/v1/accounts/#{account.id}/navigator/assistants/#{assistant.id}/playground",
              params: params_without_history,
              headers: agent.create_new_auth_token,
              as: :json

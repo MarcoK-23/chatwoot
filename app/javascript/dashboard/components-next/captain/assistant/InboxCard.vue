@@ -50,7 +50,7 @@ const inboxName = computed(() => {
 
 const menuItems = computed(() => [
   {
-    label: t('CAPTAIN.INBOXES.OPTIONS.DISCONNECT'),
+    label: t('NAVIGATOR.INBOXES.OPTIONS.DISCONNECT'),
     value: 'delete',
     action: 'delete',
     icon: 'i-lucide-trash',

@@ -287,10 +287,10 @@
     "SETTINGS": "Configuracions",
     "CONTACTS": "Contactes",
     "ACTIVE": "Actiu",
-    "CAPTAIN": "Captain",
-    "CAPTAIN_ASSISTANTS": "Assistants",
-    "CAPTAIN_DOCUMENTS": "Documents",
-    "CAPTAIN_RESPONSES": "FAQs",
+    "NAVIGATOR": "Navigator",
+    "NAVIGATOR_ASSISTANTS": "Assistants",
+    "NAVIGATOR_DOCUMENTS": "Documents",
+    "NAVIGATOR_RESPONSES": "FAQs",
     "HOME": "Inici",
     "AGENTS": "Agents",
     "AGENT_BOTS": "Bots",
@@ -365,13 +365,13 @@
       "DESCRIPTION": "Consulta les teves factures anteriors, edita els teus detalls de facturació o cancel·la la teva subscripció.",
       "BUTTON_TXT": "Ves al portal de facturació"
     },
-    "CAPTAIN": {
-      "TITLE": "Captain",
-      "DESCRIPTION": "Manage usage and credits for Captain AI.",
+    "NAVIGATOR": {
+      "TITLE": "Navigator",
+      "DESCRIPTION": "Manage usage and credits for Navigator AI.",
       "BUTTON_TXT": "Buy more credits",
       "DOCUMENTS": "Documents",
       "RESPONSES": "Responses",
-      "UPGRADE": "Captain is not available on the free plan, upgrade now to get access to assistants, copilot and more."
+      "UPGRADE": "Navigator is not available on the free plan, upgrade now to get access to assistants, copilot and more."
     },
     "CHAT_WITH_US": {
       "TITLE": "Necessita ajuda?",

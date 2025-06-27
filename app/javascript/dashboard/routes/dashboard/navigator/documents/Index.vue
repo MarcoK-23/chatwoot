@@ -4,12 +4,12 @@ import { useMapGetter, useStore } from 'dashboard/composables/store';
 import { FEATURE_FLAGS } from 'dashboard/featureFlags';
 
 import DeleteDialog from 'dashboard/components-next/navigator/pageComponents/DeleteDialog.vue';
-import DocumentCard from 'dashboard/components-next/captain/assistant/DocumentCard.vue';
-import PageLayout from 'dashboard/components-next/captain/PageLayout.vue';
-import RelatedResponses from 'dashboard/components-next/captain/pageComponents/document/RelatedResponses.vue';
-import CreateDocumentDialog from 'dashboard/components-next/captain/pageComponents/document/CreateDocumentDialog.vue';
+import DocumentCard from 'dashboard/components-next/navigator/assistant/DocumentCard.vue';
+import PageLayout from 'dashboard/components-next/navigator/PageLayout.vue';
+import RelatedResponses from 'dashboard/components-next/navigator/pageComponents/document/RelatedResponses.vue';
+import CreateDocumentDialog from 'dashboard/components-next/navigator/pageComponents/document/CreateDocumentDialog.vue';
 import AssistantSelector from 'dashboard/components-next/navigator/pageComponents/AssistantSelector.vue';
-import DocumentPageEmptyState from 'dashboard/components-next/captain/pageComponents/emptyStates/DocumentPageEmptyState.vue';
+import DocumentPageEmptyState from 'dashboard/components-next/navigator/pageComponents/emptyStates/DocumentPageEmptyState.vue';
 import FeatureSpotlightPopover from 'dashboard/components-next/feature-spotlight/FeatureSpotlightPopover.vue';
 
 const store = useStore();
@@ -138,7 +138,7 @@ onMounted(() => {
 
     <RelatedResponses
       v-if="showRelatedResponses && selectedDocument"
-      :captain-document="selectedDocument"
+      :navigator-document="selectedDocument"
       @close="showRelatedResponses = false"
     />
   </PageLayout>

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Captain::Tools::Copilot::SearchLinearIssuesService do
+RSpec.describe Navigator::Tools::Copilot::SearchLinearIssuesService do
   let(:account) { create(:account) }
-  let(:assistant) { create(:captain_assistant, account: account) }
+  let(:assistant) { create(:navigator_assistant, account: account) }
   let(:user) { create(:user, account: account) }
   let(:service) { described_class.new(assistant, user: user) }
 

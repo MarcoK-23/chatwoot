@@ -287,10 +287,10 @@
     "SETTINGS": "الإعدادات",
     "CONTACTS": "جهات الاتصال",
     "ACTIVE": "مفعل",
-    "CAPTAIN": "قائد",
-    "CAPTAIN_ASSISTANTS": "Assistants",
-    "CAPTAIN_DOCUMENTS": "Documents",
-    "CAPTAIN_RESPONSES": "FAQs",
+    "NAVIGATOR": "قائد",
+    "NAVIGATOR_ASSISTANTS": "Assistants",
+    "NAVIGATOR_DOCUMENTS": "Documents",
+    "NAVIGATOR_RESPONSES": "FAQs",
     "HOME": "الرئيسية",
     "AGENTS": "وكيل الدعم",
     "AGENT_BOTS": "الروبوتات",
@@ -365,13 +365,13 @@
       "DESCRIPTION": "عرض فواتيرك السابقة، تحرير تفاصيل الفوترة الخاصة بك، أو إلغاء اشتراكك.",
       "BUTTON_TXT": "الذهاب إلى بوابة الفوترة"
     },
-    "CAPTAIN": {
+    "NAVIGATOR": {
       "TITLE": "قائد",
-      "DESCRIPTION": "Manage usage and credits for Captain AI.",
+      "DESCRIPTION": "Manage usage and credits for Navigator AI.",
       "BUTTON_TXT": "Buy more credits",
       "DOCUMENTS": "Documents",
       "RESPONSES": "Responses",
-      "UPGRADE": "Captain is not available on the free plan, upgrade now to get access to assistants, copilot and more."
+      "UPGRADE": "Navigator is not available on the free plan, upgrade now to get access to assistants, copilot and more."
     },
     "CHAT_WITH_US": {
       "TITLE": "تحتاج مساعدة؟",

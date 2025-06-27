@@ -1,4 +1,4 @@
-import CopilotThreadsAPI from 'dashboard/api/captain/copilotThreads';
+import CopilotThreadsAPI from 'dashboard/api/navigator/copilotThreads';
 import { createStore } from './storeFactory';
 
 export default createStore({

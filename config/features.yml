@@ -136,8 +136,8 @@
 - name: linear_integration
   display_name: Linear Integration
   enabled: false
-- name: captain_integration
-  display_name: Captain
+- name: navigator_integration
+  display_name: Navigator
   enabled: false
   premium: true
 - name: navigator_ai

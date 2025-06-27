@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Api::V1::Accounts::Captain::CopilotThreads', type: :request do
+RSpec.describe 'Api::V1::Accounts::Navigator::CopilotThreads', type: :request do
   let(:account) { create(:account) }
   let(:admin) { create(:user, account: account, role: :administrator) }
   let(:agent) { create(:user, account: account, role: :agent) }
@@ -10,10 +10,10 @@ RSpec.describe 'Api::V1::Accounts::Captain::CopilotThreads', type: :request do
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  describe 'GET /api/v1/accounts/{account.id}/captain/copilot_threads' do
+  describe 'GET /api/v1/accounts/{account.id}/navigator/copilot_threads' do
     context 'when it is an un-authenticated user' do
       it 'does not fetch copilot threads' do
-        get "/api/v1/accounts/#{account.id}/captain/copilot_threads",
+        get "/api/v1/accounts/#{account.id}/navigator/copilot_threads",
             as: :json
         expect(response).to have_http_status(:unauthorized)
       end
@@ -22,11 +22,11 @@ RSpec.describe 'Api::V1::Accounts::Captain::CopilotThreads', type: :request do
     context 'when it is an authenticated user' do
       it 'fetches copilot threads for the current user' do
         # Create threads for the current agent
-        create_list(:captain_copilot_thread, 3, account: account, user: agent)
+        create_list(:navigator_copilot_thread, 3, account: account, user: agent)
         # Create threads for another user (should not be included)
-        create_list(:captain_copilot_thread, 2, account: account, user: admin)
+        create_list(:navigator_copilot_thread, 2, account: account, user: admin)
 
-        get "/api/v1/accounts/#{account.id}/captain/copilot_threads",
+        get "/api/v1/accounts/#{account.id}/navigator/copilot_threads",
             headers: agent.create_new_auth_token,
             as: :json
 
@@ -37,9 +37,9 @@ RSpec.describe 'Api::V1::Accounts::Captain::CopilotThreads', type: :request do
       end
 
       it 'returns threads in descending order of creation' do
-        threads = create_list(:captain_copilot_thread, 3, account: account, user: agent)
+        threads = create_list(:navigator_copilot_thread, 3, account: account, user: agent)
 
-        get "/api/v1/accounts/#{account.id}/captain/copilot_threads",
+        get "/api/v1/accounts/#{account.id}/navigator/copilot_threads",
             headers: agent.create_new_auth_token,
             as: :json
 
@@ -49,13 +49,13 @@ RSpec.describe 'Api::V1::Accounts::Captain::CopilotThreads', type: :request do
     end
   end
 
-  describe 'POST /api/v1/accounts/{account.id}/captain/copilot_threads' do
-    let(:assistant) { create(:captain_assistant, account: account) }
+  describe 'POST /api/v1/accounts/{account.id}/navigator/copilot_threads' do
+    let(:assistant) { create(:navigator_assistant, account: account) }
     let(:valid_params) { { message: 'Hello, how can you help me?', assistant_id: assistant.id, conversation_id: conversation.display_id } }
 
     context 'when it is an un-authenticated user' do
       it 'returns unauthorized' do
-        post "/api/v1/accounts/#{account.id}/captain/copilot_threads",
+        post "/api/v1/accounts/#{account.id}/navigator/copilot_threads",
              params: valid_params,
              as: :json
 
@@ -66,7 +66,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::CopilotThreads', type: :request do
     context 'when it is an authenticated user' do
       context 'with invalid params' do
         it 'returns error when message is blank' do
-          post "/api/v1/accounts/#{account.id}/captain/copilot_threads",
+          post "/api/v1/accounts/#{account.id}/navigator/copilot_threads",
                params: { message: '', assistant_id: assistant.id },
                headers: agent.create_new_auth_token,
                as: :json
@@ -76,7 +76,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::CopilotThreads', type: :request do
         end
 
         it 'returns error when assistant_id is invalid' do
-          post "/api/v1/accounts/#{account.id}/captain/copilot_threads",
+          post "/api/v1/accounts/#{account.id}/navigator/copilot_threads",
                params: { message: 'Hello', assistant_id: 0 },
                headers: agent.create_new_auth_token,
                as: :json
@@ -88,7 +88,7 @@ RSpec.describe 'Api::V1::Accounts::Captain::CopilotThreads', type: :request do
       context 'with valid params' do
         it 'creates a new copilot thread with initial message' do
           expect do
-            post "/api/v1/accounts/#{account.id}/captain/copilot_threads",
+            post "/api/v1/accounts/#{account.id}/navigator/copilot_threads",
                  params: valid_params,
                  headers: agent.create_new_auth_token,
                  as: :json
