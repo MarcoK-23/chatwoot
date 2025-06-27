@@ -26,6 +26,14 @@ const primaryMenuItems = accountId => [
     toStateName: 'captain',
   },
   {
+    icon: 'bot-outline',
+    key: 'navigator',
+    label: 'NAVIGATOR',
+    featureFlag: FEATURE_FLAGS.NAVIGATOR,
+    toState: frontendURL(`accounts/${accountId}/navigator/assistants`),
+    toStateName: 'navigator_assistants_index',
+  },
+  {
     icon: 'book-contacts',
     key: 'contacts',
     label: 'CONTACTS',
