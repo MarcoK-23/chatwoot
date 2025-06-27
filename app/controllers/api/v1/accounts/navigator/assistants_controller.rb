@@ -3,21 +3,28 @@ class Api::V1::Accounts::Navigator::AssistantsController < Api::V1::Accounts::Ba
 
   def index
     @assistants = current_account.navigator_assistants.ordered
+    render json: {
+      payload: @assistants.map(&:push_event_data),
+      meta: {
+        total_count: @assistants.count,
+        page: 1
+      }
+    }
   end
 
   def show
-    @assistant
+    render json: @assistant.push_event_data
   end
 
   def create
     @assistant = current_account.navigator_assistants.new(assistant_params)
     @assistant.save!
-    render json: @assistant
+    render json: @assistant.push_event_data
   end
 
   def update
     @assistant.update!(assistant_params)
-    render json: @assistant
+    render json: @assistant.push_event_data
   end
 
   def destroy
