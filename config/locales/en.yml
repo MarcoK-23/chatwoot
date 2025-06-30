@@ -358,6 +358,15 @@ en:
     assistants:
       header: "Navigator Assistants"
       add_new: "Add New Assistant"
+      form_description: "Fill out the details below to name your assistant, describe its purpose, and specify the product it will support."
+      create:
+        title: "Create a Navigator Assistant"
+        success_message: "The Navigator assistant has been successfully created"
+        error_message: "There was an error creating the Navigator assistant, please try again."
+      edit:
+        title: "Update the Navigator Assistant"
+        success_message: "The Navigator assistant has been successfully updated"
+        error_message: "There was an error updating the Navigator assistant, please try again."
       empty_state:
         feature_spotlight:
           title: "AI-Powered Assistants"

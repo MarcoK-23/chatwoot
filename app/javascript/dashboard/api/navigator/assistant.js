@@ -15,6 +15,18 @@ class NavigatorAssistant extends ApiClient {
     });
   }
 
+  create(params = {}) {
+    return axios.post(this.url, params);
+  }
+
+  update({ id, ...params } = {}) {
+    return axios.put(`${this.url}/${id}`, params);
+  }
+
+  delete({ id } = {}) {
+    return axios.delete(`${this.url}/${id}`);
+  }
+
   playground({ assistantId, messageContent, messageHistory }) {
     return axios.post(`${this.url}/${assistantId}/playground`, {
       message_content: messageContent,
