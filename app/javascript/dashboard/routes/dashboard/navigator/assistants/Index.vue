@@ -49,6 +49,12 @@ const onPageChange = page => {
   store.dispatch('navigatorAssistants/get', { page });
 };
 
+const handleCreateDialogClose = () => {
+  if (createAssistantDialog.value && createAssistantDialog.value.dialogRef) {
+    createAssistantDialog.value.dialogRef.close();
+  }
+};
+
 onMounted(() => {
   store.dispatch('navigatorAssistants/get');
 });
@@ -87,7 +93,10 @@ onMounted(() => {
       <AssistantCard
         v-for="assistant in assistants"
         :key="assistant.id"
-        :assistant="assistant"
+        :id="assistant.id"
+        :name="assistant.name || ''"
+        :description="assistant.description || ''"
+        :updatedAt="assistant.updated_at || assistant.created_at || Date.now()"
         :is-selected="selectedAssistant?.id === assistant.id"
         @select="selectedAssistant = assistant"
         @edit="handleEdit"
@@ -98,7 +107,7 @@ onMounted(() => {
     <CreateAssistantDialog
       ref="createAssistantDialog"
       :mode="dialogType"
-      @close="createAssistantDialog.dialogRef.close()"
+      @close="handleCreateDialogClose"
       @submit="
         createAssistantDialog.dialogRef.close();
         store.dispatch('navigatorAssistants/get');
