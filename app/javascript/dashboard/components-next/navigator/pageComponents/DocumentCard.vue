@@ -16,14 +16,18 @@ const props = defineProps({
   },
   name: {
     type: String,
-    required: true,
+    default: '',
   },
-  description: {
+  assistant: {
+    type: Object,
+    default: () => ({}),
+  },
+  externalLink: {
     type: String,
     required: true,
   },
-  updatedAt: {
-    type: [Number, String],
+  createdAt: {
+    type: Number,
     required: true,
   },
 });
@@ -36,69 +40,41 @@ const { t } = useI18n();
 const [showActionsDropdown, toggleDropdown] = useToggle();
 
 const menuItems = computed(() => {
-  const allOptions = [];
+  const allOptions = [
+    {
+      label: t('NAVIGATOR.DOCUMENTS.OPTIONS.VIEW_RELATED_RESPONSES'),
+      value: 'viewRelatedQuestions',
+      action: 'viewRelatedQuestions',
+      icon: 'i-ph-tree-view-duotone',
+    },
+  ];
+
   if (checkPermissions(['administrator'])) {
-    allOptions.push(
-      {
-        label: t('NAVIGATOR.ASSISTANTS.OPTIONS.EDIT_ASSISTANT'),
-        value: 'edit',
-        action: 'edit',
-        icon: 'i-lucide-pencil-line',
-      },
-      {
-        label: t('NAVIGATOR.ASSISTANTS.OPTIONS.DELETE_ASSISTANT'),
-        value: 'delete',
-        action: 'delete',
-        icon: 'i-lucide-trash',
-      }
-    );
+    allOptions.push({
+      label: t('NAVIGATOR.DOCUMENTS.OPTIONS.DELETE_DOCUMENT'),
+      value: 'delete',
+      action: 'delete',
+      icon: 'i-lucide-trash',
+    });
   }
+
   return allOptions;
 });
 
-// Robust date handling
-const lastUpdatedAt = computed(() => {
-  let date = props.updatedAt;
-  
-  if (!date) {
-    return dynamicTime(new Date());
-  }
-  
-  // If it's a number, treat as timestamp
-  if (typeof date === 'number') {
-    try {
-      return dynamicTime(new Date(date));
-    } catch (e) {
-      return dynamicTime(new Date());
-    }
-  }
-  
-  // If it's a string, try to parse
-  const parsed = Date.parse(date);
-  if (!isNaN(parsed)) {
-    return dynamicTime(new Date(parsed));
-  }
-  
-  return dynamicTime(new Date());
-});
+const createdAt = computed(() => dynamicTime(props.createdAt));
 
 const handleAction = ({ action, value }) => {
   toggleDropdown(false);
   emit('action', { action, value, id: props.id });
 };
-
-// Note: If you want to suppress the /enterprise/api.../limits request, do so in the API config or by disabling enterprise features in your environment.
 </script>
 
 <template>
   <CardLayout>
     <div class="flex justify-between w-full gap-1">
-      <router-link
-        :to="{ name: 'navigator_assistants_edit', params: { assistantId: id } }"
-        class="text-base text-n-slate-12 line-clamp-1 hover:underline transition-colors"
-      >
+      <span class="text-base text-n-slate-12 line-clamp-1">
         {{ name }}
-      </router-link>
+      </span>
       <div class="flex items-center gap-2">
         <div
           v-on-clickaway="() => toggleDropdown(false)"
@@ -114,19 +90,28 @@ const handleAction = ({ action, value }) => {
           <DropdownMenu
             v-if="showActionsDropdown"
             :menu-items="menuItems"
-            class="mt-1 ltr:right-0 rtl:left-0 top-full"
+            class="mt-1 ltr:right-0 rtl:left-0 xl:ltr:right-0 xl:rtl:left-0 top-full"
             @action="handleAction($event)"
           />
         </div>
       </div>
     </div>
     <div class="flex items-center justify-between w-full gap-4">
-      <span class="text-sm truncate text-n-slate-11">
-        {{ description || 'Description not available' }}
+      <span
+        class="text-sm shrink-0 truncate text-n-slate-11 flex items-center gap-1"
+      >
+        <i class="i-lucide-navigation" />
+        {{ assistant?.name || '' }}
       </span>
-      <span class="text-sm text-n-slate-11 line-clamp-1 shrink-0">
-        {{ lastUpdatedAt }}
+      <span
+        class="text-n-slate-11 text-sm truncate flex justify-start flex-1 items-center gap-1"
+      >
+        <i class="i-ph-link-simple shrink-0" />
+        <span class="truncate">{{ externalLink }}</span>
       </span>
+      <div class="shrink-0 text-sm text-n-slate-11 line-clamp-1">
+        {{ createdAt }}
+      </div>
     </div>
   </CardLayout>
 </template> 

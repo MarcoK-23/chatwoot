@@ -53,13 +53,6 @@ const handleCreateDialogClose = () => {
   dialogType.value = '';
 };
 
-// Log assistant times for debugging
-watch(assistants, (newVal) => {
-  newVal.forEach(a => {
-    console.log('Assistant times:', a.updated_at, a.created_at);
-  });
-});
-
 onMounted(() => {
   store.dispatch('navigatorAssistants/get');
 });

@@ -100,14 +100,14 @@ const handlePageChange = event => {
           <div
             v-if="!showPaywall && buttonLabel"
             v-on-clickaway="() => emit('close')"
-            class="relative group/campaign-button"
+            class="relative group/navigator-button"
           >
             <Policy :permissions="buttonPolicy">
               <Button
                 :label="buttonLabel"
                 icon="i-lucide-plus"
                 size="sm"
-                class="group-hover/campaign-button:brightness-110"
+                class="group-hover/navigator-button:brightness-110"
                 @click="handleButtonClick"
               />
             </Policy>

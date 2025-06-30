@@ -5,7 +5,7 @@ import { useAlert } from 'dashboard/composables';
 import { useI18n } from 'vue-i18n';
 
 import Dialog from 'dashboard/components-next/dialog/Dialog.vue';
-import AssistantForm from 'dashboard/components-next/captain/pageComponents/assistant/AssistantForm.vue';
+import AssistantForm from 'dashboard/components-next/navigator/pageComponents/assistant/AssistantForm.vue';
 
 const props = defineProps({
   selectedAssistant: {
