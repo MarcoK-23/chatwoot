@@ -48,6 +48,7 @@ class Navigator::Assistant < ApplicationRecord
       avatar_url: avatar_url.presence || default_avatar_url,
       description: description,
       created_at: created_at,
+      updated_at: updated_at,
       type: 'navigator_assistant'
     }
   end
@@ -59,6 +60,7 @@ class Navigator::Assistant < ApplicationRecord
       avatar_url: avatar_url.presence || default_avatar_url,
       description: description,
       created_at: created_at,
+      updated_at: updated_at,
       type: 'navigator_assistant'
     }
   end
