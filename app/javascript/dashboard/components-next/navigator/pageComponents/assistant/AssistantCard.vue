@@ -59,20 +59,32 @@ const menuItems = computed(() => {
 // Robust date handling
 const lastUpdatedAt = computed(() => {
   let date = props.updatedAt;
-  if (!date) return dynamicTime(new Date());
+  
+  // Debug logging
+  console.log('AssistantCard updatedAt:', date, 'Type:', typeof date);
+  
+  if (!date) {
+    console.log('AssistantCard: No date provided, using current date');
+    return dynamicTime(new Date());
+  }
+  
   // If it's a number, treat as timestamp
   if (typeof date === 'number') {
     try {
       return dynamicTime(new Date(date));
     } catch (e) {
+      console.log('AssistantCard: Invalid number date, using current date');
       return dynamicTime(new Date());
     }
   }
+  
   // If it's a string, try to parse
   const parsed = Date.parse(date);
   if (!isNaN(parsed)) {
     return dynamicTime(new Date(parsed));
   }
+  
+  console.log('AssistantCard: Invalid date format, using current date');
   return dynamicTime(new Date());
 });
 

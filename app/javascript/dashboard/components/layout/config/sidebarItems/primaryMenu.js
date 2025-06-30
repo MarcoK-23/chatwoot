@@ -26,7 +26,7 @@ const primaryMenuItems = accountId => [
     toStateName: 'captain',
   },
   {
-    icon: 'i-lucide-compass',
+    icon: 'navigation-outline',
     key: 'navigator',
     label: 'NAVIGATOR',
     featureFlag: FEATURE_FLAGS.NAVIGATOR,
