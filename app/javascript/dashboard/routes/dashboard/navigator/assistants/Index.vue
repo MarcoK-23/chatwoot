@@ -3,7 +3,7 @@ import { computed, onMounted, ref, nextTick } from 'vue';
 import { useMapGetter, useStore } from 'dashboard/composables/store';
 import { FEATURE_FLAGS } from 'dashboard/featureFlags';
 
-import AssistantCard from 'dashboard/components-next/captain/assistant/AssistantCard.vue';
+import AssistantCard from 'dashboard/components-next/navigator/pageComponents/assistant/AssistantCard.vue';
 import DeleteDialog from 'dashboard/components-next/navigator/pageComponents/DeleteDialog.vue';
 import PageLayout from 'dashboard/components-next/captain/PageLayout.vue';
 import CreateAssistantDialog from 'dashboard/components-next/navigator/pageComponents/assistant/CreateAssistantDialog.vue';

@@ -26,7 +26,7 @@ const primaryMenuItems = accountId => [
     toStateName: 'captain',
   },
   {
-    icon: 'bot-outline',
+    icon: 'captain',
     key: 'navigator',
     label: 'NAVIGATOR',
     featureFlag: FEATURE_FLAGS.NAVIGATOR,
