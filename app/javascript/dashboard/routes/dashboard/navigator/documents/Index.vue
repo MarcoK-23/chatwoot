@@ -110,7 +110,11 @@ onMounted(() => {
       <DocumentCard
         v-for="document in documents"
         :key="document.id"
-        :document="document"
+        :id="document.id"
+        :name="document.name || ''"
+        :assistant="document.assistant || {}"
+        :external-link="document.external_link || ''"
+        :created-at="document.created_at || Date.now()"
         :is-selected="selectedDocument?.id === document.id"
         @select="selectedDocument = document"
         @delete="handleDelete"

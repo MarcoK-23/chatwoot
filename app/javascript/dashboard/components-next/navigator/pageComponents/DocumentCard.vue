@@ -32,7 +32,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(['action']);
+const emit = defineEmits(['action', 'select', 'delete', 'show-related-responses']);
 const { checkPermissions } = usePolicy();
 
 const { t } = useI18n();
@@ -65,12 +65,18 @@ const createdAt = computed(() => dynamicTime(props.createdAt));
 
 const handleAction = ({ action, value }) => {
   toggleDropdown(false);
-  emit('action', { action, value, id: props.id });
+  if (action === 'delete') {
+    emit('delete');
+  } else if (action === 'viewRelatedQuestions') {
+    emit('show-related-responses');
+  } else {
+    emit('action', { action, value, id: props.id });
+  }
 };
 </script>
 
 <template>
-  <CardLayout>
+  <CardLayout @click="emit('select')">
     <div class="flex justify-between w-full gap-1">
       <span class="text-base text-n-slate-12 line-clamp-1">
         {{ name }}

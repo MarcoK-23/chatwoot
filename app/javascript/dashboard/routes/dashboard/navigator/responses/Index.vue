@@ -124,6 +124,16 @@ const handleAssistantFilterChange = assistantId => {
   });
 };
 
+const handleResponseAction = ({ action }) => {
+  if (action === 'edit') {
+    handleEdit();
+  } else if (action === 'delete') {
+    handleDelete();
+  } else if (action === 'approve') {
+    handleAccept();
+  }
+};
+
 onMounted(() => {
   store.dispatch('navigatorAssistants/get');
   store.dispatch('navigatorResponses/get');
@@ -205,9 +215,7 @@ onMounted(() => {
         :updated-at="response.updated_at"
         :is-selected="selectedResponse?.id === response.id"
         @select="selectedResponse = response"
-        @edit="handleEdit"
-        @delete="handleDelete"
-        @accept="handleAccept"
+        @action="handleResponseAction"
       />
     </div>
 
