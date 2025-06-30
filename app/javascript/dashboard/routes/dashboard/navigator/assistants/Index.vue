@@ -5,9 +5,9 @@ import { FEATURE_FLAGS } from 'dashboard/featureFlags';
 
 import AssistantCard from 'dashboard/components-next/navigator/pageComponents/assistant/AssistantCard.vue';
 import DeleteDialog from 'dashboard/components-next/navigator/pageComponents/DeleteDialog.vue';
-import PageLayout from 'dashboard/components-next/captain/PageLayout.vue';
+import PageLayout from 'dashboard/components-next/navigator/pageComponents/PageLayout.vue';
 import CreateAssistantDialog from 'dashboard/components-next/navigator/pageComponents/assistant/CreateAssistantDialog.vue';
-import AssistantPageEmptyState from 'dashboard/components-next/captain/pageComponents/emptyStates/AssistantPageEmptyState.vue';
+import AssistantPageEmptyState from 'dashboard/components-next/navigator/pageComponents/emptyStates/AssistantPageEmptyState.vue';
 import FeatureSpotlightPopover from 'dashboard/components-next/feature-spotlight/FeatureSpotlightPopover.vue';
 import { useRouter } from 'vue-router';
 
