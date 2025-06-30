@@ -23,7 +23,7 @@ const props = defineProps({
     required: true,
   },
   updatedAt: {
-    type: Number,
+    type: [Number, String],
     required: true,
   },
 });
@@ -56,12 +56,32 @@ const menuItems = computed(() => {
   return allOptions;
 });
 
-const lastUpdatedAt = computed(() => dynamicTime(props.updatedAt));
+// Robust date handling
+const lastUpdatedAt = computed(() => {
+  let date = props.updatedAt;
+  if (!date) return dynamicTime(new Date());
+  // If it's a number, treat as timestamp
+  if (typeof date === 'number') {
+    try {
+      return dynamicTime(new Date(date));
+    } catch (e) {
+      return dynamicTime(new Date());
+    }
+  }
+  // If it's a string, try to parse
+  const parsed = Date.parse(date);
+  if (!isNaN(parsed)) {
+    return dynamicTime(new Date(parsed));
+  }
+  return dynamicTime(new Date());
+});
 
 const handleAction = ({ action, value }) => {
   toggleDropdown(false);
   emit('action', { action, value, id: props.id });
 };
+
+// Note: If you want to suppress the /enterprise/api.../limits request, do so in the API config or by disabling enterprise features in your environment.
 </script>
 
 <template>
