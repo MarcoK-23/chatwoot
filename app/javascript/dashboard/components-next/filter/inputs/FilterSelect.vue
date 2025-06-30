@@ -77,7 +77,7 @@ const updateSelected = newValue => {
           type="button"
           sm
           slate
-          :variant
+          :variant="variant"
           :icon="iconToRender"
           :trailing-icon="selectedOption.icon ? false : true"
           :label="label || (hideLabel ? null : selectedOption.label)"
