@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref, nextTick } from 'vue';
+import { computed, onMounted, ref, nextTick, watch } from 'vue';
 import { useMapGetter, useStore } from 'dashboard/composables/store';
 import { FEATURE_FLAGS } from 'dashboard/featureFlags';
 
@@ -50,10 +50,15 @@ const onPageChange = page => {
 };
 
 const handleCreateDialogClose = () => {
-  if (createAssistantDialog.value && createAssistantDialog.value.dialogRef) {
-    createAssistantDialog.value.dialogRef.close();
-  }
+  dialogType.value = '';
 };
+
+// Log assistant times for debugging
+watch(assistants, (newVal) => {
+  newVal.forEach(a => {
+    console.log('Assistant times:', a.updated_at, a.created_at);
+  });
+});
 
 onMounted(() => {
   store.dispatch('navigatorAssistants/get');
@@ -109,7 +114,7 @@ onMounted(() => {
       :mode="dialogType"
       @close="handleCreateDialogClose"
       @submit="
-        createAssistantDialog.dialogRef.close();
+        dialogType = '';
         store.dispatch('navigatorAssistants/get');
       "
     />
