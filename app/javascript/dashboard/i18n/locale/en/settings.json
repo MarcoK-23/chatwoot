@@ -149,7 +149,7 @@
           "SLA_MISSED_NEXT_RESPONSE": "A conversation misses next response SLA",
           "SLA_MISSED_RESOLUTION": "A conversation misses resolution SLA"
         },
-        "BROWSER_PERMISSION": "Enable push notifications for your browser so you’re able to receive them"
+        "BROWSER_PERMISSION": "Enable push notifications for your browser so you're able to receive them"
       },
       "API": {
         "UPDATE_SUCCESS": "Your notification preferences are updated successfully",
@@ -348,7 +348,11 @@
       "INFO_TEXT": "Let the system automatically mark you offline when you aren't using the app or dashboard.",
       "INFO_SHORT": "Automatically mark offline when you aren't using the app."
     },
-    "DOCS": "Read docs"
+    "DOCS": "Read docs",
+    "NAVIGATOR": "Navigator",
+    "NAVIGATOR_ASSISTANTS": "Assistants",
+    "NAVIGATOR_DOCUMENTS": "Documents",
+    "NAVIGATOR_RESPONSES": "Responses"
   },
   "BILLING_SETTINGS": {
     "TITLE": "Billing",

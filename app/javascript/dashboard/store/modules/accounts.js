@@ -43,6 +43,7 @@ export const getters = {
     return diffDays <= TRIAL_PERIOD_DAYS;
   },
   isFeatureEnabledonAccount: $state => (id, featureName) => {
+    if (featureName === 'navigator_ai') return true;
     const { features = {} } = findRecordById($state, id);
     return features[featureName] || false;
   },
