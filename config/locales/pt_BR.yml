@@ -331,3 +331,62 @@ pt_BR:
 
       Transcrição:
       %{format_messages}
+
+  navigator:
+    name: "Navegador"
+    header_know_more: "Saiba mais"
+    assistants:
+      header: "Assistentes do Navegador"
+      add_new: "Adicionar Novo Assistente"
+      form_description: "Preencha os detalhes abaixo para nomear seu assistente, descrever seu propósito e especificar o produto que ele apoiará."
+      create:
+        title: "Criar um Assistente do Navegador"
+        success_message: "O assistente do Navegador foi criado com sucesso"
+        error_message: "Houve um erro ao criar o assistente do Navegador, tente novamente."
+      edit:
+        title: "Atualizar o Assistente do Navegador"
+        success_message: "O assistente do Navegador foi atualizado com sucesso"
+        error_message: "Houve um erro ao atualizar o assistente do Navegador, tente novamente."
+      empty_state:
+        feature_spotlight:
+          title: "Assistentes com IA"
+          note: "Crie assistentes inteligentes para ajudar sua equipe"
+    documents:
+      header: "Documentos do Navegador"
+      add_new: "Adicionar Novo Documento"
+      empty_state:
+        feature_spotlight:
+          title: "Base de Conhecimento"
+          note: "Faça upload de documentos para treinar seus assistentes"
+    responses:
+      header: "Respostas do Navegador"
+      add_new: "Adicionar Nova Resposta"
+      status:
+        all: "Todos os Status"
+        pending: "Pendente"
+        approved: "Aprovado"
+      filter:
+        status: "Status: %{selected}"
+        assistant: "Assistente: %{selected}"
+        all_assistants: "Todos os Assistentes"
+      empty_state:
+        feature_spotlight:
+          title: "Respostas Treinadas"
+          note: "Crie e gerencie respostas de IA"
+      edit:
+        approve_success_message: "Resposta aprovada com sucesso"
+        error_message: "Falha ao aprovar resposta"
+    delete:
+      title: "Excluir %{type}"
+      description: "Tem certeza de que deseja excluir este %{type}? Esta ação não pode ser desfeita."
+      confirm: "Excluir"
+      success_message: "%{type} excluído com sucesso"
+      error_message: "Falha ao excluir %{type}"
+    CAPTAIN: "Capitão"
+    CAPTAIN_ASSISTANTS: "Assistentes"
+    CAPTAIN_DOCUMENTS: "Documentos"
+    CAPTAIN_RESPONSES: "FAQ"
+    NAVIGATOR: "Navegador"
+    NAVIGATOR_ASSISTANTS: "Assistentes"
+    NAVIGATOR_DOCUMENTS: "Documentos"
+    NAVIGATOR_RESPONSES: "Respostas"

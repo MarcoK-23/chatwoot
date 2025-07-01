@@ -325,3 +325,62 @@ ko:
 
       Transcript:
       %{format_messages}
+
+  navigator:
+    name: "네비게이터"
+    header_know_more: "더 알아보기"
+    assistants:
+      header: "네비게이터 어시스턴트"
+      add_new: "새 어시스턴트 추가"
+      form_description: "어시스턴트의 이름, 목적, 지원할 제품을 지정하는 세부 정보를 아래에 입력하세요."
+      create:
+        title: "네비게이터 어시스턴트 생성"
+        success_message: "네비게이터 어시스턴트가 성공적으로 생성되었습니다"
+        error_message: "네비게이터 어시스턴트 생성 중 오류가 발생했습니다. 다시 시도해 주세요."
+      edit:
+        title: "네비게이터 어시스턴트 업데이트"
+        success_message: "네비게이터 어시스턴트가 성공적으로 업데이트되었습니다"
+        error_message: "네비게이터 어시스턴트 업데이트 중 오류가 발생했습니다. 다시 시도해 주세요."
+      empty_state:
+        feature_spotlight:
+          title: "AI 기반 어시스턴트"
+          note: "팀을 돕는 지능형 어시스턴트 생성"
+    documents:
+      header: "네비게이터 문서"
+      add_new: "새 문서 추가"
+      empty_state:
+        feature_spotlight:
+          title: "지식 베이스"
+          note: "어시스턴트를 훈련하기 위한 문서 업로드"
+    responses:
+      header: "네비게이터 응답"
+      add_new: "새 응답 추가"
+      status:
+        all: "모든 상태"
+        pending: "대기 중"
+        approved: "승인됨"
+      filter:
+        status: "상태: %{selected}"
+        assistant: "어시스턴트: %{selected}"
+        all_assistants: "모든 어시스턴트"
+      empty_state:
+        feature_spotlight:
+          title: "훈련된 응답"
+          note: "AI 응답 생성 및 관리"
+      edit:
+        approve_success_message: "응답이 성공적으로 승인되었습니다"
+        error_message: "응답 승인에 실패했습니다"
+    delete:
+      title: "%{type} 삭제"
+      description: "이 %{type}을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다."
+      confirm: "삭제"
+      success_message: "%{type}이 성공적으로 삭제되었습니다"
+      error_message: "%{type} 삭제에 실패했습니다"
+    CAPTAIN: "캡틴"
+    CAPTAIN_ASSISTANTS: "어시스턴트"
+    CAPTAIN_DOCUMENTS: "문서"
+    CAPTAIN_RESPONSES: "FAQ"
+    NAVIGATOR: "네비게이터"
+    NAVIGATOR_ASSISTANTS: "어시스턴트"
+    NAVIGATOR_DOCUMENTS: "문서"
+    NAVIGATOR_RESPONSES: "응답"

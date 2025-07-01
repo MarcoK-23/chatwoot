@@ -329,3 +329,62 @@ nl:
 
       Transcript:
       %{format_messages}
+
+  navigator:
+    name: "Navigator"
+    header_know_more: "Meer weten"
+    assistants:
+      header: "Navigator Assistenten"
+      add_new: "Nieuwe Assistent Toevoegen"
+      form_description: "Vul de onderstaande gegevens in om uw assistent een naam te geven, het doel te beschrijven en het product op te geven dat het zal ondersteunen."
+      create:
+        title: "Navigator Assistent Maken"
+        success_message: "De Navigator assistent is succesvol aangemaakt"
+        error_message: "Er is een fout opgetreden bij het maken van de Navigator assistent, probeer het opnieuw."
+      edit:
+        title: "Navigator Assistent Bijwerken"
+        success_message: "De Navigator assistent is succesvol bijgewerkt"
+        error_message: "Er is een fout opgetreden bij het bijwerken van de Navigator assistent, probeer het opnieuw."
+      empty_state:
+        feature_spotlight:
+          title: "AI-aangedreven Assistenten"
+          note: "Maak intelligente assistenten om uw team te helpen"
+    documents:
+      header: "Navigator Documenten"
+      add_new: "Nieuw Document Toevoegen"
+      empty_state:
+        feature_spotlight:
+          title: "Kennisbank"
+          note: "Upload documenten om uw assistenten te trainen"
+    responses:
+      header: "Navigator Antwoorden"
+      add_new: "Nieuw Antwoord Toevoegen"
+      status:
+        all: "Alle Statussen"
+        pending: "In afwachting"
+        approved: "Goedgekeurd"
+      filter:
+        status: "Status: %{selected}"
+        assistant: "Assistent: %{selected}"
+        all_assistants: "Alle Assistenten"
+      empty_state:
+        feature_spotlight:
+          title: "Getrainde Antwoorden"
+          note: "Maak en beheer AI-antwoorden"
+      edit:
+        approve_success_message: "Antwoord succesvol goedgekeurd"
+        error_message: "Antwoord goedkeuren mislukt"
+    delete:
+      title: "%{type} Verwijderen"
+      description: "Weet u zeker dat u deze %{type} wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
+      confirm: "Verwijderen"
+      success_message: "%{type} succesvol verwijderd"
+      error_message: "Verwijderen van %{type} mislukt"
+    CAPTAIN: "Kapitein"
+    CAPTAIN_ASSISTANTS: "Assistenten"
+    CAPTAIN_DOCUMENTS: "Documenten"
+    CAPTAIN_RESPONSES: "FAQ"
+    NAVIGATOR: "Navigator"
+    NAVIGATOR_ASSISTANTS: "Assistenten"
+    NAVIGATOR_DOCUMENTS: "Documenten"
+    NAVIGATOR_RESPONSES: "Antwoorden"

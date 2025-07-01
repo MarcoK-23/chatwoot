@@ -325,3 +325,62 @@ ja:
 
       Transcript:
       %{format_messages}
+
+  navigator:
+    name: "ナビゲーター"
+    header_know_more: "詳細を見る"
+    assistants:
+      header: "ナビゲーターアシスタント"
+      add_new: "新しいアシスタントを追加"
+      form_description: "アシスタントの名前、目的、サポートする製品を指定する詳細を以下に入力してください。"
+      create:
+        title: "ナビゲーターアシスタントを作成"
+        success_message: "ナビゲーターアシスタントが正常に作成されました"
+        error_message: "ナビゲーターアシスタントの作成中にエラーが発生しました。もう一度お試しください。"
+      edit:
+        title: "ナビゲーターアシスタントを更新"
+        success_message: "ナビゲーターアシスタントが正常に更新されました"
+        error_message: "ナビゲーターアシスタントの更新中にエラーが発生しました。もう一度お試しください。"
+      empty_state:
+        feature_spotlight:
+          title: "AI搭載アシスタント"
+          note: "チームを支援するインテリジェントなアシスタントを作成"
+    documents:
+      header: "ナビゲータードキュメント"
+      add_new: "新しいドキュメントを追加"
+      empty_state:
+        feature_spotlight:
+          title: "ナレッジベース"
+          note: "アシスタントをトレーニングするためのドキュメントをアップロード"
+    responses:
+      header: "ナビゲーター応答"
+      add_new: "新しい応答を追加"
+      status:
+        all: "すべてのステータス"
+        pending: "保留中"
+        approved: "承認済み"
+      filter:
+        status: "ステータス: %{selected}"
+        assistant: "アシスタント: %{selected}"
+        all_assistants: "すべてのアシスタント"
+      empty_state:
+        feature_spotlight:
+          title: "トレーニング済み応答"
+          note: "AI応答を作成・管理"
+      edit:
+        approve_success_message: "応答が正常に承認されました"
+        error_message: "応答の承認に失敗しました"
+    delete:
+      title: "%{type}を削除"
+      description: "この%{type}を削除してもよろしいですか？この操作は元に戻せません。"
+      confirm: "削除"
+      success_message: "%{type}が正常に削除されました"
+      error_message: "%{type}の削除に失敗しました"
+    CAPTAIN: "キャプテン"
+    CAPTAIN_ASSISTANTS: "アシスタント"
+    CAPTAIN_DOCUMENTS: "ドキュメント"
+    CAPTAIN_RESPONSES: "FAQ"
+    NAVIGATOR: "ナビゲーター"
+    NAVIGATOR_ASSISTANTS: "アシスタント"
+    NAVIGATOR_DOCUMENTS: "ドキュメント"
+    NAVIGATOR_RESPONSES: "応答"
