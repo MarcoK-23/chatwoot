@@ -338,62 +338,8 @@ pl:
       Transcript:
       %{format_messages}
 
-  navigator:
-    name: "Nawigator"
-    header_know_more: "Dowiedz się więcej"
-    assistants:
-      header: "Asystenci Nawigatora"
-      add_new: "Dodaj nowego asystenta"
-      form_description: "Wypełnij szczegóły poniżej, aby nazwać swojego asystenta, opisać jego cel i określić produkt, który będzie wspierał."
-      create:
-        title: "Utwórz asystenta Nawigatora"
-        success_message: "Asystent Nawigatora został pomyślnie utworzony"
-        error_message: "Wystąpił błąd podczas tworzenia asystenta Nawigatora, spróbuj ponownie."
-      edit:
-        title: "Zaktualizuj asystenta Nawigatora"
-        success_message: "Asystent Nawigatora został pomyślnie zaktualizowany"
-        error_message: "Wystąpił błąd podczas aktualizacji asystenta Nawigatora, spróbuj ponownie."
-      empty_state:
-        feature_spotlight:
-          title: "Asystenci napędzani AI"
-          note: "Twórz inteligentnych asystentów, aby pomóc swojemu zespołowi"
-    documents:
-      header: "Dokumenty Nawigatora"
-      add_new: "Dodaj nowy dokument"
-      empty_state:
-        feature_spotlight:
-          title: "Baza wiedzy"
-          note: "Prześlij dokumenty, aby trenować swoich asystentów"
-    responses:
-      header: "Odpowiedzi Nawigatora"
-      add_new: "Dodaj nową odpowiedź"
-      status:
-        all: "Wszystkie statusy"
-        pending: "Oczekujące"
-        approved: "Zatwierdzone"
-      filter:
-        status: "Status: %{selected}"
-        assistant: "Asystent: %{selected}"
-        all_assistants: "Wszyscy asystenci"
-      empty_state:
-        feature_spotlight:
-          title: "Wytrenowane odpowiedzi"
-          note: "Twórz i zarządzaj odpowiedziami AI"
-      edit:
-        approve_success_message: "Odpowiedź pomyślnie zatwierdzona"
-        error_message: "Nie udało się zatwierdzić odpowiedzi"
-    delete:
-      title: "Usuń %{type}"
-      description: "Czy na pewno chcesz usunąć ten %{type}? Tej akcji nie można cofnąć."
-      confirm: "Usuń"
-      success_message: "%{type} pomyślnie usunięty"
-      error_message: "Nie udało się usunąć %{type}"
-    CAPTAIN: "Kapitan"
-    CAPTAIN_ASSISTANTS: "Asystenci"
-    CAPTAIN_DOCUMENTS: "Dokumenty"
-    CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR:
-      ASSISTANTS:
-        HEADER: "Asystenci Nawigatora"
-        ADD_NEW: "Dodaj nowego asystenta"
-      HEADER_KNOW_MORE: "Dowiedz się więcej"
+NAVIGATOR:
+  ASSISTANTS:
+    HEADER: "Asystenci Nawigatora"
+    ADD_NEW: "Dodaj nowego asystenta"
+  HEADER_KNOW_MORE: "Dowiedz się więcej"

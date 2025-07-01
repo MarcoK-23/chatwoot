@@ -330,62 +330,8 @@ it:
       Transcript:
       %{format_messages}
 
-  navigator:
-    name: "Navigatore"
-    header_know_more: "Scopri di più"
-    assistants:
-      header: "Assistenti del Navigatore"
-      add_new: "Aggiungi Nuovo Assistente"
-      form_description: "Compila i dettagli qui sotto per nominare il tuo assistente, descrivere il suo scopo e specificare il prodotto che supporterà."
-      create:
-        title: "Crea un Assistente del Navigatore"
-        success_message: "L'assistente del Navigatore è stato creato con successo"
-        error_message: "Si è verificato un errore durante la creazione dell'assistente del Navigatore, riprova."
-      edit:
-        title: "Aggiorna l'Assistente del Navigatore"
-        success_message: "L'assistente del Navigatore è stato aggiornato con successo"
-        error_message: "Si è verificato un errore durante l'aggiornamento dell'assistente del Navigatore, riprova."
-      empty_state:
-        feature_spotlight:
-          title: "Assistenti alimentati dall'IA"
-          note: "Crea assistenti intelligenti per aiutare il tuo team"
-    documents:
-      header: "Documenti del Navigatore"
-      add_new: "Aggiungi Nuovo Documento"
-      empty_state:
-        feature_spotlight:
-          title: "Base di Conoscenza"
-          note: "Carica documenti per addestrare i tuoi assistenti"
-    responses:
-      header: "Risposte del Navigatore"
-      add_new: "Aggiungi Nuova Risposta"
-      status:
-        all: "Tutti gli Stati"
-        pending: "In attesa"
-        approved: "Approvato"
-      filter:
-        status: "Stato: %{selected}"
-        assistant: "Assistente: %{selected}"
-        all_assistants: "Tutti gli Assistenti"
-      empty_state:
-        feature_spotlight:
-          title: "Risposte Addestrate"
-          note: "Crea e gestisci risposte IA"
-      edit:
-        approve_success_message: "Risposta approvata con successo"
-        error_message: "Impossibile approvare la risposta"
-    delete:
-      title: "Elimina %{type}"
-      description: "Sei sicuro di voler eliminare questo %{type}? Questa azione non può essere annullata."
-      confirm: "Elimina"
-      success_message: "%{type} eliminato con successo"
-      error_message: "Impossibile eliminare %{type}"
-    CAPTAIN: "Capitano"
-    CAPTAIN_ASSISTANTS: "Assistenti"
-    CAPTAIN_DOCUMENTS: "Documenti"
-    CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR:
-      ASSISTANTS:
-        HEADER: "Assistenti del Navigatore"
-        ADD_NEW: "Aggiungi Nuovo Assistente"
-      HEADER_KNOW_MORE: "Scopri di più"
+NAVIGATOR:
+  ASSISTANTS:
+    HEADER: "Assistenti del Navigatore"
+    ADD_NEW: "Aggiungi Nuovo Assistente"
+  HEADER_KNOW_MORE: "Scopri di più"

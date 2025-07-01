@@ -326,62 +326,8 @@ zh_TW:
       Transcript:
       %{format_messages}
 
-  navigator:
-    name: "導航器"
-    header_know_more: "了解更多"
-    assistants:
-      header: "導航器助手"
-      add_new: "新增助手"
-      form_description: "填寫下面的詳細資訊，為您的助手命名，描述其目的，並指定它將支援的產品。"
-      create:
-        title: "建立導航器助手"
-        success_message: "導航器助手已成功建立"
-        error_message: "建立導航器助手時出現錯誤，請重試。"
-      edit:
-        title: "更新導航器助手"
-        success_message: "導航器助手已成功更新"
-        error_message: "更新導航器助手時出現錯誤，請重試。"
-      empty_state:
-        feature_spotlight:
-          title: "AI驅動的助手"
-          note: "建立智慧助手來幫助您的團隊"
-    documents:
-      header: "導航器文件"
-      add_new: "新增文件"
-      empty_state:
-        feature_spotlight:
-          title: "知識庫"
-          note: "上傳文件來訓練您的助手"
-    responses:
-      header: "導航器回應"
-      add_new: "新增回應"
-      status:
-        all: "所有狀態"
-        pending: "待處理"
-        approved: "已核准"
-      filter:
-        status: "狀態: %{selected}"
-        assistant: "助手: %{selected}"
-        all_assistants: "所有助手"
-      empty_state:
-        feature_spotlight:
-          title: "訓練回應"
-          note: "建立和管理AI回應"
-      edit:
-        approve_success_message: "回應已成功核准"
-        error_message: "核准回應失敗"
-    delete:
-      title: "刪除%{type}"
-      description: "您確定要刪除此%{type}嗎？此操作無法復原。"
-      confirm: "刪除"
-      success_message: "%{type}已成功刪除"
-      error_message: "刪除%{type}失敗"
-    CAPTAIN: "船長"
-    CAPTAIN_ASSISTANTS: "助手"
-    CAPTAIN_DOCUMENTS: "文件"
-    CAPTAIN_RESPONSES: "常見問題"
-    NAVIGATOR:
-      ASSISTANTS:
-        HEADER: "導航器助手"
-        ADD_NEW: "新增助手"
-      HEADER_KNOW_MORE: "了解更多"
+NAVIGATOR:
+  ASSISTANTS:
+    HEADER: "導航器助手"
+    ADD_NEW: "新增助手"
+  HEADER_KNOW_MORE: "了解更多"

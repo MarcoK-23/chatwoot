@@ -346,62 +346,8 @@ ar:
       Transcript:
       %{format_messages}
 
-  navigator:
-    name: "المستكشف"
-    header_know_more: "اعرف المزيد"
-    assistants:
-      header: "مساعدي المستكشف"
-      add_new: "إضافة مساعد جديد"
-      form_description: "املأ التفاصيل أدناه لتسمية مساعدك، ووصف غرضه، وتحديد المنتج الذي سيدعمه."
-      create:
-        title: "إنشاء مساعد المستكشف"
-        success_message: "تم إنشاء مساعد المستكشف بنجاح"
-        error_message: "حدث خطأ أثناء إنشاء مساعد المستكشف، يرجى المحاولة مرة أخرى."
-      edit:
-        title: "تحديث مساعد المستكشف"
-        success_message: "تم تحديث مساعد المستكشف بنجاح"
-        error_message: "حدث خطأ أثناء تحديث مساعد المستكشف، يرجى المحاولة مرة أخرى."
-      empty_state:
-        feature_spotlight:
-          title: "المساعدون المدعومون بالذكاء الاصطناعي"
-          note: "أنشئ مساعدين أذكياء لمساعدة فريقك"
-    documents:
-      header: "مستندات المستكشف"
-      add_new: "إضافة مستند جديد"
-      empty_state:
-        feature_spotlight:
-          title: "قاعدة المعرفة"
-          note: "حمّل المستندات لتدريب مساعديك"
-    responses:
-      header: "استجابات المستكشف"
-      add_new: "إضافة استجابة جديدة"
-      status:
-        all: "جميع الحالات"
-        pending: "قيد الانتظار"
-        approved: "موافق عليه"
-      filter:
-        status: "الحالة: %{selected}"
-        assistant: "المساعد: %{selected}"
-        all_assistants: "جميع المساعدين"
-      empty_state:
-        feature_spotlight:
-          title: "الاستجابات المدربة"
-          note: "أنشئ وأدر استجابات الذكاء الاصطناعي"
-      edit:
-        approve_success_message: "تمت الموافقة على الاستجابة بنجاح"
-        error_message: "فشل في الموافقة على الاستجابة"
-    delete:
-      title: "حذف %{type}"
-      description: "هل أنت متأكد من أنك تريد حذف هذا %{type}؟ لا يمكن التراجع عن هذا الإجراء."
-      confirm: "حذف"
-      success_message: "تم حذف %{type} بنجاح"
-      error_message: "فشل في حذف %{type}"
-    CAPTAIN: "الكابتن"
-    CAPTAIN_ASSISTANTS: "المساعدون"
-    CAPTAIN_DOCUMENTS: "المستندات"
-    CAPTAIN_RESPONSES: "الأسئلة الشائعة"
-    NAVIGATOR:
-      ASSISTANTS:
-        HEADER: "مساعدي المستكشف"
-        ADD_NEW: "إضافة مساعد جديد"
-      HEADER_KNOW_MORE: "اعرف المزيد"
+NAVIGATOR:
+  ASSISTANTS:
+    HEADER: "مساعدي المستكشف"
+    ADD_NEW: "إضافة مساعد جديد"
+  HEADER_KNOW_MORE: "اعرف المزيد"

@@ -330,62 +330,8 @@ fr:
       Transcription :
       %{format_messages}
 
-  navigator:
-    name: "Navigateur"
-    header_know_more: "En savoir plus"
-    assistants:
-      header: "Assistants du Navigateur"
-      add_new: "Ajouter un Nouvel Assistant"
-      form_description: "Remplissez les détails ci-dessous pour nommer votre assistant, décrire son objectif et spécifier le produit qu'il soutiendra."
-      create:
-        title: "Créer un Assistant du Navigateur"
-        success_message: "L'assistant du Navigateur a été créé avec succès"
-        error_message: "Une erreur s'est produite lors de la création de l'assistant du Navigateur, veuillez réessayer."
-      edit:
-        title: "Mettre à jour l'Assistant du Navigateur"
-        success_message: "L'assistant du Navigateur a été mis à jour avec succès"
-        error_message: "Une erreur s'est produite lors de la mise à jour de l'assistant du Navigateur, veuillez réessayer."
-      empty_state:
-        feature_spotlight:
-          title: "Assistants alimentés par l'IA"
-          note: "Créez des assistants intelligents pour aider votre équipe"
-    documents:
-      header: "Documents du Navigateur"
-      add_new: "Ajouter un Nouveau Document"
-      empty_state:
-        feature_spotlight:
-          title: "Base de Connaissances"
-          note: "Téléchargez des documents pour former vos assistants"
-    responses:
-      header: "Réponses du Navigateur"
-      add_new: "Ajouter une Nouvelle Réponse"
-      status:
-        all: "Tous les États"
-        pending: "En attente"
-        approved: "Approuvé"
-      filter:
-        status: "État : %{selected}"
-        assistant: "Assistant : %{selected}"
-        all_assistants: "Tous les Assistants"
-      empty_state:
-        feature_spotlight:
-          title: "Réponses Entraînées"
-          note: "Créez et gérez les réponses d'IA"
-      edit:
-        approve_success_message: "Réponse approuvée avec succès"
-        error_message: "Échec de l'approbation de la réponse"
-    delete:
-      title: "Supprimer %{type}"
-      description: "Êtes-vous sûr de vouloir supprimer ce %{type} ? Cette action ne peut pas être annulée."
-      confirm: "Supprimer"
-      success_message: "%{type} supprimé avec succès"
-      error_message: "Échec de la suppression de %{type}"
-    CAPTAIN: "Capitaine"
-    CAPTAIN_ASSISTANTS: "Assistants"
-    CAPTAIN_DOCUMENTS: "Documents"
-    CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR:
-      ASSISTANTS:
-        HEADER: "Assistants du Navigateur"
-        ADD_NEW: "Ajouter un Nouvel Assistant"
-      HEADER_KNOW_MORE: "En savoir plus"
+NAVIGATOR:
+  ASSISTANTS:
+    HEADER: "Assistants du Navigateur"
+    ADD_NEW: "Ajouter un Nouvel Assistant"
+  HEADER_KNOW_MORE: "En savoir plus"

@@ -330,62 +330,8 @@ sv:
       Transcript:
       %{format_messages}
 
-  navigator:
-    name: "Navigator"
-    header_know_more: "Läs mer"
-    assistants:
-      header: "Navigator Assistenter"
-      add_new: "Lägg till ny assistent"
-      form_description: "Fyll i detaljerna nedan för att namnge din assistent, beskriva dess syfte och specificera produkten den kommer att stödja."
-      create:
-        title: "Skapa Navigator Assistent"
-        success_message: "Navigator-assistenten har skapats framgångsrikt"
-        error_message: "Ett fel uppstod när Navigator-assistenten skulle skapas, försök igen."
-      edit:
-        title: "Uppdatera Navigator Assistent"
-        success_message: "Navigator-assistenten har uppdaterats framgångsrikt"
-        error_message: "Ett fel uppstod när Navigator-assistenten skulle uppdateras, försök igen."
-      empty_state:
-        feature_spotlight:
-          title: "AI-drivna Assistenter"
-          note: "Skapa intelligenta assistenter för att hjälpa ditt team"
-    documents:
-      header: "Navigator Dokument"
-      add_new: "Lägg till nytt dokument"
-      empty_state:
-        feature_spotlight:
-          title: "Kunskapsbas"
-          note: "Ladda upp dokument för att träna dina assistenter"
-    responses:
-      header: "Navigator Svar"
-      add_new: "Lägg till nytt svar"
-      status:
-        all: "Alla Statusar"
-        pending: "Väntande"
-        approved: "Godkänd"
-      filter:
-        status: "Status: %{selected}"
-        assistant: "Assistent: %{selected}"
-        all_assistants: "Alla Assistenter"
-      empty_state:
-        feature_spotlight:
-          title: "Tränade Svar"
-          note: "Skapa och hantera AI-svar"
-      edit:
-        approve_success_message: "Svar godkänt framgångsrikt"
-        error_message: "Misslyckades att godkänna svar"
-    delete:
-      title: "Radera %{type}"
-      description: "Är du säker på att du vill radera denna %{type}? Denna åtgärd kan inte ångras."
-      confirm: "Radera"
-      success_message: "%{type} raderad framgångsrikt"
-      error_message: "Misslyckades att radera %{type}"
-    CAPTAIN: "Kapten"
-    CAPTAIN_ASSISTANTS: "Assistenter"
-    CAPTAIN_DOCUMENTS: "Dokument"
-    CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR:
-      ASSISTANTS:
-        HEADER: "Navigator Assistenter"
-        ADD_NEW: "Lägg till ny assistent"
-      HEADER_KNOW_MORE: "Läs mer"
+NAVIGATOR:
+  ASSISTANTS:
+    HEADER: "Navigator Assistenter"
+    ADD_NEW: "Lägg till ny assistent"
+  HEADER_KNOW_MORE: "Läs mer"

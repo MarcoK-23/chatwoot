@@ -326,62 +326,8 @@ zh_CN:
       副本：
       %{format_messages}
 
-  navigator:
-    name: "导航器"
-    header_know_more: "了解更多"
-    assistants:
-      header: "导航器助手"
-      add_new: "添加新助手"
-      form_description: "填写下面的详细信息，为您的助手命名，描述其目的，并指定它将支持的产品。"
-      create:
-        title: "创建导航器助手"
-        success_message: "导航器助手已成功创建"
-        error_message: "创建导航器助手时出现错误，请重试。"
-      edit:
-        title: "更新导航器助手"
-        success_message: "导航器助手已成功更新"
-        error_message: "更新导航器助手时出现错误，请重试。"
-      empty_state:
-        feature_spotlight:
-          title: "AI驱动的助手"
-          note: "创建智能助手来帮助您的团队"
-    documents:
-      header: "导航器文档"
-      add_new: "添加新文档"
-      empty_state:
-        feature_spotlight:
-          title: "知识库"
-          note: "上传文档来训练您的助手"
-    responses:
-      header: "导航器响应"
-      add_new: "添加新响应"
-      status:
-        all: "所有状态"
-        pending: "待处理"
-        approved: "已批准"
-      filter:
-        status: "状态: %{selected}"
-        assistant: "助手: %{selected}"
-        all_assistants: "所有助手"
-      empty_state:
-        feature_spotlight:
-          title: "训练响应"
-          note: "创建和管理AI响应"
-      edit:
-        approve_success_message: "响应已成功批准"
-        error_message: "批准响应失败"
-    delete:
-      title: "删除%{type}"
-      description: "您确定要删除此%{type}吗？此操作无法撤消。"
-      confirm: "删除"
-      success_message: "%{type}已成功删除"
-      error_message: "删除%{type}失败"
-    CAPTAIN: "船长"
-    CAPTAIN_ASSISTANTS: "助手"
-    CAPTAIN_DOCUMENTS: "文档"
-    CAPTAIN_RESPONSES: "常见问题"
-    NAVIGATOR:
-      ASSISTANTS:
-        HEADER: "导航器助手"
-        ADD_NEW: "添加新助手"
-      HEADER_KNOW_MORE: "了解更多"
+NAVIGATOR:
+  ASSISTANTS:
+    HEADER: "导航器助手"
+    ADD_NEW: "添加新助手"
+  HEADER_KNOW_MORE: "了解更多"

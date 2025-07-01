@@ -338,62 +338,8 @@ ru:
       Transcript:
       %{format_messages}
 
-  navigator:
-    name: "Навигатор"
-    header_know_more: "Узнать больше"
-    assistants:
-      header: "Ассистенты Навигатора"
-      add_new: "Добавить нового ассистента"
-      form_description: "Заполните детали ниже, чтобы назвать вашего ассистента, описать его назначение и указать продукт, который он будет поддерживать."
-      create:
-        title: "Создать ассистента Навигатора"
-        success_message: "Ассистент Навигатора был успешно создан"
-        error_message: "Произошла ошибка при создании ассистента Навигатора, попробуйте еще раз."
-      edit:
-        title: "Обновить ассистента Навигатора"
-        success_message: "Ассистент Навигатора был успешно обновлен"
-        error_message: "Произошла ошибка при обновлении ассистента Навигатора, попробуйте еще раз."
-      empty_state:
-        feature_spotlight:
-          title: "ИИ-ассистенты"
-          note: "Создавайте умных ассистентов для помощи вашей команде"
-    documents:
-      header: "Документы Навигатора"
-      add_new: "Добавить новый документ"
-      empty_state:
-        feature_spotlight:
-          title: "База знаний"
-          note: "Загружайте документы для обучения ваших ассистентов"
-    responses:
-      header: "Ответы Навигатора"
-      add_new: "Добавить новый ответ"
-      status:
-        all: "Все статусы"
-        pending: "В ожидании"
-        approved: "Одобрено"
-      filter:
-        status: "Статус: %{selected}"
-        assistant: "Ассистент: %{selected}"
-        all_assistants: "Все ассистенты"
-      empty_state:
-        feature_spotlight:
-          title: "Обученные ответы"
-          note: "Создавайте и управляйте ИИ-ответами"
-      edit:
-        approve_success_message: "Ответ успешно одобрен"
-        error_message: "Не удалось одобрить ответ"
-    delete:
-      title: "Удалить %{type}"
-      description: "Вы уверены, что хотите удалить этот %{type}? Это действие нельзя отменить."
-      confirm: "Удалить"
-      success_message: "%{type} успешно удален"
-      error_message: "Не удалось удалить %{type}"
-    CAPTAIN: "Капитан"
-    CAPTAIN_ASSISTANTS: "Ассистенты"
-    CAPTAIN_DOCUMENTS: "Документы"
-    CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR:
-      ASSISTANTS:
-        HEADER: "Ассистенты Навигатора"
-        ADD_NEW: "Добавить нового ассистента"
-      HEADER_KNOW_MORE: "Узнать больше"
+NAVIGATOR:
+  ASSISTANTS:
+    HEADER: "Ассистенты Навигатора"
+    ADD_NEW: "Добавить нового ассистента"
+  HEADER_KNOW_MORE: "Узнать больше"

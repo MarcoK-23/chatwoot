@@ -330,62 +330,8 @@ de:
       Transcript:
       %{format_messages}
 
-  navigator:
-    name: "Navigator"
-    header_know_more: "Mehr erfahren"
-    assistants:
-      header: "Navigator-Assistenten"
-      add_new: "Neuen Assistenten hinzufügen"
-      form_description: "Füllen Sie die Details unten aus, um Ihren Assistenten zu benennen, seinen Zweck zu beschreiben und das Produkt zu spezifizieren, das er unterstützen wird."
-      create:
-        title: "Navigator-Assistent erstellen"
-        success_message: "Der Navigator-Assistent wurde erfolgreich erstellt"
-        error_message: "Beim Erstellen des Navigator-Assistenten ist ein Fehler aufgetreten, bitte versuchen Sie es erneut."
-      edit:
-        title: "Navigator-Assistent aktualisieren"
-        success_message: "Der Navigator-Assistent wurde erfolgreich aktualisiert"
-        error_message: "Beim Aktualisieren des Navigator-Assistenten ist ein Fehler aufgetreten, bitte versuchen Sie es erneut."
-      empty_state:
-        feature_spotlight:
-          title: "KI-gestützte Assistenten"
-          note: "Erstellen Sie intelligente Assistenten, um Ihrem Team zu helfen"
-    documents:
-      header: "Navigator-Dokumente"
-      add_new: "Neues Dokument hinzufügen"
-      empty_state:
-        feature_spotlight:
-          title: "Wissensdatenbank"
-          note: "Laden Sie Dokumente hoch, um Ihre Assistenten zu trainieren"
-    responses:
-      header: "Navigator-Antworten"
-      add_new: "Neue Antwort hinzufügen"
-      status:
-        all: "Alle Status"
-        pending: "Ausstehend"
-        approved: "Genehmigt"
-      filter:
-        status: "Status: %{selected}"
-        assistant: "Assistent: %{selected}"
-        all_assistants: "Alle Assistenten"
-      empty_state:
-        feature_spotlight:
-          title: "Trainierte Antworten"
-          note: "Erstellen und verwalten Sie KI-Antworten"
-      edit:
-        approve_success_message: "Antwort erfolgreich genehmigt"
-        error_message: "Fehler beim Genehmigen der Antwort"
-    delete:
-      title: "%{type} löschen"
-      description: "Sind Sie sicher, dass Sie diesen %{type} löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden."
-      confirm: "Löschen"
-      success_message: "%{type} erfolgreich gelöscht"
-      error_message: "Fehler beim Löschen von %{type}"
-    CAPTAIN: "Kapitän"
-    CAPTAIN_ASSISTANTS: "Assistenten"
-    CAPTAIN_DOCUMENTS: "Dokumente"
-    CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR:
-      ASSISTANTS:
-        HEADER: "Navigator-Assistenten"
-        ADD_NEW: "Neuen Assistenten hinzufügen"
-      HEADER_KNOW_MORE: "Mehr erfahren"
+NAVIGATOR:
+  ASSISTANTS:
+    HEADER: "Navigator-Assistenten"
+    ADD_NEW: "Neuen Assistenten hinzufügen"
+  HEADER_KNOW_MORE: "Mehr erfahren"

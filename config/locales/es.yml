@@ -330,62 +330,8 @@ es:
       Transcript:
       %{format_messages}
 
-  navigator:
-    name: "Navegador"
-    header_know_more: "Saber más"
-    assistants:
-      header: "Asistentes del Navegador"
-      add_new: "Agregar Nuevo Asistente"
-      form_description: "Complete los detalles a continuación para nombrar su asistente, describir su propósito y especificar el producto que apoyará."
-      create:
-        title: "Crear un Asistente del Navegador"
-        success_message: "El asistente del Navegador ha sido creado exitosamente"
-        error_message: "Hubo un error al crear el asistente del Navegador, por favor inténtelo de nuevo."
-      edit:
-        title: "Actualizar el Asistente del Navegador"
-        success_message: "El asistente del Navegador ha sido actualizado exitosamente"
-        error_message: "Hubo un error al actualizar el asistente del Navegador, por favor inténtelo de nuevo."
-      empty_state:
-        feature_spotlight:
-          title: "Asistentes con IA"
-          note: "Cree asistentes inteligentes para ayudar a su equipo"
-    documents:
-      header: "Documentos del Navegador"
-      add_new: "Agregar Nuevo Documento"
-      empty_state:
-        feature_spotlight:
-          title: "Base de Conocimientos"
-          note: "Suba documentos para entrenar sus asistentes"
-    responses:
-      header: "Respuestas del Navegador"
-      add_new: "Agregar Nueva Respuesta"
-      status:
-        all: "Todos los Estados"
-        pending: "Pendiente"
-        approved: "Aprobado"
-      filter:
-        status: "Estado: %{selected}"
-        assistant: "Asistente: %{selected}"
-        all_assistants: "Todos los Asistentes"
-      empty_state:
-        feature_spotlight:
-          title: "Respuestas Entrenadas"
-          note: "Cree y gestione respuestas de IA"
-      edit:
-        approve_success_message: "Respuesta aprobada exitosamente"
-        error_message: "Error al aprobar la respuesta"
-    delete:
-      title: "Eliminar %{type}"
-      description: "¿Está seguro de que desea eliminar este %{type}? Esta acción no se puede deshacer."
-      confirm: "Eliminar"
-      success_message: "%{type} eliminado exitosamente"
-      error_message: "Error al eliminar %{type}"
-    CAPTAIN: "Capitán"
-    CAPTAIN_ASSISTANTS: "Asistentes"
-    CAPTAIN_DOCUMENTS: "Documentos"
-    CAPTAIN_RESPONSES: "Preguntas Frecuentes"
-    NAVIGATOR:
-      ASSISTANTS:
-        HEADER: "Asistentes del Navegador"
-        ADD_NEW: "Agregar Nuevo Asistente"
-      HEADER_KNOW_MORE: "Saber más"
+NAVIGATOR:
+  ASSISTANTS:
+    HEADER: "Asistentes del Navegador"
+    ADD_NEW: "Agregar Nuevo Asistente"
+  HEADER_KNOW_MORE: "Saber más"
