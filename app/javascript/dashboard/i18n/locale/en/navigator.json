@@ -1,0 +1,33 @@
+{
+  "NAVIGATOR": {
+    "ASSISTANTS": {
+      "HEADER": "Assistants",
+      "DESCRIPTION": "Manage and configure your AI assistants.",
+      "EMPTY": "No assistants found.",
+      "NEW": "New Assistant",
+      "EDIT": "Edit Assistant"
+    },
+    "DOCUMENTS": {
+      "HEADER": "Documents",
+      "DESCRIPTION": "Upload and manage documents for your assistants.",
+      "EMPTY": "No documents uploaded.",
+      "NEW": "Upload Document"
+    },
+    "RESPONSES": {
+      "HEADER": "Responses",
+      "DESCRIPTION": "View and manage AI-generated responses.",
+      "EMPTY": "No responses yet."
+    },
+    "SETTINGS": {
+      "HEADER": "Navigator Settings",
+      "DESCRIPTION": "Configure your navigator preferences."
+    },
+    "GENERAL": {
+      "SAVE": "Save",
+      "CANCEL": "Cancel",
+      "DELETE": "Delete",
+      "EDIT": "Edit",
+      "CONFIRM": "Confirm"
+    }
+  }
+} 

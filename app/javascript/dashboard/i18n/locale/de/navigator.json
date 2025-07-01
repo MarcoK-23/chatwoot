@@ -1,0 +1,33 @@
+{
+  "NAVIGATOR": {
+    "ASSISTANTS": {
+      "HEADER": "Assistenten",
+      "DESCRIPTION": "Verwalten und konfigurieren Sie Ihre KI-Assistenten.",
+      "EMPTY": "Keine Assistenten gefunden.",
+      "NEW": "Neuer Assistent",
+      "EDIT": "Assistent bearbeiten"
+    },
+    "DOCUMENTS": {
+      "HEADER": "Dokumente",
+      "DESCRIPTION": "Laden Sie Dokumente für Ihre Assistenten hoch und verwalten Sie sie.",
+      "EMPTY": "Keine Dokumente hochgeladen.",
+      "NEW": "Dokument hochladen"
+    },
+    "RESPONSES": {
+      "HEADER": "Antworten",
+      "DESCRIPTION": "KI-generierte Antworten anzeigen und verwalten.",
+      "EMPTY": "Noch keine Antworten."
+    },
+    "SETTINGS": {
+      "HEADER": "Navigator-Einstellungen",
+      "DESCRIPTION": "Konfigurieren Sie Ihre Navigator-Einstellungen."
+    },
+    "GENERAL": {
+      "SAVE": "Speichern",
+      "CANCEL": "Abbrechen",
+      "DELETE": "Löschen",
+      "EDIT": "Bearbeiten",
+      "CONFIRM": "Bestätigen"
+    }
+  }
+} 

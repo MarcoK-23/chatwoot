@@ -1,0 +1,33 @@
+{
+  "NAVIGATOR": {
+    "ASSISTANTS": {
+      "HEADER": "Assistentes",
+      "DESCRIPTION": "Gerencie e configure seus assistentes de IA.",
+      "EMPTY": "Nenhum assistente encontrado.",
+      "NEW": "Novo Assistente",
+      "EDIT": "Editar Assistente"
+    },
+    "DOCUMENTS": {
+      "HEADER": "Documentos",
+      "DESCRIPTION": "Envie e gerencie documentos para seus assistentes.",
+      "EMPTY": "Nenhum documento enviado.",
+      "NEW": "Enviar Documento"
+    },
+    "RESPONSES": {
+      "HEADER": "Respostas",
+      "DESCRIPTION": "Visualize e gerencie respostas geradas por IA.",
+      "EMPTY": "Ainda não há respostas."
+    },
+    "SETTINGS": {
+      "HEADER": "Configurações do Navegador",
+      "DESCRIPTION": "Configure suas preferências do navegador."
+    },
+    "GENERAL": {
+      "SAVE": "Salvar",
+      "CANCEL": "Cancelar",
+      "DELETE": "Excluir",
+      "EDIT": "Editar",
+      "CONFIRM": "Confirmar"
+    }
+  }
+} 

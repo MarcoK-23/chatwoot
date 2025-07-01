@@ -1,0 +1,33 @@
+{
+  "NAVIGATOR": {
+    "ASSISTANTS": {
+      "HEADER": "Assistenten",
+      "DESCRIPTION": "Beheer en configureer je AI-assistenten.",
+      "EMPTY": "Geen assistenten gevonden.",
+      "NEW": "Nieuwe Assistent",
+      "EDIT": "Assistent Bewerken"
+    },
+    "DOCUMENTS": {
+      "HEADER": "Documenten",
+      "DESCRIPTION": "Upload en beheer documenten voor je assistenten.",
+      "EMPTY": "Geen documenten geüpload.",
+      "NEW": "Document Uploaden"
+    },
+    "RESPONSES": {
+      "HEADER": "Antwoorden",
+      "DESCRIPTION": "Bekijk en beheer AI-gegenereerde antwoorden.",
+      "EMPTY": "Nog geen antwoorden."
+    },
+    "SETTINGS": {
+      "HEADER": "Navigator Instellingen",
+      "DESCRIPTION": "Configureer je navigator voorkeuren."
+    },
+    "GENERAL": {
+      "SAVE": "Opslaan",
+      "CANCEL": "Annuleren",
+      "DELETE": "Verwijderen",
+      "EDIT": "Bewerken",
+      "CONFIRM": "Bevestigen"
+    }
+  }
+} 

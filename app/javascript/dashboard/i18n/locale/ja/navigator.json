@@ -1,0 +1,33 @@
+{
+  "NAVIGATOR": {
+    "ASSISTANTS": {
+      "HEADER": "アシスタント",
+      "DESCRIPTION": "AIアシスタントを管理・設定します。",
+      "EMPTY": "アシスタントが見つかりません。",
+      "NEW": "新しいアシスタント",
+      "EDIT": "アシスタントを編集"
+    },
+    "DOCUMENTS": {
+      "HEADER": "ドキュメント",
+      "DESCRIPTION": "アシスタント用のドキュメントをアップロード・管理します。",
+      "EMPTY": "アップロードされたドキュメントはありません。",
+      "NEW": "ドキュメントをアップロード"
+    },
+    "RESPONSES": {
+      "HEADER": "応答",
+      "DESCRIPTION": "AIが生成した応答を表示・管理します。",
+      "EMPTY": "まだ応答がありません。"
+    },
+    "SETTINGS": {
+      "HEADER": "ナビゲーター設定",
+      "DESCRIPTION": "ナビゲーターの設定を行います。"
+    },
+    "GENERAL": {
+      "SAVE": "保存",
+      "CANCEL": "キャンセル",
+      "DELETE": "削除",
+      "EDIT": "編集",
+      "CONFIRM": "確認"
+    }
+  }
+} 
