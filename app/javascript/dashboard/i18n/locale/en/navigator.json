@@ -30,9 +30,7 @@
           "LABEL": "Description",
           "PLACEHOLDER": "Enter assistant description",
           "ERROR": "Description is required"
-        },
-        "CANCEL": "Cancel",
-        "CREATE": "Create"
+        }
       },
       "CREATE": {
         "TITLE": "Create Assistant",
@@ -75,6 +73,10 @@
       "DELETE": "Delete",
       "EDIT": "Edit",
       "CONFIRM": "Confirm"
+    },
+    "FORM": {
+      "CANCEL": "Cancel",
+      "CREATE": "Create"
     }
   }
 } 
