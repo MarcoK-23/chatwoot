@@ -30,7 +30,14 @@
           "LABEL": "Description",
           "PLACEHOLDER": "Enter assistant description",
           "ERROR": "Description is required"
-        }
+        },
+        "CANCEL": "Cancel",
+        "CREATE": "Create"
+      },
+      "CREATE": {
+        "TITLE": "Create Assistant",
+        "SUCCESS_MESSAGE": "Assistant created successfully!",
+        "ERROR_MESSAGE": "Failed to create assistant. Please try again."
       }
     },
     "DOCUMENTS": {
