@@ -138,11 +138,15 @@ export const actions = {
   },
 
   limits: async ({ commit }) => {
-    try {
-      const response = await EnterpriseAccountAPI.getLimits();
-      commit(types.default.SET_ACCOUNT_LIMITS, response.data);
-    } catch (error) {
-      // silent error
+    if (window.CHATWOOT_ENTERPRISE) {
+      try {
+        const response = await EnterpriseAccountAPI.getLimits();
+        commit(types.default.SET_ACCOUNT_LIMITS, response.data);
+      } catch (error) {
+        // silent error
+      }
+    } else {
+      commit(types.default.SET_ACCOUNT_LIMITS, {});
     }
   },
 

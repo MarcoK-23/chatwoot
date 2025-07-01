@@ -6,10 +6,14 @@ export const getRecords =
     commit(mutationTypes.SET_UI_FLAG, { fetchingList: true });
     try {
       const response = await API.get(params);
-      commit(mutationTypes.SET, response.data.payload);
-      commit(mutationTypes.SET_META, response.data.meta);
-      return response.data.payload;
+      const payload = (response.data && response.data.payload) ? response.data.payload : [];
+      const meta = (response.data && response.data.meta) ? response.data.meta : { total_count: 0, page: 1 };
+      commit(mutationTypes.SET, payload);
+      commit(mutationTypes.SET_META, meta);
+      return payload;
     } catch (error) {
+      commit(mutationTypes.SET, []);
+      commit(mutationTypes.SET_META, { total_count: 0, page: 1 });
       return throwErrorMessage(error);
     } finally {
       commit(mutationTypes.SET_UI_FLAG, { fetchingList: false });
