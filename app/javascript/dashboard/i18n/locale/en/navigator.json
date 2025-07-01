@@ -72,12 +72,52 @@
       }
     },
     "RESPONSES": {
-      "HEADER": "Responses",
-      "DESCRIPTION": "View and manage AI-generated responses.",
-      "EMPTY": "No responses yet.",
+      "HEADER": "FAQs",
+      "DESCRIPTION": "View and manage frequently asked questions and AI-generated responses.",
+      "EMPTY": "No FAQs yet.",
+      "EMPTY_STATE": {
+        "TITLE": "No FAQs yet",
+        "SUBTITLE": "Add FAQs to help your assistants answer common questions.",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "FAQs",
+          "NOTE": "Create and manage FAQs to improve your AI assistants' accuracy."
+        }
+      },
       "FILTER": {
         "ALL_ASSISTANTS": "All Assistants",
         "ASSISTANT": "Assistant: {selected}"
+      },
+      "OPTIONS": {
+        "EDIT_RESPONSE": "Edit FAQ",
+        "DELETE_RESPONSE": "Delete FAQ"
+      },
+      "FORM_DESCRIPTION": "Fill in the details for your FAQ entry.",
+      "FORM": {
+        "QUESTION": {
+          "LABEL": "Question",
+          "PLACEHOLDER": "Enter the FAQ question",
+          "ERROR": "Question is required"
+        },
+        "ANSWER": {
+          "LABEL": "Answer",
+          "PLACEHOLDER": "Enter the answer",
+          "ERROR": "Answer is required"
+        },
+        "ASSISTANT": {
+          "LABEL": "Assistant",
+          "PLACEHOLDER": "Select the assistant",
+          "ERROR": "The assistant field is required"
+        }
+      },
+      "CREATE": {
+        "TITLE": "Add FAQ",
+        "SUCCESS_MESSAGE": "The FAQ has been successfully created.",
+        "ERROR_MESSAGE": "There was an error creating the FAQ, please try again."
+      },
+      "EDIT": {
+        "TITLE": "Edit FAQ",
+        "SUCCESS_MESSAGE": "The FAQ has been successfully updated.",
+        "ERROR_MESSAGE": "There was an error updating the FAQ, please try again."
       }
     },
     "SETTINGS": {
