@@ -5,23 +5,63 @@
       "DESCRIPTION": "Gestisci e configura i tuoi assistenti AI.",
       "EMPTY": "Nessun assistente trovato.",
       "NEW": "Nuovo Assistente",
-      "EDIT": "Modifica Assistente"
+      "EDIT": "Modifica Assistente",
+      "ADD_NEW": "Aggiungi Nuovo Assistente",
+      "EMPTY_STATE": {
+        "TITLE": "Nessun assistente ancora",
+        "SUBTITLE": "Crea il tuo primo assistente per iniziare",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "Assistenti AI",
+          "NOTE": "Crea assistenti AI per aiutare il tuo team a gestire le conversazioni in modo più efficiente"
+        }
+      },
+      "OPTIONS": {
+        "EDIT_ASSISTANT": "Modifica Assistente",
+        "DELETE_ASSISTANT": "Elimina Assistente"
+      },
+      "FORM_DESCRIPTION": "Configura le impostazioni del tuo assistente AI",
+      "FORM": {
+        "NAME": {
+          "LABEL": "Nome Assistente",
+          "PLACEHOLDER": "Inserisci il nome dell'assistente",
+          "ERROR": "Il nome è obbligatorio"
+        },
+        "DESCRIPTION": {
+          "LABEL": "Descrizione",
+          "PLACEHOLDER": "Inserisci la descrizione dell'assistente",
+          "ERROR": "La descrizione è obbligatoria"
+        }
+      }
     },
     "DOCUMENTS": {
       "HEADER": "Documenti",
       "DESCRIPTION": "Carica e gestisci documenti per i tuoi assistenti.",
       "EMPTY": "Nessun documento caricato.",
-      "NEW": "Carica Documento"
+      "NEW": "Carica Documento",
+      "ADD_NEW": "Carica Documento",
+      "EMPTY_STATE": {
+        "TITLE": "Nessun documento ancora",
+        "SUBTITLE": "Carica documenti per aiutare i tuoi assistenti",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "Gestione Documenti",
+          "NOTE": "Carica e gestisci documenti che i tuoi assistenti AI possono consultare"
+        }
+      }
     },
     "RESPONSES": {
       "HEADER": "Risposte",
       "DESCRIPTION": "Visualizza e gestisci le risposte generate dall'IA.",
-      "EMPTY": "Nessuna risposta ancora."
+      "EMPTY": "Nessuna risposta ancora.",
+      "FILTER": {
+        "ALL_ASSISTANTS": "Tutti gli Assistenti",
+        "ASSISTANT": "Assistente: {selected}"
+      }
     },
     "SETTINGS": {
       "HEADER": "Impostazioni Navigatore",
       "DESCRIPTION": "Configura le preferenze del tuo navigatore."
     },
+    "HEADER_KNOW_MORE": "Scopri di più",
     "GENERAL": {
       "SAVE": "Salva",
       "CANCEL": "Annulla",

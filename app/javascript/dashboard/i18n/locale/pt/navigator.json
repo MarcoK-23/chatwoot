@@ -5,23 +5,63 @@
       "DESCRIPTION": "Gerencie e configure seus assistentes de IA.",
       "EMPTY": "Nenhum assistente encontrado.",
       "NEW": "Novo Assistente",
-      "EDIT": "Editar Assistente"
+      "EDIT": "Editar Assistente",
+      "ADD_NEW": "Adicionar Novo Assistente",
+      "EMPTY_STATE": {
+        "TITLE": "Nenhum assistente ainda",
+        "SUBTITLE": "Crie seu primeiro assistente para começar",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "Assistentes de IA",
+          "NOTE": "Crie assistentes de IA para ajudar sua equipe a gerenciar conversas de forma mais eficiente"
+        }
+      },
+      "OPTIONS": {
+        "EDIT_ASSISTANT": "Editar Assistente",
+        "DELETE_ASSISTANT": "Excluir Assistente"
+      },
+      "FORM_DESCRIPTION": "Configure as configurações do seu assistente de IA",
+      "FORM": {
+        "NAME": {
+          "LABEL": "Nome do Assistente",
+          "PLACEHOLDER": "Digite o nome do assistente",
+          "ERROR": "Nome é obrigatório"
+        },
+        "DESCRIPTION": {
+          "LABEL": "Descrição",
+          "PLACEHOLDER": "Digite a descrição do assistente",
+          "ERROR": "Descrição é obrigatória"
+        }
+      }
     },
     "DOCUMENTS": {
       "HEADER": "Documentos",
       "DESCRIPTION": "Envie e gerencie documentos para seus assistentes.",
       "EMPTY": "Nenhum documento enviado.",
-      "NEW": "Enviar Documento"
+      "NEW": "Enviar Documento",
+      "ADD_NEW": "Enviar Documento",
+      "EMPTY_STATE": {
+        "TITLE": "Nenhum documento ainda",
+        "SUBTITLE": "Envie documentos para ajudar seus assistentes",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "Gerenciamento de Documentos",
+          "NOTE": "Envie e gerencie documentos que seus assistentes de IA podem consultar"
+        }
+      }
     },
     "RESPONSES": {
       "HEADER": "Respostas",
       "DESCRIPTION": "Visualize e gerencie respostas geradas por IA.",
-      "EMPTY": "Ainda não há respostas."
+      "EMPTY": "Ainda não há respostas.",
+      "FILTER": {
+        "ALL_ASSISTANTS": "Todos os Assistentes",
+        "ASSISTANT": "Assistente: {selected}"
+      }
     },
     "SETTINGS": {
       "HEADER": "Configurações do Navegador",
       "DESCRIPTION": "Configure suas preferências do navegador."
     },
+    "HEADER_KNOW_MORE": "Saiba mais",
     "GENERAL": {
       "SAVE": "Salvar",
       "CANCEL": "Cancelar",

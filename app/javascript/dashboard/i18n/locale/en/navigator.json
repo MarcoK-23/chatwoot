@@ -5,23 +5,63 @@
       "DESCRIPTION": "Manage and configure your AI assistants.",
       "EMPTY": "No assistants found.",
       "NEW": "New Assistant",
-      "EDIT": "Edit Assistant"
+      "EDIT": "Edit Assistant",
+      "ADD_NEW": "Add New Assistant",
+      "EMPTY_STATE": {
+        "TITLE": "No assistants yet",
+        "SUBTITLE": "Create your first assistant to get started",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "AI Assistants",
+          "NOTE": "Create AI assistants to help your team handle conversations more efficiently"
+        }
+      },
+      "OPTIONS": {
+        "EDIT_ASSISTANT": "Edit Assistant",
+        "DELETE_ASSISTANT": "Delete Assistant"
+      },
+      "FORM_DESCRIPTION": "Configure your AI assistant settings",
+      "FORM": {
+        "NAME": {
+          "LABEL": "Assistant Name",
+          "PLACEHOLDER": "Enter assistant name",
+          "ERROR": "Name is required"
+        },
+        "DESCRIPTION": {
+          "LABEL": "Description",
+          "PLACEHOLDER": "Enter assistant description",
+          "ERROR": "Description is required"
+        }
+      }
     },
     "DOCUMENTS": {
       "HEADER": "Documents",
       "DESCRIPTION": "Upload and manage documents for your assistants.",
       "EMPTY": "No documents uploaded.",
-      "NEW": "Upload Document"
+      "NEW": "Upload Document",
+      "ADD_NEW": "Upload Document",
+      "EMPTY_STATE": {
+        "TITLE": "No documents yet",
+        "SUBTITLE": "Upload documents to help your assistants",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "Document Management",
+          "NOTE": "Upload and manage documents that your AI assistants can reference"
+        }
+      }
     },
     "RESPONSES": {
       "HEADER": "Responses",
       "DESCRIPTION": "View and manage AI-generated responses.",
-      "EMPTY": "No responses yet."
+      "EMPTY": "No responses yet.",
+      "FILTER": {
+        "ALL_ASSISTANTS": "All Assistants",
+        "ASSISTANT": "Assistant: {selected}"
+      }
     },
     "SETTINGS": {
       "HEADER": "Navigator Settings",
       "DESCRIPTION": "Configure your navigator preferences."
     },
+    "HEADER_KNOW_MORE": "Know More",
     "GENERAL": {
       "SAVE": "Save",
       "CANCEL": "Cancel",

@@ -5,23 +5,63 @@
       "DESCRIPTION": "Verwalten und konfigurieren Sie Ihre KI-Assistenten.",
       "EMPTY": "Keine Assistenten gefunden.",
       "NEW": "Neuer Assistent",
-      "EDIT": "Assistent bearbeiten"
+      "EDIT": "Assistent bearbeiten",
+      "ADD_NEW": "Neuen Assistenten hinzufügen",
+      "EMPTY_STATE": {
+        "TITLE": "Noch keine Assistenten",
+        "SUBTITLE": "Erstellen Sie Ihren ersten Assistenten, um zu beginnen",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "KI-Assistenten",
+          "NOTE": "Erstellen Sie KI-Assistenten, um Ihrem Team bei der effizienteren Verwaltung von Gesprächen zu helfen"
+        }
+      },
+      "OPTIONS": {
+        "EDIT_ASSISTANT": "Assistent bearbeiten",
+        "DELETE_ASSISTANT": "Assistent löschen"
+      },
+      "FORM_DESCRIPTION": "Konfigurieren Sie die Einstellungen Ihres KI-Assistenten",
+      "FORM": {
+        "NAME": {
+          "LABEL": "Assistentenname",
+          "PLACEHOLDER": "Assistentenname eingeben",
+          "ERROR": "Name ist erforderlich"
+        },
+        "DESCRIPTION": {
+          "LABEL": "Beschreibung",
+          "PLACEHOLDER": "Assistentenbeschreibung eingeben",
+          "ERROR": "Beschreibung ist erforderlich"
+        }
+      }
     },
     "DOCUMENTS": {
       "HEADER": "Dokumente",
       "DESCRIPTION": "Laden Sie Dokumente für Ihre Assistenten hoch und verwalten Sie sie.",
       "EMPTY": "Keine Dokumente hochgeladen.",
-      "NEW": "Dokument hochladen"
+      "NEW": "Dokument hochladen",
+      "ADD_NEW": "Dokument hochladen",
+      "EMPTY_STATE": {
+        "TITLE": "Noch keine Dokumente",
+        "SUBTITLE": "Laden Sie Dokumente hoch, um Ihren Assistenten zu helfen",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "Dokumentenverwaltung",
+          "NOTE": "Laden Sie Dokumente hoch und verwalten Sie sie, auf die Ihre KI-Assistenten zugreifen können"
+        }
+      }
     },
     "RESPONSES": {
       "HEADER": "Antworten",
       "DESCRIPTION": "KI-generierte Antworten anzeigen und verwalten.",
-      "EMPTY": "Noch keine Antworten."
+      "EMPTY": "Noch keine Antworten.",
+      "FILTER": {
+        "ALL_ASSISTANTS": "Alle Assistenten",
+        "ASSISTANT": "Assistent: {selected}"
+      }
     },
     "SETTINGS": {
       "HEADER": "Navigator-Einstellungen",
       "DESCRIPTION": "Konfigurieren Sie Ihre Navigator-Einstellungen."
     },
+    "HEADER_KNOW_MORE": "Mehr erfahren",
     "GENERAL": {
       "SAVE": "Speichern",
       "CANCEL": "Abbrechen",

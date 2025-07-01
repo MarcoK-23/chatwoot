@@ -5,23 +5,63 @@
       "DESCRIPTION": "Gérez et configurez vos assistants IA.",
       "EMPTY": "Aucun assistant trouvé.",
       "NEW": "Nouvel Assistant",
-      "EDIT": "Modifier l'Assistant"
+      "EDIT": "Modifier l'Assistant",
+      "ADD_NEW": "Ajouter un Nouvel Assistant",
+      "EMPTY_STATE": {
+        "TITLE": "Aucun assistant pour le moment",
+        "SUBTITLE": "Créez votre premier assistant pour commencer",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "Assistants IA",
+          "NOTE": "Créez des assistants IA pour aider votre équipe à gérer les conversations plus efficacement"
+        }
+      },
+      "OPTIONS": {
+        "EDIT_ASSISTANT": "Modifier l'Assistant",
+        "DELETE_ASSISTANT": "Supprimer l'Assistant"
+      },
+      "FORM_DESCRIPTION": "Configurez les paramètres de votre assistant IA",
+      "FORM": {
+        "NAME": {
+          "LABEL": "Nom de l'Assistant",
+          "PLACEHOLDER": "Entrez le nom de l'assistant",
+          "ERROR": "Le nom est requis"
+        },
+        "DESCRIPTION": {
+          "LABEL": "Description",
+          "PLACEHOLDER": "Entrez la description de l'assistant",
+          "ERROR": "La description est requise"
+        }
+      }
     },
     "DOCUMENTS": {
       "HEADER": "Documents",
       "DESCRIPTION": "Téléchargez et gérez des documents pour vos assistants.",
       "EMPTY": "Aucun document téléchargé.",
-      "NEW": "Télécharger un document"
+      "NEW": "Télécharger un document",
+      "ADD_NEW": "Télécharger un document",
+      "EMPTY_STATE": {
+        "TITLE": "Aucun document pour le moment",
+        "SUBTITLE": "Téléchargez des documents pour aider vos assistants",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "Gestion des Documents",
+          "NOTE": "Téléchargez et gérez des documents que vos assistants IA peuvent consulter"
+        }
+      }
     },
     "RESPONSES": {
       "HEADER": "Réponses",
       "DESCRIPTION": "Voir et gérer les réponses générées par l'IA.",
-      "EMPTY": "Aucune réponse pour le moment."
+      "EMPTY": "Aucune réponse pour le moment.",
+      "FILTER": {
+        "ALL_ASSISTANTS": "Tous les Assistants",
+        "ASSISTANT": "Assistant : {selected}"
+      }
     },
     "SETTINGS": {
       "HEADER": "Paramètres du Navigateur",
       "DESCRIPTION": "Configurez vos préférences de navigateur."
     },
+    "HEADER_KNOW_MORE": "En savoir plus",
     "GENERAL": {
       "SAVE": "Enregistrer",
       "CANCEL": "Annuler",

@@ -5,23 +5,63 @@
       "DESCRIPTION": "AIアシスタントを管理・設定します。",
       "EMPTY": "アシスタントが見つかりません。",
       "NEW": "新しいアシスタント",
-      "EDIT": "アシスタントを編集"
+      "EDIT": "アシスタントを編集",
+      "ADD_NEW": "新しいアシスタントを追加",
+      "EMPTY_STATE": {
+        "TITLE": "まだアシスタントがありません",
+        "SUBTITLE": "最初のアシスタントを作成して開始しましょう",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "AIアシスタント",
+          "NOTE": "AIアシスタントを作成して、チームが会話をより効率的に処理できるようにします"
+        }
+      },
+      "OPTIONS": {
+        "EDIT_ASSISTANT": "アシスタントを編集",
+        "DELETE_ASSISTANT": "アシスタントを削除"
+      },
+      "FORM_DESCRIPTION": "AIアシスタントの設定を構成します",
+      "FORM": {
+        "NAME": {
+          "LABEL": "アシスタント名",
+          "PLACEHOLDER": "アシスタント名を入力",
+          "ERROR": "名前は必須です"
+        },
+        "DESCRIPTION": {
+          "LABEL": "説明",
+          "PLACEHOLDER": "アシスタントの説明を入力",
+          "ERROR": "説明は必須です"
+        }
+      }
     },
     "DOCUMENTS": {
       "HEADER": "ドキュメント",
       "DESCRIPTION": "アシスタント用のドキュメントをアップロード・管理します。",
       "EMPTY": "アップロードされたドキュメントはありません。",
-      "NEW": "ドキュメントをアップロード"
+      "NEW": "ドキュメントをアップロード",
+      "ADD_NEW": "ドキュメントをアップロード",
+      "EMPTY_STATE": {
+        "TITLE": "まだドキュメントがありません",
+        "SUBTITLE": "アシスタントを支援するドキュメントをアップロード",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "ドキュメント管理",
+          "NOTE": "AIアシスタントが参照できるドキュメントをアップロード・管理します"
+        }
+      }
     },
     "RESPONSES": {
       "HEADER": "応答",
       "DESCRIPTION": "AIが生成した応答を表示・管理します。",
-      "EMPTY": "まだ応答がありません。"
+      "EMPTY": "まだ応答がありません。",
+      "FILTER": {
+        "ALL_ASSISTANTS": "すべてのアシスタント",
+        "ASSISTANT": "アシスタント: {selected}"
+      }
     },
     "SETTINGS": {
       "HEADER": "ナビゲーター設定",
       "DESCRIPTION": "ナビゲーターの設定を行います。"
     },
+    "HEADER_KNOW_MORE": "詳細を見る",
     "GENERAL": {
       "SAVE": "保存",
       "CANCEL": "キャンセル",

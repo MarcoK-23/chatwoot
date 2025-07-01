@@ -5,23 +5,63 @@
       "DESCRIPTION": "Beheer en configureer je AI-assistenten.",
       "EMPTY": "Geen assistenten gevonden.",
       "NEW": "Nieuwe Assistent",
-      "EDIT": "Assistent Bewerken"
+      "EDIT": "Assistent Bewerken",
+      "ADD_NEW": "Nieuwe Assistent Toevoegen",
+      "EMPTY_STATE": {
+        "TITLE": "Nog geen assistenten",
+        "SUBTITLE": "Maak je eerste assistent aan om te beginnen",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "AI Assistenten",
+          "NOTE": "Maak AI-assistenten aan om je team te helpen gesprekken efficiënter te beheren"
+        }
+      },
+      "OPTIONS": {
+        "EDIT_ASSISTANT": "Assistent Bewerken",
+        "DELETE_ASSISTANT": "Assistent Verwijderen"
+      },
+      "FORM_DESCRIPTION": "Configureer je AI-assistent instellingen",
+      "FORM": {
+        "NAME": {
+          "LABEL": "Assistent Naam",
+          "PLACEHOLDER": "Voer assistent naam in",
+          "ERROR": "Naam is vereist"
+        },
+        "DESCRIPTION": {
+          "LABEL": "Beschrijving",
+          "PLACEHOLDER": "Voer assistent beschrijving in",
+          "ERROR": "Beschrijving is vereist"
+        }
+      }
     },
     "DOCUMENTS": {
       "HEADER": "Documenten",
       "DESCRIPTION": "Upload en beheer documenten voor je assistenten.",
       "EMPTY": "Geen documenten geüpload.",
-      "NEW": "Document Uploaden"
+      "NEW": "Document Uploaden",
+      "ADD_NEW": "Document Uploaden",
+      "EMPTY_STATE": {
+        "TITLE": "Nog geen documenten",
+        "SUBTITLE": "Upload documenten om je assistenten te helpen",
+        "FEATURE_SPOTLIGHT": {
+          "TITLE": "Documentbeheer",
+          "NOTE": "Upload en beheer documenten die je AI-assistenten kunnen raadplegen"
+        }
+      }
     },
     "RESPONSES": {
       "HEADER": "Antwoorden",
       "DESCRIPTION": "Bekijk en beheer AI-gegenereerde antwoorden.",
-      "EMPTY": "Nog geen antwoorden."
+      "EMPTY": "Nog geen antwoorden.",
+      "FILTER": {
+        "ALL_ASSISTANTS": "Alle Assistenten",
+        "ASSISTANT": "Assistent: {selected}"
+      }
     },
     "SETTINGS": {
       "HEADER": "Navigator Instellingen",
       "DESCRIPTION": "Configureer je navigator voorkeuren."
     },
+    "HEADER_KNOW_MORE": "Meer weten",
     "GENERAL": {
       "SAVE": "Opslaan",
       "CANCEL": "Annuleren",
