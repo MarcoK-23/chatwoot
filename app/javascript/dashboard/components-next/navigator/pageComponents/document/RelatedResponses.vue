@@ -4,7 +4,7 @@ import { useStore, useMapGetter } from 'dashboard/composables/store';
 import { useI18n } from 'vue-i18n';
 import Spinner from 'dashboard/components-next/spinner/Spinner.vue';
 import Dialog from 'dashboard/components-next/dialog/Dialog.vue';
-import ResponseCard from '../../ResponseCard.vue';
+import ResponseCard from '../ResponseCard.vue';
 
 const props = defineProps({
   navigatorDocument: {
