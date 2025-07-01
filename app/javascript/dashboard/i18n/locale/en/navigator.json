@@ -51,6 +51,24 @@
           "TITLE": "Document Management",
           "NOTE": "Upload and manage documents that your AI assistants can reference"
         }
+      },
+      "CREATE": {
+        "TITLE": "Add Document",
+        "SUCCESS_MESSAGE": "The document has been successfully created.",
+        "ERROR_MESSAGE": "There was an error creating the document, please try again."
+      },
+      "FORM_DESCRIPTION": "Enter the URL of the document to add it as a knowledge source and choose the assistant to associate it with.",
+      "FORM": {
+        "URL": {
+          "LABEL": "URL",
+          "PLACEHOLDER": "Enter the URL of the document",
+          "ERROR": "Please provide a valid URL for the document"
+        },
+        "ASSISTANT": {
+          "LABEL": "Assistant",
+          "PLACEHOLDER": "Select the assistant",
+          "ERROR": "The assistant field is required"
+        }
       }
     },
     "RESPONSES": {
