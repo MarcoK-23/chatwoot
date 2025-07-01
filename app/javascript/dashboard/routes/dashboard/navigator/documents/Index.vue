@@ -124,7 +124,7 @@ onMounted(() => {
 
     <CreateDocumentDialog
       ref="createDocumentDialog"
-      @close="createDocumentDialog.dialogRef.close()"
+      @close="showCreateDialog = false"
       @submit="
         createDocumentDialog.dialogRef.close();
         store.dispatch('navigatorDocuments/get', {
