@@ -1,5 +1,9 @@
 {
   "NAVIGATOR": {
+    "FORM": {
+      "CANCEL": "キャンセル",
+      "CREATE": "作成"
+    },
     "ASSISTANTS": {
       "HEADER": "アシスタント",
       "DESCRIPTION": "AIアシスタントを管理・設定します。",
@@ -31,6 +35,11 @@
           "PLACEHOLDER": "アシスタントの説明を入力",
           "ERROR": "説明は必須です"
         }
+      },
+      "CREATE": {
+        "TITLE": "アシスタントを作成",
+        "SUCCESS_MESSAGE": "アシスタントが正常に作成されました！",
+        "ERROR_MESSAGE": "アシスタントの作成に失敗しました。もう一度お試しください。"
       }
     },
     "DOCUMENTS": {

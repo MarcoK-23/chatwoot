@@ -1,5 +1,9 @@
 {
   "NAVIGATOR": {
+    "FORM": {
+      "CANCEL": "Abbrechen",
+      "CREATE": "Erstellen"
+    },
     "ASSISTANTS": {
       "HEADER": "Assistenten",
       "DESCRIPTION": "Verwalten und konfigurieren Sie Ihre KI-Assistenten.",
@@ -31,6 +35,11 @@
           "PLACEHOLDER": "Assistentenbeschreibung eingeben",
           "ERROR": "Beschreibung ist erforderlich"
         }
+      },
+      "CREATE": {
+        "TITLE": "Assistent erstellen",
+        "SUCCESS_MESSAGE": "Assistent erfolgreich erstellt!",
+        "ERROR_MESSAGE": "Assistent konnte nicht erstellt werden. Bitte versuchen Sie es erneut."
       }
     },
     "DOCUMENTS": {

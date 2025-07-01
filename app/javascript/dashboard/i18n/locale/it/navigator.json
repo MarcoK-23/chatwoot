@@ -1,5 +1,9 @@
 {
   "NAVIGATOR": {
+    "FORM": {
+      "CANCEL": "Annulla",
+      "CREATE": "Crea"
+    },
     "ASSISTANTS": {
       "HEADER": "Assistenti",
       "DESCRIPTION": "Gestisci e configura i tuoi assistenti AI.",
@@ -31,6 +35,11 @@
           "PLACEHOLDER": "Inserisci la descrizione dell'assistente",
           "ERROR": "La descrizione è obbligatoria"
         }
+      },
+      "CREATE": {
+        "TITLE": "Crea Assistente",
+        "SUCCESS_MESSAGE": "Assistente creato con successo!",
+        "ERROR_MESSAGE": "Impossibile creare l'assistente. Riprova."
       }
     },
     "DOCUMENTS": {

@@ -1,5 +1,9 @@
 {
   "NAVIGATOR": {
+    "FORM": {
+      "CANCEL": "Cancelar",
+      "CREATE": "Criar"
+    },
     "ASSISTANTS": {
       "HEADER": "Assistentes",
       "DESCRIPTION": "Gerencie e configure seus assistentes de IA.",
@@ -31,6 +35,11 @@
           "PLACEHOLDER": "Digite a descrição do assistente",
           "ERROR": "Descrição é obrigatória"
         }
+      },
+      "CREATE": {
+        "TITLE": "Criar Assistente",
+        "SUCCESS_MESSAGE": "Assistente criado com sucesso!",
+        "ERROR_MESSAGE": "Falha ao criar assistente. Por favor, tente novamente."
       }
     },
     "DOCUMENTS": {

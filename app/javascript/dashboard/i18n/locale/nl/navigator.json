@@ -1,5 +1,9 @@
 {
   "NAVIGATOR": {
+    "FORM": {
+      "CANCEL": "Annuleren",
+      "CREATE": "Aanmaken"
+    },
     "ASSISTANTS": {
       "HEADER": "Assistenten",
       "DESCRIPTION": "Beheer en configureer je AI-assistenten.",
@@ -31,6 +35,11 @@
           "PLACEHOLDER": "Voer assistent beschrijving in",
           "ERROR": "Beschrijving is vereist"
         }
+      },
+      "CREATE": {
+        "TITLE": "Assistent aanmaken",
+        "SUCCESS_MESSAGE": "Assistent succesvol aangemaakt!",
+        "ERROR_MESSAGE": "Assistent aanmaken mislukt. Probeer het opnieuw."
       }
     },
     "DOCUMENTS": {
