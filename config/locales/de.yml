@@ -384,7 +384,8 @@ de:
     CAPTAIN_ASSISTANTS: "Assistenten"
     CAPTAIN_DOCUMENTS: "Dokumente"
     CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR: "Navigator"
-    NAVIGATOR_ASSISTANTS: "Assistenten"
-    NAVIGATOR_DOCUMENTS: "Dokumente"
-    NAVIGATOR_RESPONSES: "Antworten"
+    NAVIGATOR:
+      ASSISTANTS:
+        HEADER: "Navigator-Assistenten"
+        ADD_NEW: "Neuen Assistenten hinzufügen"
+      HEADER_KNOW_MORE: "Mehr erfahren"

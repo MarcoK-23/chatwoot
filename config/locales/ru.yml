@@ -392,7 +392,8 @@ ru:
     CAPTAIN_ASSISTANTS: "Ассистенты"
     CAPTAIN_DOCUMENTS: "Документы"
     CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR: "Навигатор"
-    NAVIGATOR_ASSISTANTS: "Ассистенты"
-    NAVIGATOR_DOCUMENTS: "Документы"
-    NAVIGATOR_RESPONSES: "Ответы"
+    NAVIGATOR:
+      ASSISTANTS:
+        HEADER: "Ассистенты Навигатора"
+        ADD_NEW: "Добавить нового ассистента"
+      HEADER_KNOW_MORE: "Узнать больше"

@@ -380,7 +380,8 @@ ja:
     CAPTAIN_ASSISTANTS: "アシスタント"
     CAPTAIN_DOCUMENTS: "ドキュメント"
     CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR: "ナビゲーター"
-    NAVIGATOR_ASSISTANTS: "アシスタント"
-    NAVIGATOR_DOCUMENTS: "ドキュメント"
-    NAVIGATOR_RESPONSES: "応答"
+    NAVIGATOR:
+      ASSISTANTS:
+        HEADER: "ナビゲーターアシスタント"
+        ADD_NEW: "新しいアシスタントを追加"
+      HEADER_KNOW_MORE: "詳細を見る"

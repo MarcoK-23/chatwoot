@@ -380,7 +380,8 @@ zh_TW:
     CAPTAIN_ASSISTANTS: "助手"
     CAPTAIN_DOCUMENTS: "文件"
     CAPTAIN_RESPONSES: "常見問題"
-    NAVIGATOR: "導航器"
-    NAVIGATOR_ASSISTANTS: "助手"
-    NAVIGATOR_DOCUMENTS: "文件"
-    NAVIGATOR_RESPONSES: "回應"
+    NAVIGATOR:
+      ASSISTANTS:
+        HEADER: "導航器助手"
+        ADD_NEW: "新增助手"
+      HEADER_KNOW_MORE: "了解更多"

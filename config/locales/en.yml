@@ -406,7 +406,8 @@ en:
     CAPTAIN_ASSISTANTS: "Assistants"
     CAPTAIN_DOCUMENTS: "Documents"
     CAPTAIN_RESPONSES: "FAQs"
-    NAVIGATOR: "Navigator"
-    NAVIGATOR_ASSISTANTS: "Assistants"
-    NAVIGATOR_DOCUMENTS: "Documents"
-    NAVIGATOR_RESPONSES: "Responses"
+    NAVIGATOR:
+      ASSISTANTS:
+        HEADER: "Navigator Assistants"
+        ADD_NEW: "Add New Assistant"
+      HEADER_KNOW_MORE: "Know More"

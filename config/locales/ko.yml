@@ -380,7 +380,8 @@ ko:
     CAPTAIN_ASSISTANTS: "어시스턴트"
     CAPTAIN_DOCUMENTS: "문서"
     CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR: "네비게이터"
-    NAVIGATOR_ASSISTANTS: "어시스턴트"
-    NAVIGATOR_DOCUMENTS: "문서"
-    NAVIGATOR_RESPONSES: "응답"
+    NAVIGATOR:
+      ASSISTANTS:
+        HEADER: "네비게이터 어시스턴트"
+        ADD_NEW: "새 어시스턴트 추가"
+      HEADER_KNOW_MORE: "더 알아보기"

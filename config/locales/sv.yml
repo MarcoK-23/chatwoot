@@ -384,7 +384,8 @@ sv:
     CAPTAIN_ASSISTANTS: "Assistenter"
     CAPTAIN_DOCUMENTS: "Dokument"
     CAPTAIN_RESPONSES: "FAQ"
-    NAVIGATOR: "Navigator"
-    NAVIGATOR_ASSISTANTS: "Assistenter"
-    NAVIGATOR_DOCUMENTS: "Dokument"
-    NAVIGATOR_RESPONSES: "Svar"
+    NAVIGATOR:
+      ASSISTANTS:
+        HEADER: "Navigator Assistenter"
+        ADD_NEW: "Lägg till ny assistent"
+      HEADER_KNOW_MORE: "Läs mer"

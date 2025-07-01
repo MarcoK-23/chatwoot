@@ -400,7 +400,8 @@ ar:
     CAPTAIN_ASSISTANTS: "المساعدون"
     CAPTAIN_DOCUMENTS: "المستندات"
     CAPTAIN_RESPONSES: "الأسئلة الشائعة"
-    NAVIGATOR: "المستكشف"
-    NAVIGATOR_ASSISTANTS: "المساعدون"
-    NAVIGATOR_DOCUMENTS: "المستندات"
-    NAVIGATOR_RESPONSES: "الاستجابات"
+    NAVIGATOR:
+      ASSISTANTS:
+        HEADER: "مساعدي المستكشف"
+        ADD_NEW: "إضافة مساعد جديد"
+      HEADER_KNOW_MORE: "اعرف المزيد"
