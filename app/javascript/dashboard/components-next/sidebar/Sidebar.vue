@@ -106,7 +106,7 @@ const newReportRoutes = () => [
 const reportRoutes = computed(() => newReportRoutes());
 
 const menuItems = computed(() => {
-  return [
+  const items = [
     {
       name: 'Inbox',
       label: t('SIDEBAR.INBOX'),
@@ -500,6 +500,8 @@ const menuItems = computed(() => {
       ],
     },
   ];
+  console.log('Sidebar menuItems:', items);
+  return items;
 });
 </script>
 
