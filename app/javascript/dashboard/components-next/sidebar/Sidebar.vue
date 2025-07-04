@@ -1,4 +1,5 @@
 <script setup>
+console.log('Sidebar component mounted!');
 import { h, computed, onMounted } from 'vue';
 import { provideSidebarContext } from './provider';
 import { useAccount } from 'dashboard/composables/useAccount';
