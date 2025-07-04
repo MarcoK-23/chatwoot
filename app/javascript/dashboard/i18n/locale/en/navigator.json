@@ -118,7 +118,13 @@
         "TITLE": "Edit FAQ",
         "SUCCESS_MESSAGE": "The FAQ has been successfully updated.",
         "ERROR_MESSAGE": "There was an error updating the FAQ, please try again."
-      }
+      },
+      "STATUS": {
+        "ALL": "All",
+        "PENDING": "Pending",
+        "APPROVED": "Approved"
+      },
+      "ADD_NEW": "Add New FAQ"
     },
     "SETTINGS": {
       "HEADER": "Navigator Settings",
