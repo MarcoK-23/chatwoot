@@ -85,7 +85,8 @@
       },
       "FILTER": {
         "ALL_ASSISTANTS": "All Assistants",
-        "ASSISTANT": "Assistant: {selected}"
+        "ASSISTANT": "Assistant: {selected}",
+        "STATUS": "Status"
       },
       "OPTIONS": {
         "EDIT_RESPONSE": "Edit FAQ",
