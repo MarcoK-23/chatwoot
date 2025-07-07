@@ -35,15 +35,14 @@ import { directive as onClickaway } from 'vue3-click-away';
 import 'floating-vue/dist/style.css';
 
 
-console.log('i18nMessages:', i18nMessages);
-console.log('i18n current locale:', i18n.global.locale.value);
-console.log('Test translation:', i18n.global.t('SIDEBAR.ALL_CONVERSATIONS'));
-
 const i18n = createI18n({
   legacy: false, // https://github.com/intlify/vue-i18n/issues/1902
   locale: 'en',
   messages: i18nMessages,
 });
+
+console.log('i18n current locale:', i18n.global.locale.value);
+console.log('Test translation:', i18n.global.t('SIDEBAR.ALL_CONVERSATIONS'));
 
 sync(store, router);
 
