@@ -41,8 +41,6 @@ const i18n = createI18n({
   messages: i18nMessages,
 });
 
-console.log('i18n current locale:', i18n.global.locale.value);
-console.log('Test translation:', i18n.global.t('SIDEBAR.ALL_CONVERSATIONS'));
 
 sync(store, router);
 

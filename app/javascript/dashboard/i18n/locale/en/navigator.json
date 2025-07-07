@@ -143,11 +143,5 @@
       "CANCEL": "Cancel",
       "CREATE": "Create"
     }
-  },
-  "SIDEBAR": {
-    "NAVIGATOR": "Navigator",
-    "NAVIGATOR_ASSISTANTS": "Assistants",
-    "NAVIGATOR_DOCUMENTS": "Documents",
-    "NAVIGATOR_RESPONSES": "FAQs"
   }
 } 

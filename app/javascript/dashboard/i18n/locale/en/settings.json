@@ -352,7 +352,7 @@
     "NAVIGATOR": "Navigator",
     "NAVIGATOR_ASSISTANTS": "Assistants",
     "NAVIGATOR_DOCUMENTS": "Documents",
-    "NAVIGATOR_RESPONSES": "Responses"
+    "NAVIGATOR_RESPONSES": "FAQs"
   },
   "BILLING_SETTINGS": {
     "TITLE": "Billing",
