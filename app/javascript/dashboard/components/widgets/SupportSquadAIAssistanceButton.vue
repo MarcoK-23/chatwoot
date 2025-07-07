@@ -1,30 +1,73 @@
 <script>
+import { ref } from 'vue';
 import { mapGetters } from 'vuex';
+import { useAdmin } from 'dashboard/composables/useAdmin';
 import { useUISettings } from 'dashboard/composables/useUISettings';
+import { useKeyboardEvents } from 'dashboard/composables/useKeyboardEvents';
 import { useSupportSquadAI } from 'dashboard/composables/useSupportSquadAI';
-import { CMD_AI_ASSIST } from 'shared/constants/commandBar';
-import { emitter } from 'shared/helpers/mitt';
-import SupportSquadAIAssistanceCTAButton from './AIAssistanceCTAButton.vue';
+import { CMD_AI_ASSIST } from 'dashboard/helper/commandbar/events';
+import SupportSquadAIAssistanceCTAButton from './SupportSquadAIAssistanceCTAButton.vue';
 import SupportSquadAICTAModal from './SupportSquadAICTAModal.vue';
 import SupportSquadAIAssistanceModal from './SupportSquadAIAssistanceModal.vue';
+import { emitter } from 'shared/helpers/mitt';
 import NextButton from 'dashboard/components-next/button/Button.vue';
 
 export default {
   components: {
-    SupportSquadAIAssistanceCTAButton,
-    SupportSquadAICTAModal,
-    SupportSquadAIAssistanceModal,
     NextButton,
+    SupportSquadAIAssistanceModal,
+    SupportSquadAICTAModal,
+    SupportSquadAIAssistanceCTAButton,
+  },
+  props: {
+    conversationId: {
+      type: Number,
+      required: true,
+    },
+    isPrivateNote: {
+      type: Boolean,
+      default: false,
+    },
+    message: {
+      type: String,
+      default: '',
+    },
   },
   emits: ['replaceText'],
-  setup() {
+  setup(props, { emit }) {
     const { uiSettings, updateUISettings } = useUISettings();
-    const { isSupportSquadAIIntegrationEnabled, recordAnalytics } = useSupportSquadAI();
+
+    const { isSupportSquadAIIntegrationEnabled, draftMessage, recordAnalytics } = useSupportSquadAI();
+
+    const { isAdmin } = useAdmin();
+
+    const initialMessage = ref('');
+
+    const initializeMessage = draftMsg => {
+      initialMessage.value = draftMsg;
+    };
+    const keyboardEvents = {
+      '$mod+KeyZ': {
+        action: () => {
+          if (initialMessage.value) {
+            emit('replaceText', initialMessage.value);
+            initialMessage.value = '';
+          }
+        },
+        allowOnFocusedInput: true,
+      },
+    };
+    useKeyboardEvents(keyboardEvents);
+
     return {
       uiSettings,
       updateUISettings,
-      isSupportSquadAIIntegrationEnabled,
+      isAdmin,
+      initialMessage,
+      initializeMessage,
       recordAnalytics,
+      isSupportSquadAIIntegrationEnabled,
+      draftMessage,
     };
   },
   data: () => ({

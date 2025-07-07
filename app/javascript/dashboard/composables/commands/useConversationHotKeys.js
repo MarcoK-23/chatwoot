@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router';
 import { emitter } from 'shared/helpers/mitt';
 import { useConversationLabels } from 'dashboard/composables/useConversationLabels';
 import { useAI } from 'dashboard/composables/useAI';
+import { useSupportSquadAI } from 'dashboard/composables/useSupportSquadAI';
 import { useAgentsList } from 'dashboard/composables/useAgentsList';
 import { CMD_AI_ASSIST } from 'dashboard/helper/commandbar/events';
 import { REPLY_EDITOR_MODES } from 'dashboard/components/widgets/WootWriter/constants';
@@ -139,6 +140,46 @@ const createDraftMessageAIAssistActions = t => {
   ];
 };
 
+const createDraftMessageSupportSquadAIAssistActions = t => {
+  return [
+    {
+      label: t('INTEGRATION_SETTINGS.SUPPORT_SQUAD_AI.OPTIONS.REPHRASE'),
+      key: 'rephrase',
+      icon: ICON_AI_ASSIST,
+    },
+    {
+      label: t('INTEGRATION_SETTINGS.SUPPORT_SQUAD_AI.OPTIONS.FIX_SPELLING_GRAMMAR'),
+      key: 'fix_spelling_grammar',
+      icon: ICON_AI_GRAMMAR,
+    },
+    {
+      label: t('INTEGRATION_SETTINGS.SUPPORT_SQUAD_AI.OPTIONS.EXPAND'),
+      key: 'expand',
+      icon: ICON_AI_EXPAND,
+    },
+    {
+      label: t('INTEGRATION_SETTINGS.SUPPORT_SQUAD_AI.OPTIONS.SHORTEN'),
+      key: 'shorten',
+      icon: ICON_AI_SHORTEN,
+    },
+    {
+      label: t('INTEGRATION_SETTINGS.SUPPORT_SQUAD_AI.OPTIONS.MAKE_FRIENDLY'),
+      key: 'make_friendly',
+      icon: ICON_AI_ASSIST,
+    },
+    {
+      label: t('INTEGRATION_SETTINGS.SUPPORT_SQUAD_AI.OPTIONS.MAKE_FORMAL'),
+      key: 'make_formal',
+      icon: ICON_AI_ASSIST,
+    },
+    {
+      label: t('INTEGRATION_SETTINGS.SUPPORT_SQUAD_AI.OPTIONS.SIMPLIFY'),
+      key: 'simplify',
+      icon: ICON_AI_ASSIST,
+    },
+  ];
+};
+
 export function useConversationHotKeys() {
   const { t } = useI18n();
   const store = useStore();
@@ -152,6 +193,7 @@ export function useConversationHotKeys() {
   } = useConversationLabels();
 
   const { isAIIntegrationEnabled } = useAI();
+  const { isSupportSquadAIIntegrationEnabled } = useSupportSquadAI();
   const { agentsList } = useAgentsList();
 
   const currentChat = useMapGetter('getSelectedChat');
@@ -367,6 +409,31 @@ export function useConversationHotKeys() {
     ];
   });
 
+  const SupportSquadAIAssistActions = computed(() => {
+    const aiOptions = draftMessage.value
+      ? createDraftMessageSupportSquadAIAssistActions(t)
+      : createNonDraftMessageAIAssistActions(t, replyMode.value);
+    const options = aiOptions.map(item => ({
+      id: `support-squad-ai-assist-${item.key}`,
+      title: item.label,
+      parent: 'support_squad_ai_assist',
+      section: t('COMMAND_BAR.SECTIONS.AI_ASSIST'),
+      priority: item,
+      icon: item.icon,
+      handler: () => emitter.emit(CMD_AI_ASSIST, item.key),
+    }));
+    return [
+      {
+        id: 'support_squad_ai_assist',
+        title: t('COMMAND_BAR.COMMANDS.AI_ASSIST'),
+        section: t('COMMAND_BAR.SECTIONS.AI_ASSIST'),
+        icon: ICON_AI_ASSIST,
+        children: options.map(option => option.id),
+      },
+      ...options,
+    ];
+  });
+
   const isConversationOrInboxRoute = computed(() => {
     return isAConversationRoute(route.name) || isAInboxViewRoute(route.name);
   });
@@ -386,8 +453,15 @@ export function useConversationHotKeys() {
       ...labelActions.value,
       ...assignPriorityActions.value,
     ];
+    const aiActions = [];
     if (isAIIntegrationEnabled.value) {
-      return [...defaultConversationHotKeys, ...AIAssistActions.value];
+      aiActions.push(...AIAssistActions.value);
+    }
+    if (isSupportSquadAIIntegrationEnabled.value) {
+      aiActions.push(...SupportSquadAIAssistActions.value);
+    }
+    if (aiActions.length > 0) {
+      return [...defaultConversationHotKeys, ...aiActions];
     }
     return defaultConversationHotKeys;
   });

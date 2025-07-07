@@ -14,13 +14,14 @@ import {
 } from 'shared/constants/messages';
 import VideoCallButton from '../VideoCallButton.vue';
 import AIAssistanceButton from '../AIAssistanceButton.vue';
+import SupportSquadAIAssistanceButton from '../SupportSquadAIAssistanceButton.vue';
 import { REPLY_EDITOR_MODES } from './constants';
 import { mapGetters } from 'vuex';
 import NextButton from 'dashboard/components-next/button/Button.vue';
 
 export default {
   name: 'ReplyBottomPanel',
-  components: { NextButton, FileUpload, VideoCallButton, AIAssistanceButton },
+  components: { NextButton, FileUpload, VideoCallButton, AIAssistanceButton, SupportSquadAIAssistanceButton },
   mixins: [inboxMixin],
   props: {
     mode: {
@@ -346,6 +347,13 @@ export default {
         :conversation-id="conversationId"
       />
       <AIAssistanceButton
+        v-if="!isFetchingAppIntegrations"
+        :conversation-id="conversationId"
+        :is-private-note="isOnPrivateNote"
+        :message="message"
+        @replace-text="replaceText"
+      />
+      <SupportSquadAIAssistanceButton
         v-if="!isFetchingAppIntegrations"
         :conversation-id="conversationId"
         :is-private-note="isOnPrivateNote"
