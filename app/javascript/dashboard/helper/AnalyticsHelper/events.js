@@ -100,6 +100,23 @@ export const OPEN_AI_EVENTS = Object.freeze({
   DISMISS_AI_SUGGESTION: 'OpenAI: Dismiss AI suggestions',
 });
 
+export const SUPPORT_SQUAD_AI_EVENTS = Object.freeze({
+  SUMMARIZE: 'SupportSquadAI: Used summarize',
+  REPLY_SUGGESTION: 'SupportSquadAI: Used reply suggestion',
+  REPHRASE: 'SupportSquadAI: Used rephrase',
+  FIX_SPELLING_AND_GRAMMAR: 'SupportSquadAI: Used fix spelling and grammar',
+  SHORTEN: 'SupportSquadAI: Used shorten',
+  EXPAND: 'SupportSquadAI: Used expand',
+  MAKE_FRIENDLY: 'SupportSquadAI: Used make friendly',
+  MAKE_FORMAL: 'SupportSquadAI: Used make formal',
+  SIMPLIFY: 'SupportSquadAI: Used simplify',
+  APPLY_LABEL_SUGGESTION: 'SupportSquadAI: Apply label from suggestion',
+  DISMISS_LABEL_SUGGESTION: 'SupportSquadAI: Dismiss label suggestions',
+  ADDED_AI_INTEGRATION_VIA_CTA_BUTTON:
+    'SupportSquadAI: Added AI integration via CTA button',
+  DISMISS_AI_SUGGESTION: 'SupportSquadAI: Dismiss AI suggestions',
+});
+
 export const COPILOT_EVENTS = Object.freeze({
   SEND_SUGGESTED: 'Copilot: Send suggested message',
   SEND_MESSAGE: 'Copilot: Sent a message',

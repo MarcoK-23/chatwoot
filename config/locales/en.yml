@@ -251,6 +251,10 @@ en:
       name: 'OpenAI'
       short_description: 'AI-powered reply suggestions, summarization, and message enhancement.'
       description: 'Leverage the power of large language models from OpenAI with the features such as reply suggestions, summarization, message rephrasing, spell-checking, and label classification.'
+    support_squad_ai:
+      name: 'SupportSquadAI'
+      short_description: 'AI-powered reply suggestions, summarization, and message enhancement.'
+      description: 'Leverage the power of large language models from SupportSquadAI with the features such as reply suggestions, summarization, message rephrasing, spell-checking, and label classification.'
     linear:
       name: 'Linear'
       short_description: 'Create and link Linear issues directly from conversations.'

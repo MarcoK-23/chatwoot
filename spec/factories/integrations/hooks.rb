@@ -27,6 +27,11 @@ FactoryBot.define do
       settings { { api_key: 'api_key' } }
     end
 
+    trait :support_squad_ai do
+      app_id { 'support_squad_ai' }
+      settings { { api_key: 'api_key' } }
+    end
+
     trait :linear do
       app_id { 'linear' }
       access_token { SecureRandom.hex }
