@@ -73,7 +73,7 @@ support_squad_ai:
           'label_suggestion': { 'type': 'boolean' },
         },
       'required': ['api_key'],
-      'additionalProperties': false,
+      'additionalProperties': true,
     }
   settings_form_schema:
     [
