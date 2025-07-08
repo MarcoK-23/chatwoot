@@ -56,6 +56,34 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
       end
     end
 
+    context 'when custom API endpoint is provided' do
+      let(:custom_endpoint) { 'https://custom-api.openai.com/v1/chat/completions' }
+      let(:hook) { create(:integrations_hook, :support_squad_ai, account: account, settings: { 'api_key' => 'test_key', 'api_endpoint' => custom_endpoint }) }
+      let(:event) { { 'name' => 'rephrase', 'data' => { 'content' => 'This is a test message' } } }
+
+      it 'uses the custom API endpoint' do
+        request_body = {
+          'model' => 'gpt-4o-mini',
+          'messages' => [
+            {
+              'role' => 'system',
+              'content' => 'You are a helpful support agent. ' \
+                           'Please rephrase the following response. ' \
+                           'Ensure that the reply should be in user language.'
+            },
+            { 'role' => 'user', 'content' => event['data']['content'] }
+          ]
+        }.to_json
+
+        stub_request(:post, custom_endpoint)
+          .with(body: request_body, headers: expected_headers)
+          .to_return(status: 200, body: support_squad_ai_response, headers: {})
+
+        result = subject.perform
+        expect(result).to eq({ :message => 'This is a reply from support_squad_ai.' })
+      end
+    end
+
     context 'when event name is reply_suggestion' do
       let(:event) { { 'name' => 'reply_suggestion', 'data' => { 'conversation_display_id' => conversation.display_id } } }
 

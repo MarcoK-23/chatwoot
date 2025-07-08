@@ -209,6 +209,7 @@
         "TITLE": "Integrate with SupportSquadAI",
         "DESC": "Bring advanced AI features to your dashboard with SupportSquadAI. To begin, enter the API key from your SupportSquadAI account.",
         "KEY_PLACEHOLDER": "Enter your SupportSquadAI API key",
+        "ENDPOINT_PLACEHOLDER": "Enter your API endpoint (optional)",
         "BUTTONS": {
           "NEED_HELP": "Need help?",
           "DISMISS": "Dismiss",

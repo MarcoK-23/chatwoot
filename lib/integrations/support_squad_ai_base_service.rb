@@ -87,8 +87,11 @@ class Integrations::SupportSquadAiBaseService
       'Authorization' => "Bearer #{hook.settings['api_key']}"
     }
 
+    # Use custom API endpoint if provided, otherwise use default
+    api_url = hook.settings['api_endpoint'].presence || API_URL
+
     Rails.logger.info("SupportSquadAI API request: #{body}")
-    response = HTTParty.post(API_URL, headers: headers, body: body)
+    response = HTTParty.post(api_url, headers: headers, body: body)
     Rails.logger.info("SupportSquadAI API response: #{response.body}")
 
     return { error: response.parsed_response, error_code: response.code } unless response.success?

@@ -23,11 +23,15 @@ export default {
   },
   data() {
     return {
-      value: '',
+      apiKey: '',
+      apiEndpoint: 'https://api.openai.com/v1/chat/completions',
     };
   },
   validations: {
-    value: {
+    apiKey: {
+      required,
+    },
+    apiEndpoint: {
       required,
     },
   },
@@ -50,7 +54,8 @@ export default {
       const payload = {
         app_id: 'support_squad_ai',
         settings: {
-          api_key: this.value,
+          api_key: this.apiKey,
+          api_endpoint: this.apiEndpoint,
         },
       };
       try {
@@ -89,13 +94,24 @@ export default {
     >
       <div class="w-full mt-2">
         <woot-input
-          v-model="value"
+          v-model="apiKey"
           type="text"
-          :class="{ error: v$.value.$error }"
+          :class="{ error: v$.apiKey.$error }"
           :placeholder="
             $t('INTEGRATION_SETTINGS.SUPPORT_SQUAD_AI.CTA_MODAL.KEY_PLACEHOLDER')
           "
-          @blur="v$.value.$touch"
+          @blur="v$.apiKey.$touch"
+        />
+      </div>
+      <div class="w-full mt-2">
+        <woot-input
+          v-model="apiEndpoint"
+          type="text"
+          :class="{ error: v$.apiEndpoint.$error }"
+          :placeholder="
+            $t('INTEGRATION_SETTINGS.SUPPORT_SQUAD_AI.CTA_MODAL.ENDPOINT_PLACEHOLDER')
+          "
+          @blur="v$.apiEndpoint.$touch"
         />
       </div>
       <div class="flex flex-row justify-between w-full gap-2 px-0 py-2">
@@ -120,7 +136,7 @@ export default {
           />
           <NextButton
             type="submit"
-            :disabled="v$.value.$invalid"
+            :disabled="v$.$invalid"
             :label="$t('INTEGRATION_SETTINGS.SUPPORT_SQUAD_AI.CTA_MODAL.BUTTONS.FINISH')"
           />
         </div>
