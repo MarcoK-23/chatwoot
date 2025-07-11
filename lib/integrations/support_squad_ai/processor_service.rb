@@ -7,14 +7,47 @@ class Integrations::SupportSquadAi::ProcessorService < Integrations::SupportSqua
   end
 
   def summarize_message
-    system_content = prompt_from_file('summary')
-    make_api_call(build_api_call_body(system_content, conversation_messages))
+    # Get the entire conversation content
+    conversation_content = conversation_messages
+    
+    # Create simple instruction for summary
+    instruction = "Please summarize this conversation."
+    
+    # Log the full payload
+    payload = {
+      instruction: instruction,
+      conversation_content: conversation_content,
+      event_type: 'summarize',
+      conversation_id: conversation.id,
+      timestamp: Time.current
+    }
+    
+    Rails.logger.info("SupportSquadAI Summarize Request - Full Payload: #{payload.to_json}")
+    
+    # Always return the success message
+    { message: "Hallo de request is gelukt gefeliciteerd" }
   end
 
   def reply_suggestion_message
-    system_content = prompt_from_file('reply')
-    messages = conversation_messages(in_array_format: true)
-    make_api_call(build_api_call_body_with_messages(system_content, messages))
+    # Get the entire conversation content
+    conversation_content = conversation_messages
+    
+    # Create simple instruction for reply suggestion
+    instruction = "Please suggest a reply to this conversation."
+    
+    # Log the full payload
+    payload = {
+      instruction: instruction,
+      conversation_content: conversation_content,
+      event_type: 'reply_suggestion',
+      conversation_id: conversation.id,
+      timestamp: Time.current
+    }
+    
+    Rails.logger.info("SupportSquadAI Reply Suggestion Request - Full Payload: #{payload.to_json}")
+    
+    # Always return the success message
+    { message: "Hallo de request is gelukt gefeliciteerd" }
   end
 
   def fix_spelling_grammar_message
