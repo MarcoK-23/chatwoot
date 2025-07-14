@@ -13,19 +13,29 @@ class Integrations::SupportSquadAi::ProcessorService < Integrations::SupportSqua
     # Create simple instruction for summary
     instruction = "Please summarize this conversation."
     
+    # Build the API request body
+    api_body = {
+      model: GPT_MODEL,
+      messages: [
+        { role: 'system', content: instruction },
+        { role: 'user', content: conversation_content }
+      ]
+    }.to_json
+    
     # Log the full payload
     payload = {
       instruction: instruction,
       conversation_content: conversation_content,
       event_type: 'summarize',
       conversation_id: conversation.id,
-      timestamp: Time.current
+      timestamp: Time.current,
+      api_body: api_body
     }
     
     Rails.logger.info("SupportSquadAI Summarize Request - Full Payload: #{payload.to_json}")
     
-    # Always return the success message
-    { message: "Hallo de request is gelukt gefeliciteerd" }
+    # Make the actual API call to the configured endpoint
+    make_api_call(api_body)
   end
 
   def reply_suggestion_message
@@ -35,19 +45,29 @@ class Integrations::SupportSquadAi::ProcessorService < Integrations::SupportSqua
     # Create simple instruction for reply suggestion
     instruction = "Please suggest a reply to this conversation."
     
+    # Build the API request body
+    api_body = {
+      model: GPT_MODEL,
+      messages: [
+        { role: 'system', content: instruction },
+        { role: 'user', content: conversation_content }
+      ]
+    }.to_json
+    
     # Log the full payload
     payload = {
       instruction: instruction,
       conversation_content: conversation_content,
       event_type: 'reply_suggestion',
       conversation_id: conversation.id,
-      timestamp: Time.current
+      timestamp: Time.current,
+      api_body: api_body
     }
     
     Rails.logger.info("SupportSquadAI Reply Suggestion Request - Full Payload: #{payload.to_json}")
     
-    # Always return the success message
-    { message: "Hallo de request is gelukt gefeliciteerd" }
+    # Make the actual API call to the configured endpoint
+    make_api_call(api_body)
   end
 
   def fix_spelling_grammar_message
