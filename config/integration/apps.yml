@@ -70,7 +70,6 @@ support_squad_ai:
         {
           'api_key': { 'type': 'string' },
           'api_endpoint': { 'type': 'string' },
-          'company_id': { 'type': 'string' },
           'label_suggestion': { 'type': 'boolean' },
         },
       'required': ['api_key'],
@@ -89,14 +88,7 @@ support_squad_ai:
         'type': 'text',
         'name': 'api_endpoint',
         'validation': '',
-        'placeholder': 'https://supportsquad-api-872233161233.europe-west4.run.app',
-      },
-      {
-        'label': 'Company ID',
-        'type': 'text',
-        'name': 'company_id',
-        'validation': '',
-        'placeholder': '3fcsBYyJs4H9mNNUFWNz',
+        'placeholder': 'https://supportsquad-api-872233161233.europe-west4.run.app/3fcsBYyJs4H9mNNUFWNz',
       },
       {
         'label': 'Show label suggestions',
@@ -105,7 +97,7 @@ support_squad_ai:
         'validation': '',
       },
     ]
-  visible_properties: ['api_key', 'api_endpoint', 'company_id', 'label_suggestion']
+  visible_properties: ['api_key', 'api_endpoint', 'label_suggestion']
 linear:
   id: linear
   logo: linear.png

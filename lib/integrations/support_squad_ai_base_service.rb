@@ -95,10 +95,11 @@ class Integrations::SupportSquadAiBaseService
     # Use custom API endpoint if provided, otherwise use default
     base_api_url = hook.settings['api_endpoint'].presence || API_URL
     
-    # Extract company_id from the hook settings or use a default
-    company_id = hook.settings['company_id'] || 'default'
+    # Extract company_id from the API endpoint URL
+    # Expected format: https://supportsquad-api-872233161233.europe-west4.run.app/3fcsBYyJs4H9mNNUFWNz
+    company_id = extract_company_id_from_url(base_api_url)
     
-    # Construct the full URL with company_id
+    # Construct the full URL with company_id and completion endpoint
     api_url = if base_api_url.include?('/completion')
                 # If the endpoint already includes /completion, replace it with the company_id format
                 base_api_url.gsub('/completion', "/#{company_id}/completion")
@@ -136,5 +137,26 @@ class Integrations::SupportSquadAiBaseService
     end
 
     { message: nil }
+  end
+
+  private
+
+  def extract_company_id_from_url(url)
+    # Extract company_id from URL patterns like:
+    # https://supportsquad-api-872233161233.europe-west4.run.app/3fcsBYyJs4H9mNNUFWNz
+    # or
+    # https://api.example.com/company123
+    
+    # Split by '/' and get the last non-empty part
+    parts = url.split('/').reject(&:empty?)
+    company_id = parts.last
+    
+    # If the last part looks like a company_id (alphanumeric), use it
+    if company_id && company_id.match?(/^[a-zA-Z0-9_-]+$/)
+      return company_id
+    end
+    
+    # Fallback to default if no company_id found
+    'default'
   end
 end 

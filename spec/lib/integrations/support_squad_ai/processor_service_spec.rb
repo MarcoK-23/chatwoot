@@ -4,7 +4,7 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
   subject { described_class.new(hook: hook, event: event) }
 
   let(:account) { create(:account) }
-  let(:hook) { create(:integrations_hook, :support_squad_ai, account: account, settings: { 'company_id' => 'test_company' }) }
+  let(:hook) { create(:integrations_hook, :support_squad_ai, account: account) }
   let(:expected_headers) { { 'Authorization' => "Bearer #{hook.settings['api_key']}" } }
   let(:support_squad_ai_response) { 'This is a reply from support_squad_ai.' }
   let!(:conversation) { create(:conversation, account: account) }
@@ -38,8 +38,8 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
     end
 
     context 'when custom API endpoint is provided' do
-      let(:custom_endpoint) { 'https://custom-api.example.com' }
-      let(:hook) { create(:integrations_hook, :support_squad_ai, account: account, settings: { 'api_key' => 'test_key', 'api_endpoint' => custom_endpoint, 'company_id' => 'test_company' }) }
+      let(:custom_endpoint) { 'https://custom-api.example.com/test_company' }
+      let(:hook) { create(:integrations_hook, :support_squad_ai, account: account, settings: { 'api_key' => 'test_key', 'api_endpoint' => custom_endpoint }) }
       let(:event) { { 'name' => 'rephrase', 'data' => { 'content' => 'This is a test message' } } }
 
       it 'uses the custom API endpoint' do
@@ -47,7 +47,7 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
           'request' => "You are a helpful support agent. Please rephrase the following response. Ensure that the reply should be in user language.\n\nContent to rephrase:\nThis is a test message"
         }.to_json
 
-        stub_request(:post, "#{custom_endpoint}/test_company/completion")
+        stub_request(:post, "#{custom_endpoint}/completion")
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 
