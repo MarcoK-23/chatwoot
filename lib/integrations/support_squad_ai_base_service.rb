@@ -81,24 +81,59 @@ class Integrations::SupportSquadAiBaseService
     self.class::CACHEABLE_EVENTS.include?(event_name)
   end
 
-  def make_api_call(body)
+  def make_api_call(request_content)
     headers = {
       'Content-Type' => 'application/json',
       'Authorization' => "Bearer #{hook.settings['api_key']}"
     }
 
-    # Use custom API endpoint if provided, otherwise use default
-    api_url = hook.settings['api_endpoint'].presence || API_URL
+    # Build the custom request format for Support Squad server
+    request_body = {
+      request: request_content
+    }.to_json
 
-    Rails.logger.info("SupportSquadAI API request: #{body}")
-    response = HTTParty.post(api_url, headers: headers, body: body)
+    # Use custom API endpoint if provided, otherwise use default
+    base_api_url = hook.settings['api_endpoint'].presence || API_URL
+    
+    # Extract company_id from the hook settings or use a default
+    company_id = hook.settings['company_id'] || 'default'
+    
+    # Construct the full URL with company_id
+    api_url = if base_api_url.include?('/completion')
+                # If the endpoint already includes /completion, replace it with the company_id format
+                base_api_url.gsub('/completion', "/#{company_id}/completion")
+              else
+                # Otherwise, append the company_id and completion path
+                "#{base_api_url}/#{company_id}/completion"
+              end
+
+    Rails.logger.info("SupportSquadAI API request to: #{api_url}")
+    Rails.logger.info("SupportSquadAI API request body: #{request_body}")
+    
+    response = HTTParty.post(api_url, headers: headers, body: request_body)
     Rails.logger.info("SupportSquadAI API response: #{response.body}")
 
     return { error: response.parsed_response, error_code: response.code } unless response.success?
 
-    choices = JSON.parse(response.body)['choices']
-
-    return { message: choices.first['message']['content'] } if choices.present?
+    # Parse the response from Support Squad server
+    # The server should return the AI-generated response directly
+    response_text = response.parsed_response
+    
+    # If the response is a string, use it directly
+    if response_text.is_a?(String)
+      return { message: response_text }
+    end
+    
+    # If the response is a hash, look for common response fields
+    if response_text.is_a?(Hash)
+      # Try different possible response formats
+      message = response_text['message'] || 
+                response_text['response'] || 
+                response_text['content'] || 
+                response_text['text']
+      
+      return { message: message } if message.present?
+    end
 
     { message: nil }
   end

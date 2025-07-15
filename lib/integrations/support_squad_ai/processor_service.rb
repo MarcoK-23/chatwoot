@@ -3,7 +3,10 @@ class Integrations::SupportSquadAi::ProcessorService < Integrations::SupportSqua
     system_content = 'You are a helpful support agent. ' \
                      'Please rephrase the following response. ' \
                      'Ensure that the reply should be in user language.'
-    make_api_call(build_api_call_body(system_content))
+    
+    # Build the request content with system instruction and user content
+    request_content = "#{system_content}\n\nContent to rephrase:\n#{event['data']['content']}"
+    make_api_call(request_content)
   end
 
   def summarize_message
@@ -13,14 +16,8 @@ class Integrations::SupportSquadAi::ProcessorService < Integrations::SupportSqua
     # Create simple instruction for summary
     instruction = "Please summarize this conversation."
     
-    # Build the API request body
-    api_body = {
-      model: GPT_MODEL,
-      messages: [
-        { role: 'system', content: instruction },
-        { role: 'user', content: conversation_content }
-      ]
-    }.to_json
+    # Build the request content
+    request_content = "#{instruction}\n\nConversation:\n#{conversation_content}"
     
     # Log the full payload
     payload = {
@@ -29,13 +26,13 @@ class Integrations::SupportSquadAi::ProcessorService < Integrations::SupportSqua
       event_type: 'summarize',
       conversation_id: conversation.id,
       timestamp: Time.current,
-      api_body: api_body
+      request_content: request_content
     }
     
     Rails.logger.info("SupportSquadAI Summarize Request - Full Payload: #{payload.to_json}")
     
     # Make the actual API call to the configured endpoint
-    make_api_call(api_body)
+    make_api_call(request_content)
   end
 
   def reply_suggestion_message
@@ -45,14 +42,8 @@ class Integrations::SupportSquadAi::ProcessorService < Integrations::SupportSqua
     # Create simple instruction for reply suggestion
     instruction = "Please suggest a reply to this conversation."
     
-    # Build the API request body
-    api_body = {
-      model: GPT_MODEL,
-      messages: [
-        { role: 'system', content: instruction },
-        { role: 'user', content: conversation_content }
-      ]
-    }.to_json
+    # Build the request content
+    request_content = "#{instruction}\n\nConversation:\n#{conversation_content}"
     
     # Log the full payload
     payload = {
@@ -61,49 +52,67 @@ class Integrations::SupportSquadAi::ProcessorService < Integrations::SupportSqua
       event_type: 'reply_suggestion',
       conversation_id: conversation.id,
       timestamp: Time.current,
-      api_body: api_body
+      request_content: request_content
     }
     
     Rails.logger.info("SupportSquadAI Reply Suggestion Request - Full Payload: #{payload.to_json}")
     
     # Make the actual API call to the configured endpoint
-    make_api_call(api_body)
+    make_api_call(request_content)
   end
 
   def fix_spelling_grammar_message
     system_content = 'You are a helpful support agent. Please fix the spelling and grammar of the following response. ' \
                      'Ensure that the reply should be in user language.'
-    make_api_call(build_api_call_body(system_content))
+    
+    # Build the request content
+    request_content = "#{system_content}\n\nContent to fix:\n#{event['data']['content']}"
+    make_api_call(request_content)
   end
 
   def shorten_message
     system_content = 'You are a helpful support agent. Please shorten the following response. ' \
                      'Ensure that the reply should be in user language.'
-    make_api_call(build_api_call_body(system_content))
+    
+    # Build the request content
+    request_content = "#{system_content}\n\nContent to shorten:\n#{event['data']['content']}"
+    make_api_call(request_content)
   end
 
   def expand_message
     system_content = 'You are a helpful support agent. Please expand the following response. ' \
                      'Ensure that the reply should be in user language.'
-    make_api_call(build_api_call_body(system_content))
+    
+    # Build the request content
+    request_content = "#{system_content}\n\nContent to expand:\n#{event['data']['content']}"
+    make_api_call(request_content)
   end
 
   def make_friendly_message
     system_content = 'You are a helpful support agent. Please make the following response more friendly. ' \
                      'Ensure that the reply should be in user language.'
-    make_api_call(build_api_call_body(system_content))
+    
+    # Build the request content
+    request_content = "#{system_content}\n\nContent to make friendly:\n#{event['data']['content']}"
+    make_api_call(request_content)
   end
 
   def make_formal_message
     system_content = 'You are a helpful support agent. Please make the following response more formal. ' \
                      'Ensure that the reply should be in user language.'
-    make_api_call(build_api_call_body(system_content))
+    
+    # Build the request content
+    request_content = "#{system_content}\n\nContent to make formal:\n#{event['data']['content']}"
+    make_api_call(request_content)
   end
 
   def simplify_message
     system_content = 'You are a helpful support agent. Please simplify the following response. ' \
                      'Ensure that the reply should be in user language.'
-    make_api_call(build_api_call_body(system_content))
+    
+    # Build the request content
+    request_content = "#{system_content}\n\nContent to simplify:\n#{event['data']['content']}"
+    make_api_call(request_content)
   end
 
   private

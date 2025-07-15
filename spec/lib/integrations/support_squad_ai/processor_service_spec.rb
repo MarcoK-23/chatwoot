@@ -4,19 +4,9 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
   subject { described_class.new(hook: hook, event: event) }
 
   let(:account) { create(:account) }
-  let(:hook) { create(:integrations_hook, :support_squad_ai, account: account) }
+  let(:hook) { create(:integrations_hook, :support_squad_ai, account: account, settings: { 'company_id' => 'test_company' }) }
   let(:expected_headers) { { 'Authorization' => "Bearer #{hook.settings['api_key']}" } }
-  let(:support_squad_ai_response) do
-    {
-      'choices' => [
-        {
-          'message' => {
-            'content' => 'This is a reply from support_squad_ai.'
-          }
-        }
-      ]
-    }.to_json
-  end
+  let(:support_squad_ai_response) { 'This is a reply from support_squad_ai.' }
   let!(:conversation) { create(:conversation, account: account) }
   let!(:customer_message) { create(:message, account: account, conversation: conversation, message_type: :incoming, content: 'hello agent') }
   let!(:agent_message) { create(:message, account: account, conversation: conversation, message_type: :outgoing, content: 'hello customer') }
@@ -35,19 +25,10 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
 
       it 'returns the rephrased message using the tone in data' do
         request_body = {
-          'model' => 'gpt-4o-mini',
-          'messages' => [
-            {
-              'role' => 'system',
-              'content' => 'You are a helpful support agent. ' \
-                           'Please rephrase the following response. ' \
-                           'Ensure that the reply should be in user language.'
-            },
-            { 'role' => 'user', 'content' => event['data']['content'] }
-          ]
+          'request' => "You are a helpful support agent. Please rephrase the following response. Ensure that the reply should be in user language.\n\nContent to rephrase:\nThis is a test message"
         }.to_json
 
-        stub_request(:post, 'https://api.openai.com/v1/chat/completions')
+        stub_request(:post, 'https://api.openai.com/v1/chat/completions/test_company/completion')
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 
@@ -57,25 +38,16 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
     end
 
     context 'when custom API endpoint is provided' do
-      let(:custom_endpoint) { 'https://custom-api.openai.com/v1/chat/completions' }
-      let(:hook) { create(:integrations_hook, :support_squad_ai, account: account, settings: { 'api_key' => 'test_key', 'api_endpoint' => custom_endpoint }) }
+      let(:custom_endpoint) { 'https://custom-api.example.com' }
+      let(:hook) { create(:integrations_hook, :support_squad_ai, account: account, settings: { 'api_key' => 'test_key', 'api_endpoint' => custom_endpoint, 'company_id' => 'test_company' }) }
       let(:event) { { 'name' => 'rephrase', 'data' => { 'content' => 'This is a test message' } } }
 
       it 'uses the custom API endpoint' do
         request_body = {
-          'model' => 'gpt-4o-mini',
-          'messages' => [
-            {
-              'role' => 'system',
-              'content' => 'You are a helpful support agent. ' \
-                           'Please rephrase the following response. ' \
-                           'Ensure that the reply should be in user language.'
-            },
-            { 'role' => 'user', 'content' => event['data']['content'] }
-          ]
+          'request' => "You are a helpful support agent. Please rephrase the following response. Ensure that the reply should be in user language.\n\nContent to rephrase:\nThis is a test message"
         }.to_json
 
-        stub_request(:post, custom_endpoint)
+        stub_request(:post, "#{custom_endpoint}/test_company/completion")
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 
@@ -89,17 +61,10 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
 
       it 'returns the suggested reply' do
         request_body = {
-          'model' => 'gpt-4o-mini',
-          'messages' => [
-            { role: 'system',
-              content: Rails.root.join('lib/integrations/support_squad_ai/support_squad_ai_prompts/reply.txt').read },
-            { role: 'user', content: customer_message.content },
-            { role: 'assistant', content: agent_message.content }
-          ]
+          'request' => "Please suggest a reply to this conversation.\n\nConversation:\nCustomer: hello agent\nAgent: hello customer\n"
         }.to_json
 
-        # Update the stub_request with the correct messages order
-        stub_request(:post, 'https://api.openai.com/v1/chat/completions')
+        stub_request(:post, 'https://api.openai.com/v1/chat/completions/test_company/completion')
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 
@@ -113,14 +78,10 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
 
       it 'returns the summarized conversation' do
         request_body = {
-          'model' => 'gpt-4o-mini',
-          'messages' => [
-            { 'role' => 'system', 'content' => summary_prompt },
-            { 'role' => 'user', 'content' => conversation_messages }
-          ]
+          'request' => "Please summarize this conversation.\n\nConversation:\nCustomer: hello agent\nAgent: hello customer\n"
         }.to_json
 
-        stub_request(:post, 'https://api.openai.com/v1/chat/completions')
+        stub_request(:post, 'https://api.openai.com/v1/chat/completions/test_company/completion')
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 
@@ -134,15 +95,10 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
 
       it 'returns the corrected text' do
         request_body = {
-          'model' => 'gpt-4o-mini',
-          'messages' => [
-            { 'role' => 'system', 'content' => 'You are a helpful support agent. Please fix the spelling and grammar of the following response. ' \
-                                               'Ensure that the reply should be in user language.' },
-            { 'role' => 'user', 'content' => event['data']['content'] }
-          ]
+          'request' => "You are a helpful support agent. Please fix the spelling and grammar of the following response. Ensure that the reply should be in user language.\n\nContent to fix:\nThis is a test"
         }.to_json
 
-        stub_request(:post, 'https://api.openai.com/v1/chat/completions')
+        stub_request(:post, 'https://api.openai.com/v1/chat/completions/test_company/completion')
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 
@@ -156,15 +112,10 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
 
       it 'returns the shortened text' do
         request_body = {
-          'model' => 'gpt-4o-mini',
-          'messages' => [
-            { 'role' => 'system', 'content' => 'You are a helpful support agent. Please shorten the following response. ' \
-                                               'Ensure that the reply should be in user language.' },
-            { 'role' => 'user', 'content' => event['data']['content'] }
-          ]
+          'request' => "You are a helpful support agent. Please shorten the following response. Ensure that the reply should be in user language.\n\nContent to shorten:\nThis is a test"
         }.to_json
 
-        stub_request(:post, 'https://api.openai.com/v1/chat/completions')
+        stub_request(:post, 'https://api.openai.com/v1/chat/completions/test_company/completion')
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 
@@ -178,15 +129,10 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
 
       it 'returns the expanded text' do
         request_body = {
-          'model' => 'gpt-4o-mini',
-          'messages' => [
-            { 'role' => 'system', 'content' => 'You are a helpful support agent. Please expand the following response. ' \
-                                               'Ensure that the reply should be in user language.' },
-            { 'role' => 'user', 'content' => event['data']['content'] }
-          ]
+          'request' => "You are a helpful support agent. Please expand the following response. Ensure that the reply should be in user language.\n\nContent to expand:\nThis is a test"
         }.to_json
 
-        stub_request(:post, 'https://api.openai.com/v1/chat/completions')
+        stub_request(:post, 'https://api.openai.com/v1/chat/completions/test_company/completion')
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 
@@ -200,15 +146,10 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
 
       it 'returns the friendly text' do
         request_body = {
-          'model' => 'gpt-4o-mini',
-          'messages' => [
-            { 'role' => 'system', 'content' => 'You are a helpful support agent. Please make the following response more friendly. ' \
-                                               'Ensure that the reply should be in user language.' },
-            { 'role' => 'user', 'content' => event['data']['content'] }
-          ]
+          'request' => "You are a helpful support agent. Please make the following response more friendly. Ensure that the reply should be in user language.\n\nContent to make friendly:\nThis is a test"
         }.to_json
 
-        stub_request(:post, 'https://api.openai.com/v1/chat/completions')
+        stub_request(:post, 'https://api.openai.com/v1/chat/completions/test_company/completion')
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 
@@ -222,15 +163,10 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
 
       it 'returns the formal text' do
         request_body = {
-          'model' => 'gpt-4o-mini',
-          'messages' => [
-            { 'role' => 'system', 'content' => 'You are a helpful support agent. Please make the following response more formal. ' \
-                                               'Ensure that the reply should be in user language.' },
-            { 'role' => 'user', 'content' => event['data']['content'] }
-          ]
+          'request' => "You are a helpful support agent. Please make the following response more formal. Ensure that the reply should be in user language.\n\nContent to make formal:\nThis is a test"
         }.to_json
 
-        stub_request(:post, 'https://api.openai.com/v1/chat/completions')
+        stub_request(:post, 'https://api.openai.com/v1/chat/completions/test_company/completion')
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 
@@ -244,15 +180,10 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
 
       it 'returns the simplified text' do
         request_body = {
-          'model' => 'gpt-4o-mini',
-          'messages' => [
-            { 'role' => 'system', 'content' => 'You are a helpful support agent. Please simplify the following response. ' \
-                                               'Ensure that the reply should be in user language.' },
-            { 'role' => 'user', 'content' => event['data']['content'] }
-          ]
+          'request' => "You are a helpful support agent. Please simplify the following response. Ensure that the reply should be in user language.\n\nContent to simplify:\nThis is a test"
         }.to_json
 
-        stub_request(:post, 'https://api.openai.com/v1/chat/completions')
+        stub_request(:post, 'https://api.openai.com/v1/chat/completions/test_company/completion')
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 

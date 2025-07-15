@@ -29,7 +29,7 @@ FactoryBot.define do
 
     trait :support_squad_ai do
       app_id { 'support_squad_ai' }
-      settings { { api_key: 'api_key', api_endpoint: 'https://api.openai.com/v1/chat/completions' } }
+      settings { { api_key: 'api_key', api_endpoint: 'https://api.openai.com/v1/chat/completions', company_id: 'test_company' } }
     end
 
     trait :linear do
