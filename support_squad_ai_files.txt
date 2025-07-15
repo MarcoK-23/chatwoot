@@ -1,0 +1,45 @@
+# Support Squad AI Integration Files
+# Files that were CREATED for Support Squad AI:
+
+# Core Integration Files
+lib/integrations/support_squad_ai_base_service.rb
+lib/integrations/support_squad_ai/processor_service.rb
+lib/integrations/support_squad_ai/support_squad_ai_prompts/reply.txt
+lib/integrations/support_squad_ai/support_squad_ai_prompts/summary.txt
+
+# Frontend Components
+app/javascript/dashboard/components/widgets/SupportSquadAIAssistanceButton.vue
+app/javascript/dashboard/components/widgets/SupportSquadAIAssistanceModal.vue
+app/javascript/dashboard/components/widgets/SupportSquadAIAssistanceCTAButton.vue
+app/javascript/dashboard/components/widgets/SupportSquadAICTAModal.vue
+
+# API and Composables
+app/javascript/dashboard/api/integrations/support_squad_ai.js
+app/javascript/dashboard/composables/useSupportSquadAI.js
+
+# Assets
+public/dashboard/images/integrations/support_squad_ai.png
+public/dashboard/images/integrations/support_squad_ai-dark.png
+
+# Tests
+spec/lib/integrations/support_squad_ai/processor_service_spec.rb
+
+# Database Migration
+db/migrate/20241220000000_add_api_endpoint_to_existing_support_squad_ai_hooks.rb
+
+# Files that were CHANGED for Support Squad AI:
+
+# Configuration Files (contain Support Squad AI sections)
+config/integration/apps.yml
+config/locales/en.yml
+app/javascript/dashboard/i18n/locale/en/integrations.json
+
+# Modified Files (contain Support Squad AI references)
+app/models/integrations/hook.rb
+app/javascript/dashboard/helper/AnalyticsHelper/events.js
+app/javascript/dashboard/composables/commands/useConversationHotKeys.js
+lib/redis/redis_keys.rb
+spec/factories/integrations/hooks.rb
+
+# Files that reference Support Squad AI components
+app/javascript/dashboard/components/widgets/WootWriter/ReplyBottomPanel.vue 
