@@ -58,7 +58,7 @@ openai:
   visible_properties: ['api_key', 'label_suggestion']
 support_squad_ai:
   id: support_squad_ai
-  logo: openai.png
+  logo: support_squad_ai_logo.png
   i18n_key: support_squad_ai
   action: /support_squad_ai
   hook_type: account

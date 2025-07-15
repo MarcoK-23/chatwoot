@@ -37,17 +37,36 @@ RSpec.describe Integrations::SupportSquadAi::ProcessorService do
       end
     end
 
-    context 'when custom API endpoint is provided' do
+    context 'when custom API endpoint is provided with company_id' do
       let(:custom_endpoint) { 'https://custom-api.example.com/test_company' }
       let(:hook) { create(:integrations_hook, :support_squad_ai, account: account, settings: { 'api_key' => 'test_key', 'api_endpoint' => custom_endpoint }) }
       let(:event) { { 'name' => 'rephrase', 'data' => { 'content' => 'This is a test message' } } }
 
-      it 'uses the custom API endpoint' do
+      it 'uses the custom API endpoint and adds completion' do
         request_body = {
           'request' => "You are a helpful support agent. Please rephrase the following response. Ensure that the reply should be in user language.\n\nContent to rephrase:\nThis is a test message"
         }.to_json
 
         stub_request(:post, "#{custom_endpoint}/completion")
+          .with(body: request_body, headers: expected_headers)
+          .to_return(status: 200, body: support_squad_ai_response, headers: {})
+
+        result = subject.perform
+        expect(result).to eq({ :message => 'This is a reply from support_squad_ai.' })
+      end
+    end
+
+    context 'when custom API endpoint already includes completion' do
+      let(:custom_endpoint) { 'https://custom-api.example.com/test_company/completion' }
+      let(:hook) { create(:integrations_hook, :support_squad_ai, account: account, settings: { 'api_key' => 'test_key', 'api_endpoint' => custom_endpoint }) }
+      let(:event) { { 'name' => 'rephrase', 'data' => { 'content' => 'This is a test message' } } }
+
+      it 'uses the custom API endpoint as is' do
+        request_body = {
+          'request' => "You are a helpful support agent. Please rephrase the following response. Ensure that the reply should be in user language.\n\nContent to rephrase:\nThis is a test message"
+        }.to_json
+
+        stub_request(:post, custom_endpoint)
           .with(body: request_body, headers: expected_headers)
           .to_return(status: 200, body: support_squad_ai_response, headers: {})
 

@@ -100,13 +100,7 @@ class Integrations::SupportSquadAiBaseService
     company_id = extract_company_id_from_url(base_api_url)
     
     # Construct the full URL with company_id and completion endpoint
-    api_url = if base_api_url.include?('/completion')
-                # If the endpoint already includes /completion, replace it with the company_id format
-                base_api_url.gsub('/completion', "/#{company_id}/completion")
-              else
-                # Otherwise, append the company_id and completion path
-                "#{base_api_url}/#{company_id}/completion"
-              end
+    api_url = construct_completion_url(base_api_url, company_id)
 
     Rails.logger.info("SupportSquadAI API request to: #{api_url}")
     Rails.logger.info("SupportSquadAI API request body: #{request_body}")
@@ -158,5 +152,25 @@ class Integrations::SupportSquadAiBaseService
     
     # Fallback to default if no company_id found
     'default'
+  end
+
+  def construct_completion_url(base_url, company_id)
+    # Remove trailing slash if present
+    base_url = base_url.chomp('/')
+    
+    # Check if the URL already ends with /completion
+    if base_url.end_with?('/completion')
+      # If it already has /completion, just return as is
+      return base_url
+    end
+    
+    # Check if the URL already ends with the company_id
+    if base_url.end_with?("/#{company_id}")
+      # If it ends with company_id, just add /completion
+      return "#{base_url}/completion"
+    end
+    
+    # If it doesn't end with company_id or /completion, add both
+    return "#{base_url}/#{company_id}/completion"
   end
 end 
