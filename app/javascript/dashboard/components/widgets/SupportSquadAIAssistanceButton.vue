@@ -118,7 +118,7 @@ export default {
       }
       this.initializeMessage(this.draftMessage);
       const ninja = document.querySelector('ninja-keys');
-      ninja.open({ parent: 'ai_assist' });
+      ninja.open({ parent: 'support_squad_ai_assist' });
     },
     hideSupportSquadAICtaModal() {
       this.showSupportSquadAICtaModal = false;
